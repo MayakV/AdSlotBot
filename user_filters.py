@@ -47,9 +47,9 @@ class UserFilter:
 
 class Reach(UserFilter):
     f_type = 'охват'
-    operand_help = {'>': HelpParams('Больше значения', 1),
-                    '<': HelpParams('Меньше значения', 1),
-                    '-': HelpParams('Удалить фильтр', 0)
+    operand_help = {'>': HelpParams('Охват ОТ', 1),
+                    '<': HelpParams('Охват ДО', 1),
+                    '-': HelpParams('Очистить фильтр', 0)
                     }
     help_text = 'Фильтр по охвату канала\r\n'
 
