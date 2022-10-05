@@ -51,7 +51,7 @@ class Reach(UserFilter):
                     '<': HelpParams('Охват ДО', 1),
                     '-': HelpParams('Очистить фильтр', 0)
                     }
-    help_text = 'Фильтр по охвату канала\r\n'
+    help_text = 'Фильтр по охвату каналов.\r\n'
 
     @classmethod
     def check_above_min(cls, ad: dict, value):
@@ -122,9 +122,9 @@ class Reach(UserFilter):
 class Category(UserFilter):
     f_type = 'категория'
     operand_help = {'+': HelpParams('Добавить значение', 1),
-                    '-': HelpParams('Удалить значение', 1)
+                    '-': HelpParams('Очистить фильтр', 1)
                     }
-    help_text = 'Фильтр по категориям каналов. Выдает заявки, если в них присутствует хотя бы она категория\r\n\r\n' \
+    help_text = 'Фильтр по категориям каналов. Показывает заявки, в которых присутствует выбранная категория.\r\n\r\n' \
                 'Доступные категории:\r\n' \
                 'эротика\r\n' \
                 'автомобили\r\n' \
@@ -203,9 +203,9 @@ class Category(UserFilter):
 class Audience(UserFilter):
     f_type = 'аудитория'
     operand_help = {'+': HelpParams('Добавить значение', 1),
-                    '-': HelpParams('Удалить значение', 1)
+                    '-': HelpParams('Очистить фильтр', 1)
                     }
-    help_text = 'Фильтр по целевой аудитории каналов\r\n' \
+    help_text = 'Фильтр по целевой аудитории каналов.\r\n' \
                 'Доступные целевые аудитории:\r\n' \
                 'мца\r\n' \
                 'жца\r\n' \
@@ -277,9 +277,9 @@ class Audience(UserFilter):
 class Stat(UserFilter):
     f_type = 'стата'
     operand_help = {'+': HelpParams('Добавить фильтр', 0),
-                    '-': HelpParams('Удалить фильтр', 0),
+                    '-': HelpParams('Очистить фильтр', 0),
                     }
-    help_text = 'Фильтр по стате каналов\r\n'
+    help_text = 'Фильтр по статистике каналов.\r\n'
     valid_values = ['стата++']
 
     @classmethod
