@@ -58,10 +58,6 @@ def check_authorization(conn, user_id):
         return False
 
 
-# @bot.message_handler(func=lambda message: True)
-# def get_(message):
-#     bot.send_message(message.chat.id, "Работает")
-
 def gen_filter_markup():
     markup = telebot.types.InlineKeyboardMarkup()
     markup.row_width = 2
