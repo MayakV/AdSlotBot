@@ -40,21 +40,16 @@ def is_authorized(conn, user_id):
         return False
 
 
-def check_authorization(conn, user_id):
+def check_authorization(conn, user_id, username):
     if is_authorized(conn, user_id):
         return True
     elif conn.get_user(user_id) is None:
-        welcome_new_user(user_id)
+        welcome_new_user(user_id, username)
         return False
     else:
-        pay_url = bill.get_new_bill(user_id)
         trial_text = ''
-        if not conn.user_trial_activated(user_id):
-            trial_text = ' или активируйте пробный период выше'
         bot.send_message(user_id, "Пользователь не активирован\r\n"
-                                  "Пожалуйста, оплатите подписку по [ссылке]({url}) для "
-                                  "активации пользователя{trial}".format(url=pay_url, trial=trial_text),
-                         parse_mode='MarkdownV2')
+                                  "Пожалуйста, воспользуйтесь командой /subscription чтобы продлить подписку")
         return False
 
 
@@ -62,7 +57,7 @@ def gen_filter_markup():
     markup = telebot.types.InlineKeyboardMarkup()
     markup.row_width = 2
     for filt in customizable_filters:
-        markup.add(telebot.types.InlineKeyboardButton(filt.f_type, callback_data="filt_operand " + filt.f_type))
+        markup.add(telebot.types.InlineKeyboardButton(filt.f_type.title(), callback_data="filt_operand " + filt.f_type))
     return markup
 
 
@@ -75,8 +70,19 @@ def gen_filter_operands_markup(_filter):
     return markup
 
 
-def welcome_new_user(user_id):
-    conn.create_new_user(user_id)
+def gen_subscription_markup(trial_activated):
+    markup = telebot.types.InlineKeyboardMarkup()
+    markup.row_width = 2
+    if not trial_activated:
+        markup.add(telebot.types.InlineKeyboardButton('Активировать пробный период', callback_data="subscribe trial"))
+    markup.add(telebot.types.InlineKeyboardButton('3 дня', callback_data="subscribe 3d"))
+    markup.add(telebot.types.InlineKeyboardButton('Неделю', callback_data="subscribe 1w"))
+    markup.add(telebot.types.InlineKeyboardButton('Месяц', callback_data="subscribe 1m"))
+    return markup
+
+
+def welcome_new_user(user_id, username):
+    conn.create_new_user(user_id, username)
     pay_url = bill.get_new_bill(user_id)
 
     markup = telebot.types.InlineKeyboardMarkup()
@@ -86,14 +92,14 @@ def welcome_new_user(user_id):
                      "Добро пожаловать в бот! Бот помогает в поиске заявок на покупку рекламы в телеграм каналах.\r\n"
                      "Для продолжения работы предусмотрен бесплатный пробный период - 3 дня. После окончания пробного "
                      "периода, доступ предоставляется по подписке. "
-                     "Оформить подписку можно воспользовавшись командой /paysubscriptions".format(url=pay_url),
+                     "Оформить подписку можно воспользовавшись командой /subscription".format(url=pay_url),
                      reply_markup=markup)
     
 
 @bot.message_handler(commands=['start'])
 def welcome_message(message):
     if message.chat.type == "private":
-        welcome_new_user(message.chat.id)
+        welcome_new_user(message.chat.id, message.chat.username)
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('activate_trial'))
@@ -113,7 +119,7 @@ def activate_trial(call):
 
 @bot.message_handler(commands=['help', 'start'])
 def get_help(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id):
+    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
         print(str(datetime.datetime.now()) + " Sending help to " + str(message.chat.id)
               + " " + str(message.chat.username)
               + " " + str(message.chat.first_name)
@@ -121,16 +127,64 @@ def get_help(message):
         bot.send_message(message.chat.id,
                          "Список комманд бота:\r\n\r\n"
                          "/search - поиск заявок на покупку по настроенному фильтру\r\n"
-                         "/help - вывод справки\r\n"
-                         "/filters - просмотр настроек фильтра\r\n"                         
-                         "/clearfilters - очистить все фильтры\r\n"                         
+                         "/filters - просмотр настроек фильтра\r\n" 
                          "/changefilter - настройка фильтров\r\n"
+                         "/clearfilters - очистить все фильтры\r\n"                         
+                         "/subscription - просмотр времени до окончания подписки, продление подписки"
                          )
+
+
+@bot.message_handler(commands=['subscription'])
+def print_subscription(message):
+    if message.chat.type == "private":
+        print(f'{str(datetime.datetime.now())} Sending subscription info to {str(message.chat.id)} '
+              f'{str(message.chat.username)} {str(message.chat.first_name)} {str(message.chat.last_name)}')
+        b = conn.get_last_bill(message.chat.id)
+        if b:
+            sub_text = f"Дата окончания подписки: " \
+                       f"{b['valid_to'].strftime('%d/%m/%Y %H:%M')}" \
+                       f" по МСК\r\n\r\n"  # TODO сейчас время не по мск"
+        else:
+            sub_text = f"Ваша подписка истекла\r\n\r\n"
+        bot.send_message(message.chat.id,
+                         sub_text
+                         + f"Ниже Вы можете продлить подписку на: ",
+                         reply_markup=gen_subscription_markup(conn.user_trial_activated(message.chat.id))
+                         )
+
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('subscribe'))
+def print_subscribtion_link(call):
+    if call.message.chat.type == "private":
+        print(f"{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')} Sending subscription link to {str(call.message.chat.id)} "
+              f"{call.message.chat.username} {call.message.chat.first_name} {call.message.chat.last_name}: {call.data}")
+        if len(params := call.data.split(' ')) < 2 or len(params) > 2:
+            return  # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+        else:
+            _, period = params
+        if period == 'trial':
+            activate_trial(call)
+            return
+        elif period == '3d':
+            period_text = '3 дня'
+            pay_url = bill.get_new_3_days_bill(call.message.chat.id)
+        elif period == '1w':
+            period_text = 'неделю'
+            pay_url = bill.get_new_week_bill(call.message.chat.id)
+        elif period == '1m':
+            period_text = 'месяц'
+            pay_url = bill.get_new_month_bill(call.message.chat.id)
+        else:
+            return # raise error?
+
+        bot.send_message(call.message.chat.id,
+                         "Вы можете оплатите подписку на {period} по [ссылке]({url})".format(period=period_text, url=pay_url),
+                         parse_mode='MarkdownV2')
 
 
 @bot.message_handler(commands=['filters'])
 def print_user_filters(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id):
+    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
         print(str(datetime.datetime.now()) + " Sending filters to " + str(message.chat.username)
               + " " + str(message.chat.first_name)
               + " " + str(message.chat.last_name))
@@ -144,13 +198,32 @@ def print_user_filters(message):
 
 @bot.message_handler(commands=['clearfilters'])
 def clear_user_filters(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id):
+    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
         conn.clear_user_filters(message.chat.id)
         print(str(datetime.datetime.now()) + " Clearing filters for " + str(message.chat.username)
               + " " + str(message.chat.first_name)
               + " " + str(message.chat.last_name))
         bot.send_message(message.chat.id, "Фильтры удалены")
 
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('filt_operand '))
+def choose_filter_action(call):
+    if call.message.chat.type == "private":
+        print("got callbakc :" + call.data)
+        if len(params := call.data.split(' ')) < 2 or len(params) > 2:
+            return  # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+        else:
+            _, filter_type = params
+        _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
+        markup = gen_filter_operands_markup(_filter)
+
+        bot.send_message(call.message.chat.id,
+                         _filter.help_text + "\r\nТекущее значение фильтра:\r\n" + _filter.get_string(conn, call.message.chat.id) +
+                         "\r\nВыберите действие для фильтра",
+                         reply_markup=markup)
+
+
+# Подумать, может оставить это второй опцией изменения фильтра типа для опытных
 
 # @bot.message_handler(commands=['changefilter'])
 # def set_user_filter(message):
@@ -177,7 +250,7 @@ def clear_user_filters(message):
 
 @bot.message_handler(commands=['changefilter'])
 def set_user_filter(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id):
+    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
         print(str(datetime.datetime.now()) + " Changing filter for " + str(message.chat.username)
               + " " + str(message.chat.first_name)
               + " " + str(message.chat.last_name)
@@ -239,7 +312,7 @@ def modify_filter(user_id, _filter, operand, value=''):
 
 @bot.message_handler(commands=['search'])
 def get_ads(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id):
+    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
         print(str(datetime.datetime.now()) + " Sending ads to " + str(message.chat.username)
               + " " + str(message.chat.first_name)
               + " " + str(message.chat.last_name))

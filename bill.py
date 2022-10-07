@@ -1,6 +1,9 @@
 from yoomoney import Authorize, Client, Quickpay
 import datetime
 
+import db
+from db import Connection
+
 token = '4100117978266424.0089111004576F83E9572E3188BFDC5A9BF965150F46F58A26E57E3A51F09775F7FA70215A58EAE1FFE9794407A2799D2C111F01D5C1DF31FFEC9135AAE877E08F6404B9E1B80ACA4A4077CAF2C87C75CD328B3B53513195225C03AD6D64A70DE2764BF26DECA70B733A29D56EE850D837511B13E8A538F37072DF9655E53188'
 
 
@@ -30,14 +33,26 @@ def print_account_info():
     print("Extended balance information:")
 
 
-def get_new_bill(user_id):
+def get_new_3_days_bill(user_id):
+    return get_new_bill(str(user_id) + "_3d", 2)
+
+
+def get_new_week_bill(user_id):
+    return get_new_bill(str(user_id) + "_1w", 5)
+
+
+def get_new_month_bill(user_id):
+    return get_new_bill(str(user_id) + "_1m", 10)
+
+
+def get_new_bill(label, price):
     quickpay = Quickpay(
                 receiver="4100117978266424",
                 quickpay_form="shop",
                 targets="Sponsor this project",
                 paymentType="SB",
-                sum=10,
-                label=user_id,
+                sum=price,
+                label=label,
                 )
     # print(quickpay.base_url)
     return quickpay.redirected_url
@@ -61,34 +76,35 @@ def get_last_operation():
         print("\tType       -->", operation.type)
 
 
-def get_new_operations(from_date):
+def get_new_operations(from_date, span_info=False):
     client = Client(token)
     # from_date has about 4 hours offset for some reason
     history = client.operation_history(from_date=from_date)
-    # print("List of operations:")
-    # TODO запрос возвращает данные посранично, надо проходиться по всем страницами, чтобы вытащить операции
-    #  начало следующей тсраницы записано в history.next_record
-    # print("Next page starts with: ", history.next_record)
-    # for operation in history.operations:
-    #     print()
-    #     print("Operation:", operation.operation_id)
-    #     print("\tStatus     -->", operation.status)
-    #     print("\tDatetime   -->", operation.datetime)
-    #     print("\tTitle      -->", operation.title)
-    #     print("\tPattern id -->", operation.pattern_id)
-    #     print("\tDirection  -->", operation.direction)
-    #     print("\tAmount     -->", operation.amount)
-    #     print("\tLabel      -->", operation.label)
-    #     print("\tType       -->", operation.type)
+    if span_info:
+        print("List of operations:")
+        # TODO запрос возвращает данные посранично, надо проходиться по всем страницами, чтобы вытащить операции
+        #  начало следующей тсраницы записано в history.next_record
+        print("Next page starts with: ", history.next_record)
+        for operation in history.operations:
+            print()
+            print("Operation:", operation.operation_id)
+            print("\tStatus     -->", operation.status)
+            print("\tDatetime   -->", operation.datetime)
+            print("\tTitle      -->", operation.title)
+            print("\tPattern id -->", operation.pattern_id)
+            print("\tDirection  -->", operation.direction)
+            print("\tAmount     -->", operation.amount)
+            print("\tLabel      -->", operation.label)
+            print("\tType       -->", operation.type)
     return history.operations
 
 
-def add_trial_period(conn, user_id):
-    conn.add_bill_period(user_id, 'TRIAL')
+def add_trial_period(conn: Connection, user_id):
+    conn.add_bill_period(user_id, 'TRIAL', '3d')
     conn.permit_user(user_id)
 
 
-def poll_yoomoney_operations(conn):
+def poll_yoomoney_operations(conn: Connection):
     dt = conn.get_last_bill_date()
     if dt:
         operations = get_new_operations(dt)
@@ -96,23 +112,28 @@ def poll_yoomoney_operations(conn):
         operations = get_new_operations(datetime.datetime.strptime('1970/01/01 00:00:00', '%Y/%m/%d %H:%M:%S'))
     for operation in operations:
         if operation.direction == 'in' and operation.status == 'success':
-            t = conn.get_new_bill(operation.operation_id)
-            if not conn.get_new_bill(operation.operation_id):
-                conn.save_bill(operation.operation_id,
-                               operation.label,
-                               operation.datetime,
-                               operation.amount)
-                conn.add_bill_period(operation.label, operation.operation_id)
-                conn.permit_user(operation.label)
+            # t = conn.get_new_bill(operation.operation_id)
+            if not conn.get_bill(operation.operation_id):  # conn.get_new_bill(operation.operation_id)
+                user_id, *period = operation.label.split('_')
+                if period and len(period) == 1:
+                    conn.save_bill(operation.operation_id,
+                                   int(user_id),
+                                   operation.datetime,
+                                   period[0],
+                                   operation.amount)
+                    conn.add_bill_period(int(user_id), operation.operation_id, period[0])
+                    conn.permit_user(int(user_id))
+                else:
+                    pass  # raise no period specified?
 
 
 # get_bill()
-# get_last_operations(datetime.datetime.strptime('2022/09/25 13:00:00', '%Y/%m/%d %H:%M:%S'))
+# get_new_operations(datetime.datetime.strptime('2022/09/25 13:00:00', '%Y/%m/%d %H:%M:%S'), True)
 # get_last_operations(datetime.datetime.now() - datetime.timedelta(days=1))
 # get_new_operations(1) #717418205202002040
 # print(datetime.datetime.now() - datetime.timedelta(days=1))
-
-
+# conn = db.Connection()
+# poll_yoomoney_operations(conn)
 
 
 

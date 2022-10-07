@@ -78,14 +78,15 @@ class Connection:
             return True
         return False
 
-    def create_user(self, user_id, status, date):
+    def create_user(self, user_id, username, status, date):
         col = self.db['users']
         col.insert_one({'user_id': int(user_id),
+                        'username': username,
                         'payment_status': status,
                         'join_date': date})
 
-    def create_new_user(self, user_id):
-        self.create_user(int(user_id), 'new', datetime.datetime.now())
+    def create_new_user(self, user_id, username):
+        self.create_user(int(user_id), username, 'new', datetime.datetime.now())
 
     def delete_user(self, user_id):
         col = self.db['users']
@@ -119,32 +120,51 @@ class Connection:
         col = self.get_collection(collection_names['bills'])
         return col.find_one({'id': bill_id})
 
-    # def get_last_bill_date(self):
-    #     col = self.get_collection(collection_names['bills'])
-    #     if bills := list(col.find().sort('_id', -1)):
-    #         return bills[0]["bill_date"]
-    #     else:
-    #         return None
-
-    def save_bill(self, bill_id, user_id, bill_date, amount):
+    def get_last_bill_date(self):
         col = self.get_collection(collection_names['bills'])
-        col.insert_one({'id': bill_id, 'user_id': user_id, 'bill_date': bill_date, 'amount': amount})
+        if bills := list(col.find().sort('_id', -1)):
+            return bills[0]["bill_date"]
+        else:
+            return None
 
-    def add_bill_period(self, user_id, bill_id):
+    def save_bill(self, bill_id, user_id, bill_date, period, amount):
+        col = self.get_collection(collection_names['bills'])
+        col.insert_one({'id': bill_id, 'user_id': user_id, 'bill_date': bill_date,
+                        'period': period, 'amount': amount})
+
+    def add_bill_period(self, user_id, bill_id, period_length):
         col = self.get_collection(collection_names['bill_periods'])
         periods = list(col.find({'user_id': user_id}).sort('_id', -1))
         now = datetime.datetime.now()
+
+        days = 0
+        weeks = 0
+        months = 0
+        if period_length and len(period_length) == 2:
+            count, unit = period_length
+            if unit == 'd':
+                days = int(count)
+            elif unit == 'w':
+                weeks = int(count)
+            elif unit == 'm':
+                months = int(count)
+            else:
+                return # raise error?
+        else:
+            return  # raise errror?
+        period_length_dt = relativedelta(days=days, weeks=weeks, months=months)
+
         if periods:
             last_period = periods[0]
             if now > last_period['valid_to']:
                 valid_from = now
-                valid_to = now + relativedelta(months=+1)
+                valid_to = now + period_length_dt
             else:
-                valid_from = last_period['valid_to'] + relativedelta(days=+1)
-                valid_to = last_period['valid_to'] + relativedelta(months=+1, days=+1)
+                valid_from = last_period['valid_to']
+                valid_to = last_period['valid_to'] + period_length_dt
         else:
             valid_from = now,
-            valid_to = now + relativedelta(months=+1)
+            valid_to = now + period_length_dt
         col.insert_one({'user_id': user_id,
                         'bill_id': bill_id,
                         'valid_from': valid_from,
@@ -154,6 +174,15 @@ class Connection:
     def clear_user_bill_history(self, user_id):
         col = self.get_collection(collection_names['bill_periods'])
         col.delete_many({'user_id': user_id})
+
+    def get_last_bill(self, user_id):
+        col = self.get_collection(collection_names['bill_periods'])
+        bills = list(col.find({'user_id': user_id}).sort('valid_to', -1))
+        if bills:
+            return bills[0]
+        else:
+            return None
+
 
     def user_trial_activated(self, user_id):
         col = self.get_collection(collection_names['bill_periods'])

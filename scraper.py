@@ -17,7 +17,6 @@ api_id = int(getenv("AdScraper_api_id"))
 api_hash = getenv("AdScraper_api_hash")
 
 
-
 with TelegramClient('name', api_id, api_hash) as client:
     async def get_last_message(chat_id):
         async for message in client.iter_messages(chat_id,
