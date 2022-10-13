@@ -6,13 +6,14 @@ import db
 # TODO rework operand system into a proper action system
 # TODO convert list of filters to sets
 
-HelpParams = namedtuple('HelpParams', ['text', 'number_of_args'])
+HelpParams = namedtuple('HelpParams', ['text', 'number_of_args', 'input_type'])
 
 
 class UserFilter:
     f_type = ''
     operand_help = {}
     help_text = ''
+    input_type = ''
 
     @classmethod
     def get_string(cls, conn, user_id):
@@ -24,12 +25,11 @@ class UserFilter:
             else:
                 return f'{cls.f_type}: {str(val)}\r\n'  # str(op) + " " +
         else:
-            return f'{cls.f_type}: -\r\n'
+            return f'{cls.f_type}: не выбрано\r\n'
 
     @classmethod
     def get_user_filter(cls, conn: db.Connection, user_id):
-        old_filters = list(conn.get_user_filter(user_id, cls.f_type))
-        if old_filters:
+        if old_filters := conn.get_user_filter(user_id, cls.f_type):
             # only one filter can exist in db
             return old_filters[0]
         else:
@@ -47,11 +47,12 @@ class UserFilter:
 
 class Reach(UserFilter):
     f_type = 'охват'
-    operand_help = {'>': HelpParams('Охват ОТ', 1),
-                    '<': HelpParams('Охват ДО', 1),
-                    '-': HelpParams('Очистить фильтр', 0)
+    operand_help = {'>': HelpParams('Охват ОТ', 1, 'type_in'),
+                    '<': HelpParams('Охват ДО', 1, 'type_in'),
+                    '-': HelpParams('Очистить фильтр', 0, None)
                     }
     help_text = 'Фильтр по охвату каналов.\r\n'
+    input_type = 'type_in'
 
     @classmethod
     def check_above_min(cls, ad: dict, value):
@@ -121,8 +122,8 @@ class Reach(UserFilter):
 
 class Category(UserFilter):
     f_type = 'категория'
-    operand_help = {'+': HelpParams('Добавить значение', 1),
-                    '-': HelpParams('Очистить фильтр', 1)
+    operand_help = {'+': HelpParams('Добавить значение', 1, 'type_in'),
+                    '-': HelpParams('Очистить фильтр', 0, None)
                     }
     help_text = 'Фильтр по категориям каналов. Показывает заявки, в которых присутствует выбранная категория.\r\n\r\n' \
                 'Доступные категории:\r\n' \
@@ -138,6 +139,7 @@ class Category(UserFilter):
                     'финансы',
                     'бизнес',
                     'психология']
+    input_type = 'type_in'
 
     @classmethod
     def check_category(cls, ad, value):
@@ -166,7 +168,7 @@ class Category(UserFilter):
         # if not value:
         #     return 'Не указано значение \r\n' \
         #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
-        if value not in cls.valid_values:
+        if value and value not in cls.valid_values:
             return 'Введена неверная категория'
         if old_filter := cls.get_user_filter(conn, user_id):
             if operand == '+':
@@ -178,17 +180,17 @@ class Category(UserFilter):
                     return 'Данный фильтр уже добавлен \r\n' \
                            'Воспользуйтесь командой /filters, чтобы увидеть добавленные фильтры'
             elif operand == '-':
-                if value in old_filter['value']:
-                    old_filter['value'].remove(value)
-                    if old_filter['value']:
-                        conn.save_user_filter(user_id, cls.f_type, 'in', old_filter['value'])
-                        return 'Фильтр изменен'
-                    else:
-                        conn.delete_user_filter(user_id, cls.f_type)
-                        return 'Фильтр удален'
-                else:
-                    return 'В данном фильтре нет параметра ' + value + ' \r\n' \
-                                                                       'Воспользуйтесь командой /filters, чтобы увидеть добавленные фильтры'
+                # deletes only element provided
+                # if value in old_filter['value']:
+                #     old_filter['value'].remove(value)
+                #     if old_filter['value']:
+                #         conn.save_user_filter(user_id, cls.f_type, 'in', old_filter['value'])
+                #         return 'Фильтр изменен'
+                #     else:
+                #         conn.delete_user_filter(user_id, cls.f_type)
+                #         return 'Фильтр удален'
+                conn.delete_user_filter(user_id, cls.f_type)
+                return 'Фильтр очищен'
             else:
                 return 'Данный операнд не найден \r\n' \
                        'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
@@ -202,8 +204,8 @@ class Category(UserFilter):
 
 class Audience(UserFilter):
     f_type = 'аудитория'
-    operand_help = {'+': HelpParams('Добавить значение', 1),
-                    '-': HelpParams('Очистить фильтр', 1)
+    operand_help = {#'+': HelpParams('Добавить значение', 1, 'inline'),
+                    '-': HelpParams('Очистить фильтр', 0, 'inline')
                     }
     help_text = 'Фильтр по целевой аудитории каналов.\r\n' \
                 'Доступные целевые аудитории:\r\n' \
@@ -211,6 +213,7 @@ class Audience(UserFilter):
                 'жца\r\n' \
                 'сца\r\n'  # category list in AdScraper/filters.py in Audience class
     valid_values = ['жца', 'мца', 'сца']
+    input_type = 'inline'
 
     @classmethod
     def modify_filter(cls, conn: db.Connection, user_id, operand='', value=''):
@@ -220,8 +223,8 @@ class Audience(UserFilter):
         # if not value:
         #     return 'Не указано значение \r\n' \
         #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
-        if value not in cls.valid_values:
-            return 'Введена неверная целевая аудитория'
+        # if value not in cls.valid_values:
+        #     return 'Введена неверная целевая аудитория'
         if old_filter := cls.get_user_filter(conn, user_id):
             # only one filter can exist in db
             if operand == '+':
@@ -233,17 +236,18 @@ class Audience(UserFilter):
                     return 'Данный фильтр уже добавлен \r\n' \
                            'Воспользуйтесь командой /filters, чтобы увидеть добавленные фильтры'
             elif operand == '-':
-                if value in old_filter['value']:
-                    old_filter['value'].remove(value)
-                    if old_filter['value']:
-                        conn.save_user_filter(user_id, cls.f_type, 'in', old_filter['value'])
-                        return 'Фильтр изменен'
-                    else:
-                        conn.delete_user_filter(user_id, cls.f_type)
-                        return 'Фильтр удален'
+                if value:
+                    if value in old_filter['value']:
+                        old_filter['value'].remove(value)
+                        if old_filter['value']:
+                            conn.save_user_filter(user_id, cls.f_type, 'in', old_filter['value'])
+                            return 'Фильтр изменен'
+                        else:
+                            conn.delete_user_filter(user_id, cls.f_type)
+                            return 'Фильтр удален'
                 else:
-                    return 'В данном фильтре нет параметра ' + value + ' \r\n' \
-                                                                       'Воспользуйтесь командой /filters, чтобы увидеть добавленные фильтры'
+                    conn.delete_user_filter(user_id, cls.f_type)
+                    return 'Фильтр удален'
             else:
                 return 'Данный операнд не найден \r\n' \
                        'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
@@ -276,11 +280,12 @@ class Audience(UserFilter):
 
 class Stat(UserFilter):
     f_type = 'стата'
-    operand_help = {'+': HelpParams('Добавить фильтр', 0),
-                    '-': HelpParams('Очистить фильтр', 0),
+    operand_help = {'+': HelpParams('Добавить фильтр', 0, None),
+                    '-': HelpParams('Очистить фильтр', 0, None),
                     }
     help_text = 'Фильтр по статистике каналов.\r\n'
     valid_values = ['стата++']
+    input_type = 'type_in'
 
     @classmethod
     def check_stat(cls, ad: dict, value):

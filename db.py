@@ -21,7 +21,7 @@ class Connection:
 
     def __init__(self):
         client = MongoClient()
-        self.db = client['test-database']
+        self.db = client['AdSlot_db_prod']
 
     def get_collection(self, col_name: str):
         if col_name in collection_names:
@@ -33,6 +33,13 @@ class Connection:
     def get_chats(self):
         col = self.get_collection(collection_names['chats'])
         return list(col.find())
+
+    def add_chats(self, chat_ids: list):
+        col = self.get_collection(collection_names['chats'])
+        for _id in chat_ids:
+            col.update_one({'chat_id': _id},
+                           {'$setOnInsert': {'last_analyzed_id': 0, 'date_added': datetime.datetime.now()}},
+                           upsert=True)
 
     def get_chat_info(self, chat_id):
         col = self.get_collection(collection_names['chats'])
@@ -183,7 +190,6 @@ class Connection:
         else:
             return None
 
-
     def user_trial_activated(self, user_id):
         col = self.get_collection(collection_names['bill_periods'])
         trials = list(col.find({'user_id': user_id, 'bill_id': 'TRIAL'}))
@@ -195,9 +201,12 @@ class Connection:
     def get_user_filter(self, user_id, filter_type='all'):
         col = self.get_collection('user_filters')
         if filter_type == 'all':
-            return col.find({"user_id": user_id})
+            return list(col.find({"user_id": user_id}))
         else:
-            return col.find({"user_id": user_id, 'filter_type': filter_type})
+            if l := list(col.find({"user_id": user_id, 'filter_type': filter_type})):
+                return l[:1]  # to ensure there is nor error if there are two filters set by accident
+            else:
+                return []
 
     def save_user_filter(self, user_id, filter_type, operand, value):
         self.upsert_collection(collection_names['user_filters'],

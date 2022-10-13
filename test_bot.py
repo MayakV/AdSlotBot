@@ -6,13 +6,18 @@ import os
 import requests
 from contextlib import ExitStack
 import logging
+
+from telebot import apihelper
+
 import db
 import user_filters
 import bill
 import datetime
+import copy
 
 bot_token = os.getenv("AdSlot_TOKEN")
 
+apihelper.SESSION_TIME_TO_LIVE = 60 * 5
 bot = telebot.TeleBot(bot_token)
 
 # logging.basicConfig(filename='bot.log', encoding='utf-8', level=logging.INFO)
@@ -27,6 +32,9 @@ customizable_filters = [
     user_filters.Audience,
     user_filters.Stat,
 ]
+
+full_check = u'\U00002611'
+empty_check = u'\U0001F532'
 
 
 def is_authorized(conn, user_id):
@@ -55,19 +63,45 @@ def check_authorization(conn, user_id, username):
 
 def gen_filter_markup():
     markup = telebot.types.InlineKeyboardMarkup()
-    markup.row_width = 2
-    for filt in customizable_filters:
-        markup.add(telebot.types.InlineKeyboardButton(filt.f_type.title(), callback_data="filt_operand " + filt.f_type))
+    buttons = [telebot.types.InlineKeyboardButton(f.f_type.title(), callback_data="filt_operand " + f.f_type)
+               for f in customizable_filters]
+    markup.add(*buttons, row_width=2)
     return markup
 
 
-def gen_filter_operands_markup(_filter):
+def gen_filter_operands_markup(_filter, values_enabled):
     markup = telebot.types.InlineKeyboardMarkup()
     markup.row_width = 2
+    buttons = []
+    if _filter.input_type == 'inline':
+    # TODO it assumes value is list, which is not always the case, make better system
+        buttons.extend(
+            [telebot.types.InlineKeyboardButton((full_check if val in values_enabled else empty_check) + " " + val.title(),
+                                                callback_data="filt_value_inline "
+                                                              + _filter.f_type
+                                                              + " " + ('-' if val in values_enabled else '+')
+                                                              + " " + val)
+             for val in _filter.valid_values])
     for operand, _help in _filter.operand_help.items():
-        markup.add(telebot.types.InlineKeyboardButton(_help.text,
-                                                      callback_data="filt_value " + _filter.f_type + " " + operand))
+        if _filter.operand_help[operand].input_type in (None, 'type_in'):
+            buttons.append(telebot.types.InlineKeyboardButton(_help.text,
+                                                              callback_data="filt_value " + _filter.f_type + " " + operand))
+        elif _filter.operand_help[operand].input_type == 'inline':
+            # TODO it assumes value is list, which is not always the case, make better system
+            buttons.append(telebot.types.InlineKeyboardButton
+                           (_help.text,
+                            callback_data="filt_value_inline " + _filter.f_type + " " + operand + " " + 'null'))
+    markup.add(*buttons, row_width=2)
     return markup
+
+
+# def gen_filter_values_markup(_filter, values_enabled):
+#     markup = telebot.types.InlineKeyboardMarkup()
+#     buttons = [telebot.types.InlineKeyboardButton(full_check if val in values_enabled else empty_check + val.title(),
+#                                                   callback_data="filt_value_inline " + val)
+#                for val in _filter.valid_values]
+#     markup.add(*buttons, row_width=2)
+#     return markup
 
 
 def gen_subscription_markup(trial_activated):
@@ -83,7 +117,6 @@ def gen_subscription_markup(trial_activated):
 
 def welcome_new_user(user_id, username):
     conn.create_new_user(user_id, username)
-    pay_url = bill.get_new_bill(user_id)
 
     markup = telebot.types.InlineKeyboardMarkup()
     markup.add(telebot.types.InlineKeyboardButton('Активировать пробный период',
@@ -92,9 +125,9 @@ def welcome_new_user(user_id, username):
                      "Добро пожаловать в бот! Бот помогает в поиске заявок на покупку рекламы в телеграм каналах.\r\n"
                      "Для продолжения работы предусмотрен бесплатный пробный период - 3 дня. После окончания пробного "
                      "периода, доступ предоставляется по подписке. "
-                     "Оформить подписку можно воспользовавшись командой /subscription".format(url=pay_url),
+                     "Оформить подписку можно воспользовавшись командой /subscription",
                      reply_markup=markup)
-    
+
 
 @bot.message_handler(commands=['start'])
 def welcome_message(message):
@@ -127,9 +160,9 @@ def get_help(message):
         bot.send_message(message.chat.id,
                          "Список комманд бота:\r\n\r\n"
                          "/search - поиск заявок на покупку по настроенному фильтру\r\n"
-                         "/filters - просмотр настроек фильтра\r\n" 
+                         "/filters - просмотр настроек фильтра\r\n"
                          "/changefilter - настройка фильтров\r\n"
-                         "/clearfilters - очистить все фильтры\r\n"                         
+                         "/clearfilters - очистить все фильтры\r\n"
                          "/subscription - просмотр времени до окончания подписки, продление подписки"
                          )
 
@@ -154,12 +187,15 @@ def print_subscription(message):
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('subscribe'))
-def print_subscribtion_link(call):
+def print_subscription_link(call):
     if call.message.chat.type == "private":
-        print(f"{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')} Sending subscription link to {str(call.message.chat.id)} "
-              f"{call.message.chat.username} {call.message.chat.first_name} {call.message.chat.last_name}: {call.data}")
+        print(
+            f"{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')} Sending subscription link "
+            f"to {str(call.message.chat.id)} "
+            f"{call.message.chat.username} {call.message.chat.first_name} {call.message.chat.last_name}: {call.data}")
         if len(params := call.data.split(' ')) < 2 or len(params) > 2:
-            return  # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+            # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+            return
         else:
             _, period = params
         if period == 'trial':
@@ -175,10 +211,11 @@ def print_subscribtion_link(call):
             period_text = 'месяц'
             pay_url = bill.get_new_month_bill(call.message.chat.id)
         else:
-            return # raise error?
+            return  # raise error?
 
         bot.send_message(call.message.chat.id,
-                         "Вы можете оплатите подписку на {period} по [ссылке]({url})".format(period=period_text, url=pay_url),
+                         "Вы можете оплатите подписку на {period} по [ссылке]({url})".format(period=period_text,
+                                                                                             url=pay_url),
                          parse_mode='MarkdownV2')
 
 
@@ -211,16 +248,26 @@ def choose_filter_action(call):
     if call.message.chat.type == "private":
         print("got callbakc :" + call.data)
         if len(params := call.data.split(' ')) < 2 or len(params) > 2:
-            return  # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+            # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+            return
         else:
             _, filter_type = params
         _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
-        markup = gen_filter_operands_markup(_filter)
+        if u_filter := conn.get_user_filter(call.message.chat.id, _filter.f_type):
+            markup = gen_filter_operands_markup(_filter, u_filter[0].get('value', []))
+        else:
+            markup = gen_filter_operands_markup(_filter, [])
 
-        bot.send_message(call.message.chat.id,
-                         _filter.help_text + "\r\nТекущее значение фильтра:\r\n" + _filter.get_string(conn, call.message.chat.id) +
-                         "\r\nВыберите действие для фильтра",
-                         reply_markup=markup)
+        if _filter.input_type == 'type_in':
+            bot.send_message(call.message.chat.id,
+                             _filter.help_text + "\r\nТекущее значение фильтра:\r\n"
+                             + _filter.get_string(conn, call.message.chat.id) +
+                             "\r\nВыберите действие для фильтра",
+                             reply_markup=markup)
+        elif _filter.input_type == 'inline':
+            bot.send_message(call.message.chat.id,
+                             _filter.help_text + "\r\n\r\nВыберите значение для фильтра",
+                             reply_markup=markup)
 
 
 # Подумать, может оставить это второй опцией изменения фильтра типа для опытных
@@ -260,29 +307,13 @@ def set_user_filter(message):
                          reply_markup=gen_filter_markup())
 
 
-@bot.callback_query_handler(func=lambda call: call.data.startswith('filt_operand '))
-def choose_filter_action(call):
-    if call.message.chat.type == "private":
-        print("got callbakc :" + call.data)
-        if len(params := call.data.split(' ')) < 2 or len(params) > 2:
-            return  # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
-        else:
-            _, filter_type = params
-        _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
-        markup = gen_filter_operands_markup(_filter)
-
-        bot.send_message(call.message.chat.id,
-                         _filter.help_text + "\r\nТекущее значение фильтра:\r\n" + _filter.get_string(conn, call.message.chat.id) +
-                         "\r\nВыберите действие для фильтра",
-                         reply_markup=markup)
-
-
 @bot.callback_query_handler(func=lambda call: call.data.startswith('filt_value '))
 def choose_filter_value(call):
     if call.message.chat.type == "private":
         print("got callback :" + call.data)
         if len(params := call.data.split(' ')) < 3 or len(params) > 3:
-            return  # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+            # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
+            return
         else:
             _, filter_type, operand = params
         _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
@@ -293,15 +324,54 @@ def choose_filter_value(call):
         else:
             print("asking for value")
             msg = bot.send_message(call.message.chat.id,
-                             "Введите новое значение для фильра:")
-            bot.register_next_step_handler(msg, get_new_filter_value, _filter, operand)
+                                   "Введите новое значение для фильтра:")
+            bot.register_next_step_handler(msg, get_typed_filter_value, _filter, operand)
 
 
-def get_new_filter_value(message, _filter, operand):
+def get_typed_filter_value(message, _filter, operand):
     if message.chat.type == "private":
         print("got value " + message.text)
+
         _reply = modify_filter(message.chat.id, _filter, operand, message.text.lower())
         bot.send_message(message.chat.id, _reply)
+
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('filt_value_inline '))
+def get_inline_filter_value(call):
+    if call.message.chat.type == "private":
+        print("got value " + call.data)
+        if len(params := call.data.split(' ')) < 4 or len(params) > 4:
+            # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data # + "'")
+            return
+        else:
+            _, filter_type, filter_operand, filter_value = params
+            filter_value = filter_value.lower() if filter_value != 'null' else ''
+        _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
+        # markup = call.message.reply_markup
+        u_filter = conn.get_user_filter(call.message.chat.id, filter_type)
+        if filter_operand == '+':
+            if u_filter:
+                new_values = u_filter[0]['value'] + [filter_value]
+            else:
+                new_values = [filter_value]
+        elif filter_operand == '-':
+            if filter_value and u_filter:
+                new_values = u_filter[0]['value']
+                new_values.remove(filter_value)
+            else:
+                new_values = []
+        else:
+            new_values = []
+            # raise wrong operand?
+
+        bot.edit_message_reply_markup(chat_id=call.message.chat.id,
+                                      message_id=call.message.id,
+                                      reply_markup=gen_filter_operands_markup(_filter,
+                                                                              new_values
+                                                                              ))
+
+        _reply = modify_filter(call.message.chat.id, _filter, filter_operand, filter_value.lower())
+        # bot.send_message(message.chat.id, _reply)
 
 
 def modify_filter(user_id, _filter, operand, value=''):
@@ -349,4 +419,8 @@ def get_text_messages(message):
 
 # send_message()
 logging.info("Starting the bot")
-bot.infinity_polling(interval=5)
+bot.infinity_polling(interval=3)
+check = [u'\U000025FB', u'\U0000274C', u'\U00002714', u'\U0001F532', u'\U0001F533', u'\U00002B1C', u'\U00002705',
+         u'\U00002611']
+# check = [u'\U00002611', u'\U0001F532']
+# bot.send_message(536303432, 'this ' + ', '.join(check) + ' that')

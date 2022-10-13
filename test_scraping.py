@@ -323,10 +323,12 @@ with TelegramClient('name', api_id, api_hash) as client:
                 print(message.date.replace(tzinfo=None) > date_cutoff)
 
 
-    # client.loop.run_until_complete(test_filter())
+    client.loop.run_until_complete(test_filter())
     # pay.poll_yoomoney_operations()
     conn = Connection()
     # conn.update_expired_users()
-    conn.update_expired_ads(datetime.timedelta(days=2))
+    # conn.update_expired_ads(datetime.timedelta(days=2))
     # import scraper
     # scraper.scraper_poll()
+    # print(datetime.timedelta(days=2, months=0))
+
