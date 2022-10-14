@@ -46,7 +46,7 @@ class UserFilter:
 
 
 class Reach(UserFilter):
-    f_type = 'охват'
+    f_type = 'Охват'
     operand_help = {'>': HelpParams('Охват ОТ', 1, 'type_in'),
                     '<': HelpParams('Охват ДО', 1, 'type_in'),
                     '-': HelpParams('Очистить фильтр', 0, None)
@@ -121,7 +121,7 @@ class Reach(UserFilter):
 
 
 class Category(UserFilter):
-    f_type = 'категория'
+    f_type = 'Категория'
     operand_help = {'+': HelpParams('Добавить значение', 1, 'type_in'),
                     '-': HelpParams('Очистить фильтр', 0, None)
                     }
@@ -203,15 +203,15 @@ class Category(UserFilter):
 
 
 class Audience(UserFilter):
-    f_type = 'аудитория'
+    f_type = 'Аудитория'
     operand_help = {#'+': HelpParams('Добавить значение', 1, 'inline'),
                     '-': HelpParams('Очистить фильтр', 0, 'inline')
                     }
     help_text = 'Фильтр по целевой аудитории каналов.\r\n' \
                 'Доступные целевые аудитории:\r\n' \
-                'мца\r\n' \
-                'жца\r\n' \
-                'сца\r\n'  # category list in AdScraper/filters.py in Audience class
+                'Мца\r\n' \
+                'Жца\r\n' \
+                'Сца\r\n'  # category list in AdScraper/filters.py in Audience class
     valid_values = ['жца', 'мца', 'сца']
     input_type = 'inline'
 
@@ -279,7 +279,7 @@ class Audience(UserFilter):
 
 
 class Stat(UserFilter):
-    f_type = 'стата'
+    f_type = 'Статистика'
     operand_help = {'+': HelpParams('Добавить фильтр', 0, None),
                     '-': HelpParams('Очистить фильтр', 0, None),
                     }
