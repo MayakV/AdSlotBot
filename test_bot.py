@@ -110,7 +110,7 @@ def gen_subscription_markup(trial_activated):
     if not trial_activated:
         markup.add(telebot.types.InlineKeyboardButton('Активировать пробный период', callback_data="subscribe trial"))
     markup.add(telebot.types.InlineKeyboardButton('3 дня', callback_data="subscribe 3d"))
-    markup.add(telebot.types.InlineKeyboardButton('Неделю', callback_data="subscribe 1w"))
+    markup.add(telebot.types.InlineKeyboardButton('Неделя', callback_data="subscribe 1w"))
     markup.add(telebot.types.InlineKeyboardButton('Месяц', callback_data="subscribe 1m"))
     return markup
 
@@ -122,7 +122,7 @@ def welcome_new_user(user_id, username):
     markup.add(telebot.types.InlineKeyboardButton('Активировать пробный период',
                                                   callback_data="activate_trial"))
     bot.send_message(user_id,
-                     "Добро пожаловать в бот! Бот помогает в поиске заявок на покупку рекламы в телеграм каналах.\r\n"
+                     "Вас приветствует бот! Бот помогает в поиске заявок на покупку рекламы в телеграм каналах.\r\n"
                      "Для продолжения работы предусмотрен бесплатный пробный период - 3 дня. После окончания пробного "
                      "периода, доступ предоставляется по подписке. "
                      "Оформить подписку можно воспользовавшись командой /subscription",
@@ -140,7 +140,7 @@ def activate_trial(call):
     if call.message.chat.type == "private":
         if conn.user_trial_activated(call.message.chat.id):
             bot.send_message(call.message.chat.id,
-                             "Пробный период уже был активирован, его нельзя активировать повторно")
+                             "Пробный период уже был использован, его нельзя активировать повторно")
         else:
             bill.add_trial_period(conn, call.message.chat.id)
             conn.permit_user(call.message.chat.id)
@@ -181,7 +181,7 @@ def print_subscription(message):
             sub_text = f"Ваша подписка истекла\r\n\r\n"
         bot.send_message(message.chat.id,
                          sub_text
-                         + f"Ниже Вы можете продлить подписку на: ",
+                         + f"Для оформления новой подписки выберите желаемый период: ",
                          reply_markup=gen_subscription_markup(conn.user_trial_activated(message.chat.id))
                          )
 
@@ -214,7 +214,7 @@ def print_subscription_link(call):
             return  # raise error?
 
         bot.send_message(call.message.chat.id,
-                         "Вы можете оплатите подписку на {period} по [ссылке]({url})".format(period=period_text,
+                         "Вы можете оплатить подписку на {period} по [ссылке]({url})".format(period=period_text,
                                                                                              url=pay_url),
                          parse_mode='MarkdownV2')
 
@@ -303,7 +303,7 @@ def set_user_filter(message):
               + " " + str(message.chat.last_name)
               + ": " + str(message.text.split()))
         bot.send_message(message.from_user.id,
-                         "Выберите фильтр, который вы хотели бы изменить",
+                         "Выберите фильтр, который Вы хотели бы изменить",
                          reply_markup=gen_filter_markup())
 
 
