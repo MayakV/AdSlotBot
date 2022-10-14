@@ -115,13 +115,39 @@ class Connection:
 
     def update_expired_users(self):
         bp = self.get_collection(collection_names['bill_periods'])
-        expired_bill_periods = list(bp.find({'valid_to': {'$lt': datetime.datetime.now()}}))
-        user_ids = [x['user_id'] for x in expired_bill_periods]
-        user_ids.append('0')
-        users = self.get_collection(collection_names['users'])
-        users.update_many({'user_id': {'$in': user_ids}},
-                          {'$set': {'payment_status': 'expired'}}
-                          )
+        # expired_bill_periods = list(bp.find({'valid_to': {'$lt': datetime.datetime.now()}}))
+        # Wrong, it jast adds msx_date attributes
+        # expired_bill_periods = list(bp.aggregate([{
+        #     '$setWindowFields': {
+        #         'partitionBy': '$user_id',
+        #         'sortBy': {'valid_to': -1},
+        #         'output': {
+        #             # 'user_id': '$user_id',
+        #             'max_date': {
+        #                 '$max': '$valid_to',
+        #                 'window': {
+        #                     'documents': ['unbounded', 'current']
+        #                 }
+        #             }
+        #         }
+        #     }
+        # }]))
+        bill_periods = list(bp.aggregate([{
+            '$group': {
+                '_id': '$user_id',
+                'max_date': {'$max': '$valid_to'}
+            }
+        }]))
+        expired_users = filter(lambda x: x['max_date'] < datetime.datetime.now(), bill_periods)
+        user_ids = [x['user_id'] for x in expired_users]
+        if user_ids:
+            users = self.get_collection(collection_names['users'])
+            users.update_many({'user_id': {'$in': user_ids}},
+                              {'$set': {'payment_status': 'expired'}}
+                              )
+            return user_ids
+        else:
+            return []
 
     def get_bill(self, bill_id):
         col = self.get_collection(collection_names['bills'])

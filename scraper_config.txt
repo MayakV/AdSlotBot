@@ -1,3 +1,0 @@
-[General]
-Api_id = ""
-Api_hash = ""

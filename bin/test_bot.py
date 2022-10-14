@@ -1,26 +1,32 @@
 import copy
-
+import os
+import datetime
+import logging
+import configparser
 import telebot
 from time import sleep
-import os
-import requests
-from contextlib import ExitStack
-import logging
+import sys
 
-from telebot import apihelper
+# needed to import modules below
+parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
+print(parent_dir)
+sys.path.insert(0, parent_dir)
 
 import db
 import user_filters
 import bill
-import datetime
-import copy
 
-bot_token = os.getenv("AdSlot_TOKEN")
 
-apihelper.SESSION_TIME_TO_LIVE = 60 * 5
+configParser = configparser.RawConfigParser()
+configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config', r'bot_config.txt')
+configParser.read(configFilePath)
+# bot_token = os.getenv("AdSlot_TOKEN")
+bot_token = configParser.get('General', 'Token')
+
+telebot.apihelper.SESSION_TIME_TO_LIVE = 60 * 5
 bot = telebot.TeleBot(bot_token)
 
-# logging.basicConfig(filename='bot.log', encoding='utf-8', level=logging.INFO)
+
 
 conn = db.Connection()
 

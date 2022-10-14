@@ -104,27 +104,6 @@ def add_trial_period(conn: Connection, user_id):
     conn.permit_user(user_id)
 
 
-def poll_yoomoney_operations(conn: Connection):
-    dt = conn.get_last_bill_date()
-    if dt:
-        operations = get_new_operations(dt)
-    else:
-        operations = get_new_operations(datetime.datetime.strptime('1970/01/01 00:00:00', '%Y/%m/%d %H:%M:%S'))
-    for operation in operations:
-        if operation.direction == 'in' and operation.status == 'success':
-            # t = conn.get_new_bill(operation.operation_id)
-            if not conn.get_bill(operation.operation_id):  # conn.get_new_bill(operation.operation_id)
-                user_id, *period = operation.label.split('_')
-                if period and len(period) == 1:
-                    conn.save_bill(operation.operation_id,
-                                   int(user_id),
-                                   operation.datetime,
-                                   period[0],
-                                   operation.amount)
-                    conn.add_bill_period(int(user_id), operation.operation_id, period[0])
-                    conn.permit_user(int(user_id))
-                else:
-                    pass  # raise no period specified?
 
 
 # get_bill()
