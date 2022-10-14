@@ -17,15 +17,16 @@ class UserFilter:
 
     @classmethod
     def get_string(cls, conn, user_id):
+        f_name = cls.f_type.title()
         if _filter := cls.get_user_filter(conn, user_id):
             op = _filter["operand"]
             val = _filter["value"]
             if op == 'in' and isinstance(val, list):
-                return f'{cls.f_type}: {",".join(val)}\r\n'
+                return f'{f_name}: {",".join(val)}\r\n'
             else:
-                return f'{cls.f_type}: {str(val)}\r\n'  # str(op) + " " +
+                return f'{f_name}: {str(val)}\r\n'  # str(op) + " " +
         else:
-            return f'{cls.f_type}: не выбрано\r\n'
+            return f'{f_name}: не выбрано\r\n'
 
     @classmethod
     def get_user_filter(cls, conn: db.Connection, user_id):
@@ -46,7 +47,7 @@ class UserFilter:
 
 
 class Reach(UserFilter):
-    f_type = 'Охват'
+    f_type = 'охват'
     operand_help = {'>': HelpParams('Охват ОТ', 1, 'type_in'),
                     '<': HelpParams('Охват ДО', 1, 'type_in'),
                     '-': HelpParams('Очистить фильтр', 0, None)
@@ -121,7 +122,7 @@ class Reach(UserFilter):
 
 
 class Category(UserFilter):
-    f_type = 'Категория'
+    f_type = 'категория'
     operand_help = {'+': HelpParams('Добавить значение', 1, 'type_in'),
                     '-': HelpParams('Очистить фильтр', 0, None)
                     }
@@ -203,7 +204,7 @@ class Category(UserFilter):
 
 
 class Audience(UserFilter):
-    f_type = 'Аудитория'
+    f_type = 'аудитория'
     operand_help = {#'+': HelpParams('Добавить значение', 1, 'inline'),
                     '-': HelpParams('Очистить фильтр', 0, 'inline')
                     }
@@ -279,7 +280,7 @@ class Audience(UserFilter):
 
 
 class Stat(UserFilter):
-    f_type = 'Статистика'
+    f_type = 'статистика'
     operand_help = {'+': HelpParams('Добавить фильтр', 0, None),
                     '-': HelpParams('Очистить фильтр', 0, None),
                     }
