@@ -16,17 +16,15 @@ import db
 import user_filters
 import bill
 
-
 configParser = configparser.RawConfigParser()
-configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config', r'bot_config.txt')
+configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
+                              r'bot_config.txt')
 configParser.read(configFilePath)
 # bot_token = os.getenv("AdSlot_TOKEN")
 bot_token = configParser.get('General', 'Token')
 
 telebot.apihelper.SESSION_TIME_TO_LIVE = 60 * 5
 bot = telebot.TeleBot(bot_token)
-
-
 
 conn = db.Connection()
 
@@ -80,13 +78,14 @@ def gen_filter_operands_markup(_filter, values_enabled):
     markup.row_width = 2
     buttons = []
     if _filter.input_type == 'inline':
-    # TODO it assumes value is list, which is not always the case, make better system
+        # TODO it assumes value is list, which is not always the case, make better system
         buttons.extend(
-            [telebot.types.InlineKeyboardButton((full_check if val in values_enabled else empty_check) + " " + val.title(),
-                                                callback_data="filt_value_inline "
-                                                              + _filter.f_type
-                                                              + " " + ('-' if val in values_enabled else '+')
-                                                              + " " + val)
+            [telebot.types.InlineKeyboardButton(
+                (full_check if val in values_enabled else empty_check) + " " + val.title(),
+                callback_data="filt_value_inline "
+                              + _filter.f_type
+                              + " " + ('-' if val in values_enabled else '+')
+                              + " " + val)
              for val in _filter.valid_values])
     for operand, _help in _filter.operand_help.items():
         if _filter.operand_help[operand].input_type in (None, 'type_in'):
@@ -156,9 +155,9 @@ def activate_trial(call):
                              + " по МСК")  # TODO сейчас время не по мск
 
 
-@bot.message_handler(commands=['help', 'start'])
+@bot.message_handler(commands=['help'])
 def get_help(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
+    if message.chat.type == "private":
         print(str(datetime.datetime.now()) + " Sending help to " + str(message.chat.id)
               + " " + str(message.chat.username)
               + " " + str(message.chat.first_name)
@@ -166,10 +165,11 @@ def get_help(message):
         bot.send_message(message.chat.id,
                          "Список комманд бота:\r\n\r\n"
                          "/search - поиск заявок на покупку по настроенному фильтру\r\n"
-                         "/filters - просмотр настроек фильтра\r\n"
+                         "/filters - просмотр настроек фильтров\r\n"
                          "/changefilter - настройка фильтров\r\n"
                          "/clearfilters - очистить все фильтры\r\n"
-                         "/subscription - просмотр времени до окончания подписки, продление подписки"
+                         "/subscription - управление подпиской, позволяет активировать пробный период "
+                         "или подписаться на 3 дня, неделю, месяц"
                          )
 
 
@@ -406,27 +406,28 @@ def get_ads(message):
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-    print(message.text)
-    # print(bot.retrieve_data( ))
-    # bot.forward_message(536303432, 536303432, 55093)
-    str(message.chat.id)
-    # bot.forward_message(5615779963, 5615779963, 55093)
-    if message.text == "/help":
-        bot.send_message(message.from_user.id, "Напиши привет")
-    elif message.text == 'Поздравить Катю':
-        bot.send_message(message.chat.id, "Катя, с днём рождения!")
-    elif message.text == '/get':
-        print('Getting ads')
-
-    else:
-        # bot.send_message(message.chat.id, "Я тебя не понимаю. Напиши /help." + str(message.chat.id))
-        pass
+    # print(message.text)
+    # # print(bot.retrieve_data( ))
+    # # bot.forward_message(536303432, 536303432, 55093)
+    # str(message.chat.id)
+    # # bot.forward_message(5615779963, 5615779963, 55093)
+    # if message.text == "/help":
+    #     bot.send_message(message.from_user.id, "Напиши привет")
+    # elif message.text == 'Поздравить Катю':
+    #     bot.send_message(message.chat.id, "Катя, с днём рождения!")
+    # elif message.text == '/get':
+    #     print('Getting ads')
+    #
+    # else:
+    #     # bot.send_message(message.chat.id, "Я тебя не понимаю. Напиши /help." + str(message.chat.id))
+    #     pass
+    bot.send_message(message.chat.id, "Неопознанная команда. Напишите /help для вывода справки по командам")
 
 
 # send_message()
 logging.info("Starting the bot")
 bot.infinity_polling(interval=3)
-check = [u'\U000025FB', u'\U0000274C', u'\U00002714', u'\U0001F532', u'\U0001F533', u'\U00002B1C', u'\U00002705',
-         u'\U00002611']
+# check = [u'\U000025FB', u'\U0000274C', u'\U00002714', u'\U0001F532', u'\U0001F533', u'\U00002B1C', u'\U00002705',
+#          u'\U00002611']
 # check = [u'\U00002611', u'\U0001F532']
 # bot.send_message(536303432, 'this ' + ', '.join(check) + ' that')

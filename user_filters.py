@@ -23,6 +23,8 @@ class UserFilter:
             val = _filter["value"]
             if op == 'in' and isinstance(val, list):
                 return f'{f_name}: {",".join(val)}\r\n'
+            elif op in ('>', '<'):
+                return f'{f_name}: {str(op)} {str(val)}\r\n'  #
             else:
                 return f'{f_name}: {str(val)}\r\n'  # str(op) + " " +
         else:
@@ -49,7 +51,7 @@ class UserFilter:
 class Reach(UserFilter):
     f_type = 'охват'
     operand_help = {'>': HelpParams('Охват ОТ', 1, 'type_in'),
-                    '<': HelpParams('Охват ДО', 1, 'type_in'),
+                    #'<': HelpParams('Охват ДО', 1, 'type_in'),
                     '-': HelpParams('Очистить фильтр', 0, None)
                     }
     help_text = 'Фильтр по охвату каналов.\r\n'
@@ -57,14 +59,14 @@ class Reach(UserFilter):
 
     @classmethod
     def check_above_min(cls, ad: dict, value):
-        if (_min := ad.get('secondary_filter_params', []).get('reach_min', 0)) > value:  # or _min == 0:
+        if (_min := ad.get('secondary_filter_params', []).get('reach_min', 0)) >= value:  # or _min == 0:
             return True
         else:
             return False
 
     @classmethod
     def check_below_max(cls, ad: dict, value):
-        if (_max := ad.get('secondary_filter_params', []).get('reach_max', 0)) < value:  # or _max == 0:
+        if (_max := ad.get('secondary_filter_params', []).get('reach_max', 0)) <= value:  # or _max == 0:
             return True
         else:
             return False
@@ -123,8 +125,8 @@ class Reach(UserFilter):
 
 class Category(UserFilter):
     f_type = 'категория'
-    operand_help = {'+': HelpParams('Добавить значение', 1, 'type_in'),
-                    '-': HelpParams('Очистить фильтр', 0, None)
+    operand_help = {#'+': HelpParams('Добавить значение', 1, 'type_in'),
+                    '-': HelpParams('Очистить фильтр', 0, 'inline')
                     }
     help_text = 'Фильтр по категориям каналов. Показывает заявки, в которых присутствует выбранная категория.\r\n\r\n' \
                 'Доступные категории:\r\n' \
@@ -140,7 +142,7 @@ class Category(UserFilter):
                     'финансы',
                     'бизнес',
                     'психология']
-    input_type = 'type_in'
+    input_type = 'inline'
 
     @classmethod
     def check_category(cls, ad, value):
@@ -181,17 +183,18 @@ class Category(UserFilter):
                     return 'Данный фильтр уже добавлен \r\n' \
                            'Воспользуйтесь командой /filters, чтобы увидеть добавленные фильтры'
             elif operand == '-':
-                # deletes only element provided
-                # if value in old_filter['value']:
-                #     old_filter['value'].remove(value)
-                #     if old_filter['value']:
-                #         conn.save_user_filter(user_id, cls.f_type, 'in', old_filter['value'])
-                #         return 'Фильтр изменен'
-                #     else:
-                #         conn.delete_user_filter(user_id, cls.f_type)
-                #         return 'Фильтр удален'
-                conn.delete_user_filter(user_id, cls.f_type)
-                return 'Фильтр очищен'
+                if value:
+                    if value in old_filter['value']:
+                        old_filter['value'].remove(value)
+                        if old_filter['value']:
+                            conn.save_user_filter(user_id, cls.f_type, 'in', old_filter['value'])
+                            return 'Фильтр изменен'
+                        else:
+                            conn.delete_user_filter(user_id, cls.f_type)
+                            return 'Фильтр удален'
+                else:
+                    conn.delete_user_filter(user_id, cls.f_type)
+                    return 'Фильтр удален'
             else:
                 return 'Данный операнд не найден \r\n' \
                        'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'

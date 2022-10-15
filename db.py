@@ -132,13 +132,21 @@ class Connection:
         #         }
         #     }
         # }]))
+        users = self.get_collection(collection_names['users'])
+        paid_users = [x['user_id'] for x in users.find({'payment_status': 'confirmed'})]
         bill_periods = list(bp.aggregate([{
+            '$match': {
+                'user_id': {'$in': paid_users}
+            }
+        }, {
             '$group': {
                 '_id': '$user_id',
                 'max_date': {'$max': '$valid_to'}
             }
         }]))
+
         expired_users = filter(lambda x: x['max_date'] < datetime.datetime.now(), bill_periods)
+
         user_ids = [x['user_id'] for x in expired_users]
         if user_ids:
             users = self.get_collection(collection_names['users'])

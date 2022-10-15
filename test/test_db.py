@@ -191,7 +191,7 @@ def populate_bill_periods(conn : db.Connection):
 
 client = MongoClient()
 db1 = client['AdSlot_db_prod']
-collect = db1['bill_periods']
+collect = db1['users']
 #slot.save_to_db(collect)    AdSlot_TOKEN
 
 # cur = collect.find()
