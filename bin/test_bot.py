@@ -15,6 +15,8 @@ sys.path.insert(0, parent_dir)
 import db
 import user_filters
 import bill
+import AdSlot
+from filters import active_filters
 
 configParser = configparser.RawConfigParser()
 configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
@@ -24,9 +26,14 @@ configParser.read(configFilePath)
 bot_token = configParser.get('General', 'Token')
 
 telebot.apihelper.SESSION_TIME_TO_LIVE = 60 * 5
+telebot.apihelper.READ_TIMEOUT = 5
 bot = telebot.TeleBot(bot_token)
 
-conn = db.Connection()
+db_name = configParser.get('General', 'Db_name')
+host = configParser.get('General', 'Host')
+
+
+conn = db.Connection(host, db_name)
 
 bot_comm_chat_id = -1001676301152
 
@@ -86,7 +93,7 @@ def gen_filter_operands_markup(_filter, values_enabled):
                               + _filter.f_type
                               + " " + ('-' if val in values_enabled else '+')
                               + " " + val)
-             for val in _filter.valid_values])
+                for val in _filter.valid_values])
     for operand, _help in _filter.operand_help.items():
         if _filter.operand_help[operand].input_type in (None, 'type_in'):
             buttons.append(telebot.types.InlineKeyboardButton(_help.text,
@@ -98,15 +105,6 @@ def gen_filter_operands_markup(_filter, values_enabled):
                             callback_data="filt_value_inline " + _filter.f_type + " " + operand + " " + 'null'))
     markup.add(*buttons, row_width=2)
     return markup
-
-
-# def gen_filter_values_markup(_filter, values_enabled):
-#     markup = telebot.types.InlineKeyboardMarkup()
-#     buttons = [telebot.types.InlineKeyboardButton(full_check if val in values_enabled else empty_check + val.title(),
-#                                                   callback_data="filt_value_inline " + val)
-#                for val in _filter.valid_values]
-#     markup.add(*buttons, row_width=2)
-#     return markup
 
 
 def gen_subscription_markup(trial_activated):
@@ -137,7 +135,10 @@ def welcome_new_user(user_id, username):
 @bot.message_handler(commands=['start'])
 def welcome_message(message):
     if message.chat.type == "private":
-        welcome_new_user(message.chat.id, message.chat.username)
+        if conn.get_user(message.chat.id):
+            bot.send_message(message.chat.id, "Пользователь уже добавлен в систему")
+        else:
+            welcome_new_user(message.chat.id, message.chat.username)
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('activate_trial'))
@@ -249,6 +250,18 @@ def clear_user_filters(message):
         bot.send_message(message.chat.id, "Фильтры удалены")
 
 
+@bot.message_handler(commands=['changefilter'])
+def set_user_filter(message):
+    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
+        print(str(datetime.datetime.now()) + " Changing filter for " + str(message.chat.username)
+              + " " + str(message.chat.first_name)
+              + " " + str(message.chat.last_name)
+              + ": " + str(message.text.split()))
+        bot.send_message(message.from_user.id,
+                         "Выберите фильтр, который Вы хотели бы изменить",
+                         reply_markup=gen_filter_markup())
+
+
 @bot.callback_query_handler(func=lambda call: call.data.startswith('filt_operand '))
 def choose_filter_action(call):
     if call.message.chat.type == "private":
@@ -300,18 +313,6 @@ def choose_filter_action(call):
 #                 bot.send_message(message.chat.id, 'Указанного фильтра не существует. \r\nВоспользуйтесь /помощь')
 #         else:
 #             bot.send_message(message.chat.id, 'Тип фильтра не указан. Воспользуйтесь /помощь')
-
-@bot.message_handler(commands=['changefilter'])
-def set_user_filter(message):
-    if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
-        print(str(datetime.datetime.now()) + " Changing filter for " + str(message.chat.username)
-              + " " + str(message.chat.first_name)
-              + " " + str(message.chat.last_name)
-              + ": " + str(message.text.split()))
-        bot.send_message(message.from_user.id,
-                         "Выберите фильтр, который Вы хотели бы изменить",
-                         reply_markup=gen_filter_markup())
-
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('filt_value '))
 def choose_filter_value(call):
@@ -404,24 +405,72 @@ def get_ads(message):
             bot.send_message(message.from_user.id, "По настроенным фильтрам не найдено заявок")
 
 
-@bot.message_handler(content_types=['text'])
+@bot.message_handler(content_types=['audio', 'photo', 'voice', 'video', 'document',
+                                    'text', 'location', 'contact',
+                                    'sticker'])  # content_types=['text']
 def get_text_messages(message):
-    # print(message.text)
-    # # print(bot.retrieve_data( ))
-    # # bot.forward_message(536303432, 536303432, 55093)
-    # str(message.chat.id)
-    # # bot.forward_message(5615779963, 5615779963, 55093)
-    # if message.text == "/help":
-    #     bot.send_message(message.from_user.id, "Напиши привет")
-    # elif message.text == 'Поздравить Катю':
-    #     bot.send_message(message.chat.id, "Катя, с днём рождения!")
-    # elif message.text == '/get':
-    #     print('Getting ads')
-    #
-    # else:
-    #     # bot.send_message(message.chat.id, "Я тебя не понимаю. Напиши /help." + str(message.chat.id))
-    #     pass
-    bot.send_message(message.chat.id, "Неопознанная команда. Напишите /help для вывода справки по командам")
+    if message.chat.type == "private":
+        # print(message.text)
+        # # print(bot.retrieve_data( ))
+        # # bot.forward_message(536303432, 536303432, 55093)
+        # str(message.chat.id)
+        # # bot.forward_message(5615779963, 5615779963, 55093)
+        # if message.text == "/help":
+        #     bot.send_message(message.from_user.id, "Напиши привет")
+        # elif message.text == 'Поздравить Катю':
+        #     bot.send_message(message.chat.id, "Катя, с днём рождения!")
+        # elif message.text == '/get':
+        #     print('Getting ads')
+        #
+        # else:
+        #     # bot.send_message(message.chat.id, "Я тебя не понимаю. Напиши /help." + str(message.chat.id))
+        #     pass
+        # u =         bot.get_chat_member('tgsale', 'Profit_is')---------------------------------------------------
+        bot.send_message(message.chat.id, "Неопознанная команда. Напишите /help для вывода справки по командам")
+
+
+@bot.edited_message_handler(func=lambda message: message.chat.id == bot_comm_chat_id)
+def handler_function(message):
+    if (ad_msg := message.reply_to_message) \
+            and (message.reply_to_message.forward_from or message.reply_to_message.forward_sender_name):
+        # if user.username is None:
+        #     bot.edit_message_text(message.text + '\r\n\r\nПользователь удален')
+        # msg_hash = AdSlot.AdSlot.calc_hash(message.text)
+        if ad_info := conn.get_ad_info(bot_comm_id=ad_msg.id):
+            if message.text.lower() == 'удалить':
+                conn.invalidate_ad(ad_info.get('message_hash', ''))
+            else:
+                lines = message.text.splitlines()
+                ad = AdSlot.AdSlot(ad_info.get('author_name', ''),
+                                   ad_info.get('author_username', ''),
+                                   # ad_info.get('message_hash', ''),
+                                   ad_info.get('original_chat_type', ''),
+                                   ad_info.get('original_chat_id', 0),
+                                   ad_info.get('original_chat_name', ''),
+                                   ad_info.get('message_id', 0),
+                                   ad_info.get('bot_comm_message_id', 0),
+                                   ad_info.get('date_published', datetime.datetime(1970, 1, 1)),
+                                   ad_info.get('text', ''),
+                                   status=ad_info.get('status', ''),
+                                   secondary_filter_params=ad_info.get('secondary_filter_params', {}),
+                                   )
+                for line in lines:
+                    _type, *_ = line.split(' : ')
+                    _filter = next((filt for filt in active_filters if filt.f_type == _type), None)
+                    if _filter:
+                        new_filter_params = _filter.get_db_repr_from_text(line)
+                        ad.set_secondary_filter(new_filter_params)
+                        print(_filter.f_type + " updated successfully")
+                    else:
+                        print('Filter unknown')
+                print("Ad update successfully")
+                ad.save_to_db(conn)
+        else:
+            print("Ad not in db")
+    else:
+        print('Message is a reply : ' + str(ad_msg))
+        # print('Original Message is forwarded from : ' + str(user))
+    # message.reply_to_message
 
 
 # send_message()

@@ -3,8 +3,8 @@ import telethon
 from bson import ObjectId
 from hashlib import md5
 
-import filters
 from db import Connection
+from filters import active_filters
 
 status_names = ["open", "closed", "expired"]
 original_chat_types = ["user", "chat", "channel"]
@@ -24,13 +24,7 @@ class AdSlot:
     date_published = datetime.datetime(1970, 1, 1)
     status = ''
     text = ''
-    secondary_filters = [
-        filters.Reach,
-        filters.Audience,
-        filters.Category,
-        filters.Stat,
-    ]
-    secondary_filter_params = None
+    secondary_filter_params = {}
 
     def __init__(self,
                  author,
@@ -49,7 +43,7 @@ class AdSlot:
         self.author = author
         self.author_username = author_username
         # self.message_hash = message_hash
-        self.message_hash = md5(text.encode('utf-8')).hexdigest()
+        self.message_hash = self.calc_hash(text)
         self.original_chat_type = original_chat_type
         self.original_chat_id = original_chat_id
         self.original_chat_name = original_chat_name
@@ -87,6 +81,10 @@ class AdSlot:
         yield 'date_updated', datetime.datetime.now()
         yield 'secondary_filter_params', self.secondary_filter_params
 
+    @classmethod
+    def calc_hash(cls, text):
+        return md5(text.encode('utf-8')).hexdigest()
+
     def set_date(self, date):
         # TODO type heck
         self.date_published = date
@@ -106,13 +104,20 @@ class AdSlot:
     def set_status(self, status):
         self.status = status
 
+    def set_secondary_filter(self, new_params):
+        if new_params:
+            self.secondary_filter_params.update(new_params)
+
+    def open_status(self):
+        self.set_status('open')
+
     def apply_secondary_filters(self, text):
-        for filt in self.secondary_filters:
+        for filt in active_filters:
             self.secondary_filter_params = self.secondary_filter_params | filt.apply(text)
 
     def get_secondary_filters_message(self):
         res = ''
-        for filt in self.secondary_filters:
+        for filt in active_filters:
             res += str(filt.get_text_repr(self.secondary_filter_params))
         return res
 

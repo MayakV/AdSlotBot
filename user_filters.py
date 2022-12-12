@@ -31,6 +31,10 @@ class UserFilter:
             return f'{f_name}: не выбрано\r\n'
 
     @classmethod
+    def get_value(cls, text):
+        return '', ''
+
+    @classmethod
     def get_user_filter(cls, conn: db.Connection, user_id):
         if old_filters := conn.get_user_filter(user_id, cls.f_type):
             # only one filter can exist in db
@@ -51,7 +55,7 @@ class UserFilter:
 class Reach(UserFilter):
     f_type = 'охват'
     operand_help = {'>': HelpParams('Охват ОТ', 1, 'type_in'),
-                    #'<': HelpParams('Охват ДО', 1, 'type_in'),
+                    # '<': HelpParams('Охват ДО', 1, 'type_in'),
                     '-': HelpParams('Очистить фильтр', 0, None)
                     }
     help_text = 'Фильтр по охвату каналов.\r\n'
@@ -64,12 +68,12 @@ class Reach(UserFilter):
         else:
             return False
 
-    @classmethod
-    def check_below_max(cls, ad: dict, value):
-        if (_max := ad.get('secondary_filter_params', []).get('reach_max', 0)) <= value:  # or _max == 0:
-            return True
-        else:
-            return False
+    # @classmethod
+    # def check_below_max(cls, ad: dict, value):
+    #     if (_max := ad.get('secondary_filter_params', []).get('reach_max', 0)) <= value:  # or _max == 0:
+    #         return True
+    #     else:
+    #         return False
 
     @classmethod
     def apply(cls, conn: db.Connection, user_id, ads: list):
@@ -77,8 +81,8 @@ class Reach(UserFilter):
         if _filter:
             if _filter['operand'] == '>':
                 return filter(lambda ad: cls.check_above_min(ad, _filter.get('value', 0)), ads)
-            elif _filter['operand'] == '<':
-                return filter(lambda ad: cls.check_below_max(ad, _filter.get('value', 0)), ads)
+            # elif _filter['operand'] == '<':
+            #     return filter(lambda ad: cls.check_below_max(ad, _filter.get('value', 0)), ads)
             else:
                 return ads
         else:
@@ -102,13 +106,15 @@ class Reach(UserFilter):
             if operand in ['>', '<']:
                 if value != old_filter['value']:
                     conn.save_user_filter(user_id, cls.f_type, operand, value)
-                    return 'Фильтр изменен'
+                    return 'Фильтр изменен\r\n' \
+                           'Воспользуйтесь командой /search для отображения отфильтрованных заявок'
                 else:
                     return 'Данный фильтр уже добавлен \r\n' \
                            'Воспользуйтесь командой /filters, чтобы увидеть добавленные фильтры'
             elif operand == '-':
                 conn.delete_user_filter(user_id, cls.f_type)
-                return 'Фильтр удален'
+                return 'Фильтр удален' \
+                       'Воспользуйтесь командой /search для отображения отфильтрованных заявок'
             # else:
             #     return 'Данный операнд не найден \r\n' \
             #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
@@ -125,21 +131,21 @@ class Reach(UserFilter):
 
 class Category(UserFilter):
     f_type = 'категория'
-    operand_help = {#'+': HelpParams('Добавить значение', 1, 'type_in'),
-                    '-': HelpParams('Очистить фильтр', 0, 'inline')
-                    }
-    help_text = 'Фильтр по категориям каналов. Показывает заявки, в которых присутствует выбранная категория.\r\n\r\n' \
-                'Доступные категории:\r\n' \
-                'бизнес, финансы, крипта \r\n' \
-                'наука, познавательное\r\n' \
-                'новости\r\n' \
-                'кулинария\r\n' \
-                'психология\r\n' \
-                'кино\r\n' \
-                'эротика\r\n' \
-                'астрология\r\n'
-                 #'автомобили\r\n' \ # category list in AdScraper/filters.py in Category class
-    valid_values = ['эротика',
+    operand_help = {  # '+': HelpParams('Добавить значение', 1, 'type_in'),
+        '-': HelpParams('Очистить фильтр', 0, 'inline')
+    }
+    help_text = 'Фильтр по категориям каналов. Показывает заявки, в которых присутствует выбранная категория.'
+    # 'Доступные категории:\r\n' \
+    # 'бизнес, финансы, крипта \r\n' \
+    # 'наука, познавательное\r\n' \
+    # 'новости\r\n' \
+    # 'кулинария\r\n' \
+    # 'психология\r\n' \
+    # 'кино\r\n' \
+    # 'эротика\r\n' \
+    # 'астрология\r\n'
+    # 'автомобили\r\n' \ # category list in AdScraper/filters.py in Category class
+    valid_values = ['астрология',
                     'автомобили',
                     'кулинария',
                     'финансы',
@@ -147,6 +153,7 @@ class Category(UserFilter):
                     'психология',
                     'новости',
                     'кино',
+                    'эротика',
                     'наука',
                     'крипта']
     input_type = 'inline'
@@ -215,14 +222,14 @@ class Category(UserFilter):
 
 class Audience(UserFilter):
     f_type = 'аудитория'
-    operand_help = {#'+': HelpParams('Добавить значение', 1, 'inline'),
-                    '-': HelpParams('Очистить фильтр', 0, 'inline')
-                    }
-    help_text = 'Фильтр по целевой аудитории каналов.\r\n' \
-                'Доступные целевые аудитории:\r\n' \
-                'Мца\r\n' \
-                'Жца\r\n' \
-                'Сца\r\n'  # category list in AdScraper/filters.py in Audience class
+    operand_help = {  # '+': HelpParams('Добавить значение', 1, 'inline'),
+        '-': HelpParams('Очистить фильтр', 0, 'inline')
+    }
+    help_text = 'Фильтр по целевой аудитории каналов.' \
+        # 'Доступные целевые аудитории:\r\n' \
+    # 'Мца\r\n' \
+    # 'Жца\r\n' \
+    # 'Сца\r\n'  # category list in AdScraper/filters.py in Audience class
     valid_values = ['жца', 'мца', 'сца']
     input_type = 'inline'
 

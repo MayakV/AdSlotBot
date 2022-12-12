@@ -19,9 +19,9 @@ collection_names = {
 class Connection:
     db: collection
 
-    def __init__(self):
-        client = MongoClient()
-        self.db = client['AdSlot_db_prod']
+    def __init__(self, host_name, db_name, port=27017):
+        client = MongoClient(host_name, port)
+        self.db = client[db_name]
 
     def get_collection(self, col_name: str):
         if col_name in collection_names:
@@ -34,19 +34,51 @@ class Connection:
         col = self.get_collection(collection_names['chats'])
         return list(col.find())
 
-    def add_chats(self, chat_ids: list):
+    def get_active_chats(self):
         col = self.get_collection(collection_names['chats'])
-        for _id in chat_ids:
-            col.update_one({'chat_id': _id},
-                           {'$setOnInsert': {'last_analyzed_id': 0, 'date_added': datetime.datetime.now()}},
-                           upsert=True)
+        return list(col.find({'status': 'active'}))
 
     def get_chat_info(self, chat_id):
         col = self.get_collection(collection_names['chats'])
-        chat_info = list(col.find({'chat_id': chat_id}))
+        chat_info = list(col.find({'_id': chat_id}))
         if chat_info:
             return chat_info[0]
         return {}
+
+    def get_chat_infos(self, chat_ids):
+        col = self.get_collection(collection_names['chats'])
+        chat_infos = list(col.find({'chat_id': {'$in': chat_ids}}))
+        if chat_infos:
+            return chat_infos
+        return []
+
+    def add_chat(self, _id, type='', title='', username=''):
+        col = self.get_collection(collection_names['chats'])
+        col.update_one({'_id': _id,
+                        'status': {'$ne': 'manually disabled'}},
+                       {'$set': {
+                           'title': title,
+                           'username': username,
+                           'type': type,
+                           'status': 'active',
+                        },
+                        '$setOnInsert': {
+                               'last_analyzed_id': 0,
+                               'date_added': datetime.datetime.now(),
+                               'last_status_change': datetime.datetime.now(),
+                        }
+                       },
+                       upsert=True)
+
+    def add_chats(self, chat_infos: list):
+        if chat_infos:
+            for chat in chat_infos:
+                self.add_chat(chat["_id"], chat["type"], chat["title"], chat["username"])
+
+    def invalidate_chats(self, chat_ids: list):
+        col = self.get_collection(collection_names['chats'])
+        col.update_many({'_id': {'$in': chat_ids}},
+                        {'$set': {'status': 'expired'}})
 
     def update_last_analyzed_id(self, chat_id, last_analyzed_id):
         self.upsert_collection(collection_names['chats'],
@@ -62,9 +94,14 @@ class Connection:
         cur = col.find({'status': 'open'})
         return list(cur)
 
-    def get_ad_info(self, author_username, message_hash):
+    def get_ad_info(self, author_username='', message_hash='', bot_comm_id=0):
         col = self.get_collection(collection_names['ads'])
-        ad = col.find({'author_username': author_username, 'message_hash': message_hash})
+        if message_hash:
+            ad = col.find({'message_hash': message_hash})
+        elif bot_comm_id:
+            ad = col.find({'bot_comm_message_id': bot_comm_id})
+        else:
+            return None  # raise error?
         ads_info = list(ad)
         if ads_info:
             ad_info = ads_info[0]
@@ -84,6 +121,16 @@ class Connection:
         if self.get_ad_info(author_username, message_hash):
             return True
         return False
+
+    def invalidate_ad(self, _hash):
+        col = self.db['ads']
+        if _hash:
+            col.update_one({'message_hash': _hash}, {'$set': {'status': 'invalidated'}})
+
+    def delete_ad(self, _hash):
+        col = self.db['ads']
+        if _hash:
+            col.delete_one({'message_hash': _hash})
 
     def create_user(self, user_id, username, status, date):
         col = self.db['users']
@@ -110,7 +157,8 @@ class Connection:
     def permit_user(self, user_id):
         col = self.get_collection(collection_names['users'])
         col.update_one({'user_id': int(user_id)},
-                       {'$set': {'payment_status': 'confirmed'}},  # "$setOnInsert": {'user_id': user_id, 'join_date': datetime.datetime.now()
+                       {'$set': {'payment_status': 'confirmed'}},
+                       # "$setOnInsert": {'user_id': user_id, 'join_date': datetime.datetime.now()
                        )  # upsert=True
 
     def update_expired_users(self):
@@ -190,7 +238,7 @@ class Connection:
             elif unit == 'm':
                 months = int(count)
             else:
-                return # raise error?
+                return  # raise error?
         else:
             return  # raise errror?
         period_length_dt = relativedelta(days=days, weeks=weeks, months=months)
@@ -255,6 +303,3 @@ class Connection:
     def clear_user_filters(self, user_id):
         col = self.get_collection('user_filters')
         col.delete_many({'user_id': user_id})
-
-
-

@@ -4,148 +4,109 @@ from pymongo import MongoClient, collection, cursor
 from bson import ObjectId
 import pprint
 import hashlib
+import os
+import sys
+
+from pymongo.database import Database
+
+parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
+print(parent_dir)
+sys.path.insert(0, parent_dir)
+
 import db
 
 #  TODO добавить обработчик для удаленных каналов
-t = [  -1089694021, #
-    'AdHotChat',
-    'birzha_chat69',
-    'tgsale',
-    'Advertising_exchange_1',
-    'Advertjsjng_Telegram',
-    'alice_bob_public',
-    'birgarekl',
-    'birga_ru',
-    'birjaga',
-    'birza_kanalov',
-    'birzha_chat69',
-    'birzha_kanaIov',
-    'birzha_reklamy2',
-    'booklt',
-    'boom_chat2',
-    'brt_tg2',
-    'chattte',
-    'easy_reklama', #
-    'exchangeres',
-    'exchange_reklama',
-    'FamilyPR',
-    'fieryTGadmin',
-    'goodpiarTG',
-    'GUMarket_ads',
-    'Helix_shop_Chat0',
-    'marketingchat_ru',
-    'marketprooo',
-    'only_pokupka',
-    'piarNOpar',
-    'reclamarket',
-    'reclama_room',
-    'reclapoh',
-    'rekbir',
-    'reklamakp',
-    'reklamarur',
-    'reklamateladm',
-    'Reklamazdess',
-    'Reklama_ADD',
-    'Reklama_chat', #
-    'reklama_chat_bazar',
-    'Reklama_grami',
-    'reklamka03',
-    'reklamka_2020',
-    'reklam_birzha',
-    'reklmam',
-    'rinochek105',
-    'RuProB',
-    'swap_room',
-    'Tadverts',
-    'telegabirga',
-    'telegads',
-    'telega_Admins',
-    'tgbirza', #
-    'TGBIRZGA',
-    'tgsale',
-    'tg_chat3',
-    'tg_sale',
-    'tolko_pokypka',
-    'TOPadvPlace',
-    'toppadminchat',
-    'vpdoc',
-    'youradvt',
-]
-
-t1 = [ 'birja_Chat_Dok',
-'+AY8kjWpE_U4wODc6',
-'pokupkanovosti',
-'PokupkaTrash',
-'AdHotBirzhaChat',
-'AdHotChat',
-'7rypEOoE9kY3OTIy',
-'crypto_adminu',
-'tg_chat3',
-'reklamateladm',
-'+7sDWuorXQ0hiMDVi',
-'+0pecYNr9sH1hYzZi',
-'+1KLxyVaVX1E5OTgy',
-'+sDWLbNAaxEg3MWQy',
-'+EbU_8ZkkQBIxMjRi',
-'+2UFhMaxrQVk0NjUy',
-'+CiWvkww3qCZlNGVi',
-'+DRBAnSMQu2JkYzIy',
-'+77FJR676i3c5ZWYy',
-'+233WUAoflDcwNjBi',
-'+Fu3_oGbfTVBiZDRi',
-'+HI8lBOMl2do4YmNi',
-'+HY602kycZK9kMDVi',
-'+GAha9KymF584MzIy',
-'+ajN1eVpqUMk0NWJi',
-'+T5ZIEqlu19M2MGEy',
-'+mrP6ZkIOID1hMGNi',
-'+Y9IVESLYHrlkMWQy',
-'+u7PVQHCsEqk0MzY6',
-'+oB_b5q2zF1YxMjFi',
-'+qPKvjpJA9GE3MzY6',
-'+5GwtnIpJxdBmZmUy',
-'+I5C4350uvm82ZWEy',
-'+OglxuCHdyno1YzU6',
-'+ZWyis-IMAQljYmYy',
-'+IXvm0KhDzV83NTM6',
-'+hJbkhbBO_540Y2Fi',
-'+ZvyO25hfO4o1NGIy',
-'+6IDDBiy2W7dhNWU6',
-'+ux4eWiikn8wyOTJi',
-'+DbTbk46LCVhiMjRi',
-'+-Og9StVBcU8wNjRi',
-'adm_telegram',
-'tgm_adm',
-'tgm_trade',
-'trade_tgm',
-'+qSHHb07VCm8zNTEy',
-'+liIqW62D0kVlNzZi',
-'+08prMWpnozg5NjZh',
-'+dyen3bU65VBhYmJi',
-'+z12CYsIbtrkxYzZh',
-'+fQ0ZAAsetodkMGZi',
-'+Po7Kjl6GTrlhMzRi',
-'+8b0xNR4WaH9mZTFi',
-'+Ld4BggAk8KszNTZh',
-'+iGaRzs9IDKo0Y2Qy',
-'+NVUl3pmRGOIwMmMx',
-'+o0UkYEKA44A1YzJh',
-'+2OV6mVrJRWkyZDky',
-'+cDHaVzQdYrYwNDRi',
-'+24dusMZlQgk4OTcy',
-'+0jIVcFn-8gtmOWI6',
-'+M2TwyjbS2NliNmMy',
-'+1K4pIe73QZQ4MTUy',
-'+YczkQTbfxys0OTBi',]
-
-target_chats_ids = set(t)
-target_chats_ids.update(set(t1))
-target_chats_ids = list(target_chats_ids)
+t = [-1089694021,  #
+     'AdHotChat',
+     'birzha_chat69',
+     'tgsale',
+     'Advertising_exchange_1',
+     'Advertjsjng_Telegram',
+     'alice_bob_public',
+     'birgarekl', # TODO
+     'birga_ru',
+     'birjaga',
+     'birza_kanalov',
+     'birzha_chat69',
+     'birzha_kanaIov',
+     'birzha_reklamy2',
+     'booklt',
+     'boom_chat2',
+     'brt_tg2',
+     'chattte',
+     'easy_reklama',  #
+     'exchangeres',
+     'exchange_reklama',
+     'FamilyPR',
+     'fieryTGadmin',
+     'goodpiarTG',
+     'GUMarket_ads',
+     'Helix_shop_Chat0',
+     'marketingchat_ru',
+     'marketprooo',
+     'only_pokupka',
+     'piarNOpar',
+     'reclamarket',
+     'reclama_room',
+     'reclapoh',
+     'rekbir',
+     'reklamakp',
+     'reklamarur',
+     'reklamateladm',
+     'Reklamazdess',
+     'Reklama_ADD',
+     'Reklama_chat',  #
+     'reklama_chat_bazar',
+     'Reklama_grami',
+     'reklamka03',
+     'reklamka_2020',
+     'reklam_birzha',
+     'reklmam',
+     'rinochek105',
+     'RuProB',
+     'swap_room',
+     'Tadverts',
+     'telegabirga',
+     'telegads',
+     'telega_Admins',
+     'tgbirza',  #
+     'TGBIRZGA',
+     'tgsale',
+     'tg_chat3',
+     'tg_sale',
+     'tolko_pokypka',
+     'TOPadvPlace',
+     'toppadminchat',
+     'vpdoc',
+     'youradvt',
+     'birja_Chat_Dok', # TODO
+     'pokupkanovosti',
+     'PokupkaTrash',
+     'AdHotBirzhaChat', # каналы?
+     'AdHotChat',
+     'crypto_adminu',
+     'tg_chat3',
+     'reklamateladm',
+     'adm_telegram',
+     'tgm_adm',
+     'tgm_trade',
+     'trade_tgm',
+     'Reklama_grami',
+     'dvijenie_telegram',
+     -897864092,
+-1001152945968,
+-1001404654685,
+-1001448211813,
+-1001301229291,
+-1001357225252,
+-1001344021287,
+-1001484259439
+     ]
 
 # print(target_chats_ids)
 
 
-#slot = AdSlot('Dshar')
+# slot = AdSlot('Dshar')
 
 # d = {'author': 'Pupkin', 'price': 20, 'price_units': 'km/h'}
 
@@ -176,31 +137,42 @@ def reinsert_user(conn):
     conn.clear_user_bill_history(536303432)
     # conn.create_user(536303432, datetime.datetime(2022, 9, 27, 16, 39, 13, 791000), 'confirmed')
 
+
 def clear_user_filters(conn):
     # d = {'user_id': 536303432, 'join_date': datetime.datetime(2022, 9, 27, 16, 39, 13, 791000), 'payment_status': 'confirmed'}
     conn.clear_user_filters(536303432)
     # conn.create_user(536303432, datetime.datetime(2022, 9, 27, 16, 39, 13, 791000), 'confirmed')
 
-def add_chats(conn):
-    conn.add_chats(target_chats_ids)
 
-def populate_bill_periods(conn : db.Connection):
+def add_chats(conn, chats):
+    # TODO save chat names by getting them from telegram API
+    conn.add_chats(chats)
+
+
+def populate_bill_periods(conn: db.Connection):
     conn.add_bill_period(396170593, 'TRIAL', '3d')
     conn.add_bill_period(1004977105, 'TRIAL', '3d')
     conn.add_bill_period(396170593, '719080979673002012', '7d')
 
+
+def rescan_chats(client: Database):
+    collect = client['chats']
+    collect.update_many({'last_analyzed_id': {'$gt': 0}}, {'$set': {'last_analyzed_id': 0}})
+    collect = client['ads']
+    collect.delete_many({})
+
+
 client = MongoClient()
 db1 = client['AdSlot_db_prod']
-collect = db1['users']
-#slot.save_to_db(collect)    AdSlot_TOKEN
+collect = db1['chats']
+# slot.save_to_db(collect)    AdSlot_TOKEN
 
 # cur = collect.find()
 # cur = collect.find({'author_username': 'lisste'})
 # c = db['test-collection']
 # collect.drop()
-# collect = db['chats']
-# collect.update_many({'last_analyzed_id': {'$gt': 0}}, {'$set': {'last_analyzed_id': 0}})
-#cur = collect.find({"_id": ObjectId('630d0e308a90b74fe7223aca')})
+
+# cur = collect.find({"_id": ObjectId('630d0e308a90b74fe7223aca')})
 
 # Нужно вытаскивать сообщения со ссылками на каналы (не ботов)
 conn = db.Connection()
@@ -208,7 +180,13 @@ conn = db.Connection()
 # clear_user_filters(conn)
 
 # cur = collect.find({'user_id': 396170593})
-# add_chats(conn)
+
+# collect.delete_many({})
+# add_chats(conn, t)
+
+rescan_chats(db1)
+# cur = collect.find({'bot_comm_message_id': 1792})
+# 7rypEOoE9kY3OTIy
 cur = collect.find()
 pprint.pp(list(cur))
 
@@ -218,3 +196,40 @@ pprint.pp(list(cur))
 # it = iter(lis)
 # for x in it:
 #     print (x, next(it))
+
+def reindent(s, numSpaces):
+    s = s.split('\n')
+    s = [(numSpaces * ' ') + line.lstrip() for line in s]
+    # s = s.join('\r\n')
+    s = '\n'.join(s)
+    return s
+
+txt = '''Здравствуйте, продам рекламу на канале, который входит в **ТОП-5 в тематике Психология** и **в ТОП-5 в тематике Цитаты **🔥
+
+**95% Женщины РФ 20-35 лет, Максимально платежеспособная аудитория
+
+**Сегодня и завтра закупаем рекламу в других каналах на 20.000₽
+
+#психология #саморазвитие #жца #продамрекламу #продажа
+
+💎Закупаем рекламу каждый день
+📱Трафик TG + Instagram
+👥Подписчики: 200.000
+📈Статистика +++
+
+1/24-3990₽
+2/24 - 4490₽
+2/48 - 5090₽
+3/72 - 5490₽
+3/ без удаления - 5999₽
+
+💎**3/без удаления + 7 дней в закреплённом сообщении - 9999**₽💎
+
+**📝РЕКЛАМНЫЕ ОТЗЫВЫ: **@MYSLI_OTZIV
+
+**✅КАНАЛ:** @Psikhologia_Tsitaty
+
+❗️ПИСАТЬ АДМИНУ: @MYSLI_ADMIN'''
+
+print(txt)
+print(reindent(txt, 4))
