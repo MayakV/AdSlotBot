@@ -1,10 +1,10 @@
 # Install the base requirements for the app.
 # This stage is to support development.
 FROM python:3.10 AS base
-COPY py_requirements.txt .
+COPY ./expire_script/py_requirements.txt .
 RUN pip install -r py_requirements.txt
-COPY update_db.py ./bin/update_db.py
-COPY ../shared ./shared
+COPY ./expire_script/update_db.py ./bin/update_db.py
+COPY ./shared ./shared
 # RUN ./bin/update_db.py
 #RUN hello.py
 
