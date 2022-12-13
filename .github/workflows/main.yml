@@ -12,10 +12,9 @@ jobs:
       matrix:
         include:
           - dockerfile: ./chat_bot/Dockerfile
-            secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+            secret: TELEGRAM_TOKEN_PROD
             name: adslot
           - dockerfile: ./expire_scipt/Dockerfile
-            secret: ${{ secrets.DOCKER_HUB_USERNAME }}
             name: expire_script
     steps:
       -
@@ -37,8 +36,9 @@ jobs:
           context: .
           file: ${{ matrix.dockerfile }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
-          secrets: ${{ matrix.secret }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ matrix.name }}:latest
+          if: ${{ matrix.name }}
+            secrets: ${{ serets[matrix.secret] }}
 
 #  redeploy:
 #    name: Redeploy - Webhook call
