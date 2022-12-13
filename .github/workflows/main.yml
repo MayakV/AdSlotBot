@@ -13,9 +13,9 @@ jobs:
         include:
           - dockerfile: ./chat_bot/Dockerfile
             secret: TELEGRAM_TOKEN_PROD
-            name: adslot
-#          - dockerfile: ./expire_script/Dockerfile
-#            name: expire_script
+            name: chat_bot
+          - dockerfile: ./expire_script/Dockerfile
+            name: expire_script
     steps:
       -
         name: Checkout
@@ -33,7 +33,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./${{ matrix.name }}
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ matrix.name }}:latest

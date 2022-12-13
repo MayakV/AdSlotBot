@@ -5,7 +5,7 @@ COPY py_requirements.txt .
 RUN pip install -r py_requirements.txt
 COPY update_db.py ./bin/update_db.py
 COPY ../shared ./shared
-RUN ./bin/update_db.py
+# RUN ./bin/update_db.py
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"
