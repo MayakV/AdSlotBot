@@ -13,6 +13,10 @@ jobs:
         include:
           - dockerfile: ./chat_bot/Dockerfile
             secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+            name: adslot
+          - dockerfile: ./expire_scipt/Dockerfile
+            secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+            name: expire_script
     steps:
       -
         name: Checkout

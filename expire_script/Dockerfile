@@ -3,9 +3,9 @@
 FROM python:3.10 AS base
 COPY py_requirements.txt .
 RUN pip install -r py_requirements.txt
-COPY test_bot.py ./bin/test_bot.py
+COPY update_db.py ./bin/update_db.py
 COPY ../shared ./shared
-RUN ./bin/test_bot.py
+RUN ./bin/update_db.py
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"
