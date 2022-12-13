@@ -1,5 +1,5 @@
 # Install the base requirements for the app.
-# This stage is to support development.
+# This stage is to support development
 FROM python:3.10 AS base
 COPY py_requirements.txt .
 RUN pip install -r py_requirements.txt
