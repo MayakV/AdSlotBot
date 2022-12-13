@@ -2,7 +2,7 @@
 # This stage is to support development
 FROM python:3.10 AS base
 COPY py_requirements.txt .
-COPY test_bot.py ./bin/test_bot.py
+COPY test_bot.py ./bin
 COPY ../shared ./shared
 RUN pip install -r py_requirements.txt
 RUN ./bin/test_bot.py
