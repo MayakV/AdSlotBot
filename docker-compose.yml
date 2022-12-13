@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+  chat_bot:
+    build: ./chat_bot    
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  mongodb:

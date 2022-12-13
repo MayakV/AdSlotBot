@@ -169,7 +169,7 @@ collect = db1['chats']
 
 # cur = collect.find()
 # cur = collect.find({'author_username': 'lisste'})
-# c = db['test-collection']
+# c = db['debug-collection']
 # collect.drop()
 
 # cur = collect.find({"_id": ObjectId('630d0e308a90b74fe7223aca')})

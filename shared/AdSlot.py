@@ -3,8 +3,8 @@ import telethon
 from bson import ObjectId
 from hashlib import md5
 
-from db import Connection
-from filters import active_filters
+from shared.db import Connection
+from shared.filters import active_filters
 
 status_names = ["open", "closed", "expired"]
 original_chat_types = ["user", "chat", "channel"]

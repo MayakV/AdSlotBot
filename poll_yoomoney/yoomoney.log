@@ -1,0 +1,2964 @@
+2022-11-08 03:08:57,196 Using proactor: IocpProactor
+2022-11-08 03:08:57,198 Connecting to 149.154.167.51:443/TcpFull...
+2022-11-08 03:08:57,198 Connection attempt 1...
+2022-11-08 03:08:57,282 Connection success!
+2022-11-08 03:08:57,282 Starting send loop
+2022-11-08 03:08:57,282 Starting receive loop
+2022-11-08 03:08:57,282 Connection to 149.154.167.51:443/TcpFull complete!
+2022-11-08 03:08:57,291 Waiting for messages to send...
+2022-11-08 03:08:57,291 Assigned msg_id = 7163415051803927512 to InvokeWithLayerRequest (19b3133f730)
+2022-11-08 03:08:57,292 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:08:57,294 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,295 Waiting for messages to send...
+2022-11-08 03:08:57,295 Receiving items from the network...
+2022-11-08 03:08:57,378 Handling bad salt for message 7163415051803927512
+2022-11-08 03:08:57,378 1 message(s) will be resent
+2022-11-08 03:08:57,378 Receiving items from the network...
+2022-11-08 03:08:57,378 Assigned msg_id = 7163415052151465508 to InvokeWithLayerRequest (19b3133f730)
+2022-11-08 03:08:57,378 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:08:57,379 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,379 Waiting for messages to send...
+2022-11-08 03:08:57,379 Assigned msg_id = 7163415052155455680 to MsgsAck (19b3133f7c0)
+2022-11-08 03:08:57,379 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:57,380 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,380 Waiting for messages to send...
+2022-11-08 03:08:57,461 Handling container
+2022-11-08 03:08:57,461 Handling new session created
+2022-11-08 03:08:57,461 Handling acknowledge for [7163415052151465508]
+2022-11-08 03:08:57,461 Receiving items from the network...
+2022-11-08 03:08:57,469 Handling RPC result for message 7163415052151465508
+2022-11-08 03:08:57,469 Receiving items from the network...
+2022-11-08 03:08:57,469 Assigned msg_id = 7163415052514988036 to GetUsersRequest (19b3133fac0)
+2022-11-08 03:08:57,469 Encrypting 1 message(s) in 32 bytes for sending
+2022-11-08 03:08:57,469 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,469 Waiting for messages to send...
+2022-11-08 03:08:57,469 Assigned msg_id = 7163415052514988040 to MsgsAck (19b3133fd30)
+2022-11-08 03:08:57,470 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:08:57,470 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,470 Waiting for messages to send...
+2022-11-08 03:08:57,564 Handling RPC result for message 7163415052514988036
+2022-11-08 03:08:57,564 Receiving items from the network...
+2022-11-08 03:08:57,567 Assigned msg_id = 7163415052907780740 to GetStateRequest (19b3133fac0)
+2022-11-08 03:08:57,567 Encrypting 1 message(s) in 20 bytes for sending
+2022-11-08 03:08:57,568 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,568 Waiting for messages to send...
+2022-11-08 03:08:57,568 Assigned msg_id = 7163415052911711784 to MsgsAck (19b3133fa30)
+2022-11-08 03:08:57,568 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:57,569 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,569 Waiting for messages to send...
+2022-11-08 03:08:57,654 Handling RPC result for message 7163415052907780740
+2022-11-08 03:08:57,655 Receiving items from the network...
+2022-11-08 03:08:57,656 Assigned msg_id = 7163415053263681504 to GetUsersRequest (19b313803a0)
+2022-11-08 03:08:57,656 Encrypting 1 message(s) in 32 bytes for sending
+2022-11-08 03:08:57,659 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,659 Waiting for messages to send...
+2022-11-08 03:08:57,659 Assigned msg_id = 7163415053275403112 to MsgsAck (19b3133fdc0)
+2022-11-08 03:08:57,659 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:57,661 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,662 Waiting for messages to send...
+2022-11-08 03:08:57,748 Handling RPC result for message 7163415053263681504
+2022-11-08 03:08:57,748 Receiving items from the network...
+2022-11-08 03:08:57,766 Assigned msg_id = 7163415053703375908 to GetDialogFiltersRequest (19b31380370)
+2022-11-08 03:08:57,767 Encrypting 1 message(s) in 20 bytes for sending
+2022-11-08 03:08:57,768 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,768 Waiting for messages to send...
+2022-11-08 03:08:57,769 Assigned msg_id = 7163415053715330216 to MsgsAck (19b31381840)
+2022-11-08 03:08:57,769 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:57,771 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,771 Waiting for messages to send...
+2022-11-08 03:08:57,862 Handling RPC result for message 7163415053703375908
+2022-11-08 03:08:57,863 Receiving items from the network...
+2022-11-08 03:08:57,884 Assigned msg_id = 7163415054176019760 to GetChannelsRequest (19b31380520)
+2022-11-08 03:08:57,884 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:57,885 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,885 Waiting for messages to send...
+2022-11-08 03:08:57,885 Assigned msg_id = 7163415054179495904 to MsgsAck (19b3145af20)
+2022-11-08 03:08:57,885 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:57,885 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,885 Waiting for messages to send...
+2022-11-08 03:08:57,972 Handling container
+2022-11-08 03:08:57,972 Handling update Updates
+2022-11-08 03:08:57,972 Handling acknowledge for [7163415054176019760]
+2022-11-08 03:08:57,972 Receiving items from the network...
+2022-11-08 03:08:57,975 Handling RPC result for message 7163415054176019760
+2022-11-08 03:08:57,975 Receiving items from the network...
+2022-11-08 03:08:57,977 Assigned msg_id = 7163415054550583932 to GetChannelsRequest (19b31380c10)
+2022-11-08 03:08:57,977 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:57,978 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,978 Waiting for messages to send...
+2022-11-08 03:08:57,978 Assigned msg_id = 7163415054554576012 to MsgsAck (19b31380520)
+2022-11-08 03:08:57,978 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:08:57,979 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:57,979 Waiting for messages to send...
+2022-11-08 03:08:58,065 Handling RPC result for message 7163415054550583932
+2022-11-08 03:08:58,065 Receiving items from the network...
+2022-11-08 03:08:58,067 Assigned msg_id = 7163415055202659344 to GetChannelsRequest (19b3145bee0)
+2022-11-08 03:08:58,067 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,068 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,068 Waiting for messages to send...
+2022-11-08 03:08:58,068 Assigned msg_id = 7163415055206743928 to MsgsAck (19b3145add0)
+2022-11-08 03:08:58,068 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,069 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,069 Waiting for messages to send...
+2022-11-08 03:08:58,153 Handling RPC result for message 7163415055202659344
+2022-11-08 03:08:58,153 Receiving items from the network...
+2022-11-08 03:08:58,154 Assigned msg_id = 7163415055551457140 to GetChannelsRequest (19b31380370)
+2022-11-08 03:08:58,154 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,154 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,155 Waiting for messages to send...
+2022-11-08 03:08:58,155 Assigned msg_id = 7163415055555445408 to MsgsAck (19b3145bfa0)
+2022-11-08 03:08:58,155 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,155 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,155 Waiting for messages to send...
+2022-11-08 03:08:58,247 Handling RPC result for message 7163415055551457140
+2022-11-08 03:08:58,247 Receiving items from the network...
+2022-11-08 03:08:58,250 Assigned msg_id = 7163415055935105060 to GetChannelsRequest (19b3145abf0)
+2022-11-08 03:08:58,250 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,251 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,252 Waiting for messages to send...
+2022-11-08 03:08:58,252 Assigned msg_id = 7163415055943100664 to MsgsAck (19b3145ac50)
+2022-11-08 03:08:58,252 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,253 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,253 Waiting for messages to send...
+2022-11-08 03:08:58,336 Handling RPC result for message 7163415055935105060
+2022-11-08 03:08:58,336 Receiving items from the network...
+2022-11-08 03:08:58,337 Assigned msg_id = 7163415056283821796 to GetChannelsRequest (19b31381cf0)
+2022-11-08 03:08:58,337 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,338 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,338 Waiting for messages to send...
+2022-11-08 03:08:58,338 Assigned msg_id = 7163415056287811016 to MsgsAck (19b3145bfd0)
+2022-11-08 03:08:58,338 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,339 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,339 Waiting for messages to send...
+2022-11-08 03:08:58,428 Handling RPC result for message 7163415056283821796
+2022-11-08 03:08:58,428 Receiving items from the network...
+2022-11-08 03:08:58,431 Assigned msg_id = 7163415056658404084 to GetChannelsRequest (19b3133f7c0)
+2022-11-08 03:08:58,431 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,433 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,433 Waiting for messages to send...
+2022-11-08 03:08:58,433 Assigned msg_id = 7163415056666409228 to MsgsAck (19b3145ac20)
+2022-11-08 03:08:58,433 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,434 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,434 Waiting for messages to send...
+2022-11-08 03:08:58,521 Handling RPC result for message 7163415056658404084
+2022-11-08 03:08:58,521 Receiving items from the network...
+2022-11-08 03:08:58,522 Assigned msg_id = 7163415057023750040 to GetChannelsRequest (19b31380580)
+2022-11-08 03:08:58,522 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,524 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,524 Waiting for messages to send...
+2022-11-08 03:08:58,524 Assigned msg_id = 7163415057031896328 to MsgsAck (19b3145bee0)
+2022-11-08 03:08:58,524 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,526 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,526 Waiting for messages to send...
+2022-11-08 03:08:58,610 Handling RPC result for message 7163415057023750040
+2022-11-08 03:08:58,610 Receiving items from the network...
+2022-11-08 03:08:58,611 Assigned msg_id = 7163415057381194804 to GetChannelsRequest (19b31380370)
+2022-11-08 03:08:58,611 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,612 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,612 Waiting for messages to send...
+2022-11-08 03:08:58,612 Assigned msg_id = 7163415057385032388 to MsgsAck (19b3145abc0)
+2022-11-08 03:08:58,613 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,613 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,613 Waiting for messages to send...
+2022-11-08 03:08:58,698 Handling RPC result for message 7163415057381194804
+2022-11-08 03:08:58,698 Receiving items from the network...
+2022-11-08 03:08:58,700 Assigned msg_id = 7163415057735393260 to GetChannelsRequest (19b3145abf0)
+2022-11-08 03:08:58,700 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,701 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,701 Waiting for messages to send...
+2022-11-08 03:08:58,701 Assigned msg_id = 7163415057739373896 to MsgsAck (19b31381cf0)
+2022-11-08 03:08:58,701 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,702 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,702 Waiting for messages to send...
+2022-11-08 03:08:58,791 Handling RPC result for message 7163415057735393260
+2022-11-08 03:08:58,792 Receiving items from the network...
+2022-11-08 03:08:58,792 Assigned msg_id = 7163415058103165364 to GetChannelsRequest (19b3133fbb0)
+2022-11-08 03:08:58,792 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,794 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,794 Waiting for messages to send...
+2022-11-08 03:08:58,795 Assigned msg_id = 7163415058111155244 to MsgsAck (19b313807c0)
+2022-11-08 03:08:58,795 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,797 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,797 Waiting for messages to send...
+2022-11-08 03:08:58,882 Handling RPC result for message 7163415058103165364
+2022-11-08 03:08:58,882 Receiving items from the network...
+2022-11-08 03:08:58,882 Assigned msg_id = 7163415058465060924 to GetChannelsRequest (19b3133fd00)
+2022-11-08 03:08:58,882 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,883 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,883 Waiting for messages to send...
+2022-11-08 03:08:58,883 Assigned msg_id = 7163415058469180796 to MsgsAck (19b3145af20)
+2022-11-08 03:08:58,883 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,883 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,883 Waiting for messages to send...
+2022-11-08 03:08:58,972 Handling RPC result for message 7163415058465060924
+2022-11-08 03:08:58,972 Receiving items from the network...
+2022-11-08 03:08:58,973 Assigned msg_id = 7163415058828085636 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:08:58,973 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:58,975 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,975 Waiting for messages to send...
+2022-11-08 03:08:58,975 Assigned msg_id = 7163415058836056444 to MsgsAck (19b31381db0)
+2022-11-08 03:08:58,975 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:58,977 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:58,978 Waiting for messages to send...
+2022-11-08 03:08:59,371 Handling RPC result for message 7163415058828085636
+2022-11-08 03:08:59,372 Receiving items from the network...
+2022-11-08 03:08:59,373 Assigned msg_id = 7163415060720867492 to GetChannelsRequest (19b3133fbb0)
+2022-11-08 03:08:59,373 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,374 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,374 Waiting for messages to send...
+2022-11-08 03:08:59,374 Assigned msg_id = 7163415060724798536 to MsgsAck (19b31380520)
+2022-11-08 03:08:59,374 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:59,375 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,375 Waiting for messages to send...
+2022-11-08 03:08:59,468 Handling RPC result for message 7163415060720867492
+2022-11-08 03:08:59,468 Receiving items from the network...
+2022-11-08 03:08:59,468 Assigned msg_id = 7163415061101898528 to GetChannelsRequest (19b3133fd00)
+2022-11-08 03:08:59,468 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,469 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,469 Waiting for messages to send...
+2022-11-08 03:08:59,469 Assigned msg_id = 7163415061105888700 to MsgsAck (19b31381f60)
+2022-11-08 03:08:59,469 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:59,469 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,470 Waiting for messages to send...
+2022-11-08 03:08:59,550 Handling acknowledge for [7163415061101898528]
+2022-11-08 03:08:59,550 Receiving items from the network...
+2022-11-08 03:08:59,555 Handling update Updates
+2022-11-08 03:08:59,555 Receiving items from the network...
+2022-11-08 03:08:59,556 Handling RPC result for message 7163415061101898528
+2022-11-08 03:08:59,556 Receiving items from the network...
+2022-11-08 03:08:59,557 Assigned msg_id = 7163415061459994652 to GetChannelsRequest (19b313809d0)
+2022-11-08 03:08:59,557 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,557 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,557 Waiting for messages to send...
+2022-11-08 03:08:59,557 Assigned msg_id = 7163415061459994656 to MsgsAck (19b3145b430)
+2022-11-08 03:08:59,557 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:08:59,558 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,558 Waiting for messages to send...
+2022-11-08 03:08:59,642 Handling RPC result for message 7163415061459994652
+2022-11-08 03:08:59,643 Receiving items from the network...
+2022-11-08 03:08:59,643 Assigned msg_id = 7163415061801550244 to GetChannelsRequest (19b3133fbb0)
+2022-11-08 03:08:59,643 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,644 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,644 Waiting for messages to send...
+2022-11-08 03:08:59,644 Assigned msg_id = 7163415061805564260 to MsgsAck (19b3145bd30)
+2022-11-08 03:08:59,644 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:59,645 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,645 Waiting for messages to send...
+2022-11-08 03:08:59,734 Handling RPC result for message 7163415061801550244
+2022-11-08 03:08:59,734 Receiving items from the network...
+2022-11-08 03:08:59,736 Assigned msg_id = 7163415062175666188 to GetChannelsRequest (19b31380370)
+2022-11-08 03:08:59,737 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,737 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,737 Waiting for messages to send...
+2022-11-08 03:08:59,737 Assigned msg_id = 7163415062176954604 to MsgsAck (19b3145b190)
+2022-11-08 03:08:59,737 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:59,739 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,739 Waiting for messages to send...
+2022-11-08 03:08:59,833 Handling RPC result for message 7163415062175666188
+2022-11-08 03:08:59,834 Receiving items from the network...
+2022-11-08 03:08:59,836 Assigned msg_id = 7163415062574684476 to GetChannelsRequest (19b313809d0)
+2022-11-08 03:08:59,836 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,837 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,837 Waiting for messages to send...
+2022-11-08 03:08:59,837 Assigned msg_id = 7163415062578523016 to MsgsAck (19b3133ff10)
+2022-11-08 03:08:59,837 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:59,838 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,838 Waiting for messages to send...
+2022-11-08 03:08:59,926 Handling RPC result for message 7163415062574684476
+2022-11-08 03:08:59,926 Receiving items from the network...
+2022-11-08 03:08:59,926 Assigned msg_id = 7163415062936428404 to GetChannelsRequest (19b31380370)
+2022-11-08 03:08:59,927 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:08:59,928 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,928 Waiting for messages to send...
+2022-11-08 03:08:59,928 Assigned msg_id = 7163415062944408752 to MsgsAck (19b3133f7c0)
+2022-11-08 03:08:59,928 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:08:59,929 Encrypted messages put in a queue to be sent
+2022-11-08 03:08:59,929 Waiting for messages to send...
+2022-11-08 03:09:00,017 Handling RPC result for message 7163415062936428404
+2022-11-08 03:09:00,017 Receiving items from the network...
+2022-11-08 03:09:00,018 Assigned msg_id = 7163415063595777492 to GetChannelsRequest (19b313809d0)
+2022-11-08 03:09:00,018 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,018 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,018 Waiting for messages to send...
+2022-11-08 03:09:00,018 Assigned msg_id = 7163415063595777496 to MsgsAck (19b3133ff40)
+2022-11-08 03:09:00,018 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,019 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,019 Waiting for messages to send...
+2022-11-08 03:09:00,107 Handling RPC result for message 7163415063595777492
+2022-11-08 03:09:00,108 Receiving items from the network...
+2022-11-08 03:09:00,108 Assigned msg_id = 7163415063958686808 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:00,108 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,109 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,109 Waiting for messages to send...
+2022-11-08 03:09:00,109 Assigned msg_id = 7163415063962675072 to MsgsAck (19b31381cf0)
+2022-11-08 03:09:00,109 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,110 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,110 Waiting for messages to send...
+2022-11-08 03:09:00,196 Handling RPC result for message 7163415063958686808
+2022-11-08 03:09:00,196 Receiving items from the network...
+2022-11-08 03:09:00,196 Assigned msg_id = 7163415064310099580 to GetChannelsRequest (19b31380370)
+2022-11-08 03:09:00,196 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,197 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,197 Waiting for messages to send...
+2022-11-08 03:09:00,197 Assigned msg_id = 7163415064314091660 to MsgsAck (19b3145ae60)
+2022-11-08 03:09:00,197 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,197 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,197 Waiting for messages to send...
+2022-11-08 03:09:00,295 Handling RPC result for message 7163415064310099580
+2022-11-08 03:09:00,295 Receiving items from the network...
+2022-11-08 03:09:00,296 Assigned msg_id = 7163415064708744980 to GetChannelsRequest (19b3133fbb0)
+2022-11-08 03:09:00,296 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,297 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,297 Waiting for messages to send...
+2022-11-08 03:09:00,297 Assigned msg_id = 7163415064712731340 to MsgsAck (19b31381840)
+2022-11-08 03:09:00,297 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,297 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,297 Waiting for messages to send...
+2022-11-08 03:09:00,383 Handling RPC result for message 7163415064708744980
+2022-11-08 03:09:00,383 Receiving items from the network...
+2022-11-08 03:09:00,384 Assigned msg_id = 7163415065059808708 to GetChannelsRequest (19b3133fd00)
+2022-11-08 03:09:00,384 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,384 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,384 Waiting for messages to send...
+2022-11-08 03:09:00,384 Assigned msg_id = 7163415065059808712 to MsgsAck (19b31381db0)
+2022-11-08 03:09:00,384 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,385 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,385 Waiting for messages to send...
+2022-11-08 03:09:00,476 Handling RPC result for message 7163415065059808708
+2022-11-08 03:09:00,477 Receiving items from the network...
+2022-11-08 03:09:00,477 Assigned msg_id = 7163415065434811572 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:00,478 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,479 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,479 Waiting for messages to send...
+2022-11-08 03:09:00,479 Assigned msg_id = 7163415065442781428 to MsgsAck (19b31380520)
+2022-11-08 03:09:00,479 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,480 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,480 Waiting for messages to send...
+2022-11-08 03:09:00,584 Handling RPC result for message 7163415065434811572
+2022-11-08 03:09:00,584 Receiving items from the network...
+2022-11-08 03:09:00,584 Assigned msg_id = 7163415065861663796 to GetChannelsRequest (19b3133fbb0)
+2022-11-08 03:09:00,585 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,586 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,586 Waiting for messages to send...
+2022-11-08 03:09:00,586 Assigned msg_id = 7163415065869640328 to MsgsAck (19b3145b2b0)
+2022-11-08 03:09:00,586 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,587 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,587 Waiting for messages to send...
+2022-11-08 03:09:00,674 Handling RPC result for message 7163415065861663796
+2022-11-08 03:09:00,675 Receiving items from the network...
+2022-11-08 03:09:00,675 Assigned msg_id = 7163415066224694232 to GetChannelsRequest (19b31381810)
+2022-11-08 03:09:00,675 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,676 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,676 Waiting for messages to send...
+2022-11-08 03:09:00,676 Assigned msg_id = 7163415066228681544 to MsgsAck (19b3133f640)
+2022-11-08 03:09:00,676 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,676 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,676 Waiting for messages to send...
+2022-11-08 03:09:00,761 Handling RPC result for message 7163415066224694232
+2022-11-08 03:09:00,762 Receiving items from the network...
+2022-11-08 03:09:00,762 Assigned msg_id = 7163415066571763016 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:00,762 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,763 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,763 Waiting for messages to send...
+2022-11-08 03:09:00,763 Assigned msg_id = 7163415066575750328 to MsgsAck (19b3145b430)
+2022-11-08 03:09:00,764 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,764 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,765 Waiting for messages to send...
+2022-11-08 03:09:00,847 Handling acknowledge for [7163415066571763016]
+2022-11-08 03:09:00,847 Receiving items from the network...
+2022-11-08 03:09:00,874 Handling update Updates
+2022-11-08 03:09:00,874 Receiving items from the network...
+2022-11-08 03:09:00,877 Handling RPC result for message 7163415066571763016
+2022-11-08 03:09:00,877 Receiving items from the network...
+2022-11-08 03:09:00,878 Assigned msg_id = 7163415067038663844 to GetChannelsRequest (19b313809d0)
+2022-11-08 03:09:00,878 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,879 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,879 Waiting for messages to send...
+2022-11-08 03:09:00,879 Assigned msg_id = 7163415067042735080 to MsgsAck (19b31380250)
+2022-11-08 03:09:00,879 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:00,879 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,879 Waiting for messages to send...
+2022-11-08 03:09:00,961 Handling RPC result for message 7163415067038663844
+2022-11-08 03:09:00,961 Receiving items from the network...
+2022-11-08 03:09:00,962 Assigned msg_id = 7163415067375389076 to GetChannelsRequest (19b3145b190)
+2022-11-08 03:09:00,962 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:00,962 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,962 Waiting for messages to send...
+2022-11-08 03:09:00,962 Assigned msg_id = 7163415067375389080 to MsgsAck (19b3133fd00)
+2022-11-08 03:09:00,962 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:00,963 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:00,963 Waiting for messages to send...
+2022-11-08 03:09:01,056 Handling RPC result for message 7163415067375389076
+2022-11-08 03:09:01,057 Receiving items from the network...
+2022-11-08 03:09:01,058 Assigned msg_id = 7163415068052466968 to GetChannelsRequest (19b31381810)
+2022-11-08 03:09:01,058 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,059 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,060 Waiting for messages to send...
+2022-11-08 03:09:01,060 Assigned msg_id = 7163415068060452084 to MsgsAck (19b3145b070)
+2022-11-08 03:09:01,060 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,062 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,062 Waiting for messages to send...
+2022-11-08 03:09:01,147 Handling RPC result for message 7163415068052466968
+2022-11-08 03:09:01,148 Receiving items from the network...
+2022-11-08 03:09:01,148 Assigned msg_id = 7163415068414203268 to GetChannelsRequest (19b3145ac20)
+2022-11-08 03:09:01,148 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,150 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,150 Waiting for messages to send...
+2022-11-08 03:09:01,150 Assigned msg_id = 7163415068422169308 to MsgsAck (19b313809d0)
+2022-11-08 03:09:01,150 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,151 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,151 Waiting for messages to send...
+2022-11-08 03:09:01,237 Handling RPC result for message 7163415068414203268
+2022-11-08 03:09:01,237 Receiving items from the network...
+2022-11-08 03:09:01,239 Assigned msg_id = 7163415068776099780 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:01,239 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,239 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,240 Waiting for messages to send...
+2022-11-08 03:09:01,240 Assigned msg_id = 7163415068779867748 to MsgsAck (19b3145ae60)
+2022-11-08 03:09:01,240 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,240 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,240 Waiting for messages to send...
+2022-11-08 03:09:01,324 Handling RPC result for message 7163415068776099780
+2022-11-08 03:09:01,324 Receiving items from the network...
+2022-11-08 03:09:01,325 Assigned msg_id = 7163415069119090656 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:01,325 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,325 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,325 Waiting for messages to send...
+2022-11-08 03:09:01,325 Assigned msg_id = 7163415069119090660 to MsgsAck (19b3145abf0)
+2022-11-08 03:09:01,325 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,326 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,326 Waiting for messages to send...
+2022-11-08 03:09:01,426 Handling RPC result for message 7163415069119090656
+2022-11-08 03:09:01,427 Receiving items from the network...
+2022-11-08 03:09:01,428 Assigned msg_id = 7163415069533974272 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:01,429 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,430 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,431 Waiting for messages to send...
+2022-11-08 03:09:01,431 Assigned msg_id = 7163415069545018772 to MsgsAck (19b3145b3a0)
+2022-11-08 03:09:01,431 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,433 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,433 Waiting for messages to send...
+2022-11-08 03:09:01,522 Handling RPC result for message 7163415069533974272
+2022-11-08 03:09:01,523 Receiving items from the network...
+2022-11-08 03:09:01,524 Assigned msg_id = 7163415069917306524 to GetChannelsRequest (19b3147ba30)
+2022-11-08 03:09:01,524 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,525 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,525 Waiting for messages to send...
+2022-11-08 03:09:01,526 Assigned msg_id = 7163415069925276380 to MsgsAck (19b3147bf70)
+2022-11-08 03:09:01,526 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,527 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,527 Waiting for messages to send...
+2022-11-08 03:09:01,642 Handling RPC result for message 7163415069917306524
+2022-11-08 03:09:01,642 Receiving items from the network...
+2022-11-08 03:09:01,644 Assigned msg_id = 7163415070396966556 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:01,644 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,645 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,645 Waiting for messages to send...
+2022-11-08 03:09:01,645 Assigned msg_id = 7163415070400832752 to MsgsAck (19b3147b9d0)
+2022-11-08 03:09:01,645 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,646 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,646 Waiting for messages to send...
+2022-11-08 03:09:01,729 Handling acknowledge for [7163415070396966556]
+2022-11-08 03:09:01,729 Receiving items from the network...
+2022-11-08 03:09:01,739 Handling update Updates
+2022-11-08 03:09:01,739 Receiving items from the network...
+2022-11-08 03:09:01,740 Handling RPC result for message 7163415070396966556
+2022-11-08 03:09:01,740 Receiving items from the network...
+2022-11-08 03:09:01,742 Assigned msg_id = 7163415070789248088 to GetChannelsRequest (19b31380520)
+2022-11-08 03:09:01,742 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,743 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,743 Waiting for messages to send...
+2022-11-08 03:09:01,743 Assigned msg_id = 7163415070793129544 to MsgsAck (19b3133f640)
+2022-11-08 03:09:01,743 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:01,744 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,744 Waiting for messages to send...
+2022-11-08 03:09:01,827 Handling RPC result for message 7163415070789248088
+2022-11-08 03:09:01,828 Receiving items from the network...
+2022-11-08 03:09:01,828 Assigned msg_id = 7163415071133314708 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:01,828 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,829 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,829 Waiting for messages to send...
+2022-11-08 03:09:01,829 Assigned msg_id = 7163415071137436488 to MsgsAck (19b3145b370)
+2022-11-08 03:09:01,830 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,831 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,831 Waiting for messages to send...
+2022-11-08 03:09:01,913 Handling RPC result for message 7163415071133314708
+2022-11-08 03:09:01,915 Receiving items from the network...
+2022-11-08 03:09:01,916 Assigned msg_id = 7163415071482938388 to GetChannelsRequest (19b31381f60)
+2022-11-08 03:09:01,916 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:01,917 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,917 Waiting for messages to send...
+2022-11-08 03:09:01,917 Assigned msg_id = 7163415071486560444 to MsgsAck (19b3145b2b0)
+2022-11-08 03:09:01,917 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:01,917 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:01,917 Waiting for messages to send...
+2022-11-08 03:09:01,997 Handling acknowledge for [7163415071482938388]
+2022-11-08 03:09:01,997 Receiving items from the network...
+2022-11-08 03:09:02,009 Handling update Updates
+2022-11-08 03:09:02,009 Receiving items from the network...
+2022-11-08 03:09:02,011 Handling RPC result for message 7163415071482938388
+2022-11-08 03:09:02,011 Receiving items from the network...
+2022-11-08 03:09:02,011 Assigned msg_id = 7163415072157740816 to GetChannelsRequest (19b3145b430)
+2022-11-08 03:09:02,011 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,012 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,012 Waiting for messages to send...
+2022-11-08 03:09:02,012 Assigned msg_id = 7163415072161700472 to MsgsAck (19b31381db0)
+2022-11-08 03:09:02,012 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:02,013 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,013 Waiting for messages to send...
+2022-11-08 03:09:02,096 Handling RPC result for message 7163415072157740816
+2022-11-08 03:09:02,097 Receiving items from the network...
+2022-11-08 03:09:02,097 Assigned msg_id = 7163415072502127868 to GetChannelsRequest (19b3147bb20)
+2022-11-08 03:09:02,097 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,098 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,098 Waiting for messages to send...
+2022-11-08 03:09:02,098 Assigned msg_id = 7163415072506020768 to MsgsAck (19b3147bd90)
+2022-11-08 03:09:02,098 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,098 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,098 Waiting for messages to send...
+2022-11-08 03:09:02,183 Handling RPC result for message 7163415072502127868
+2022-11-08 03:09:02,183 Receiving items from the network...
+2022-11-08 03:09:02,183 Assigned msg_id = 7163415072845742448 to GetChannelsRequest (19b3145b430)
+2022-11-08 03:09:02,183 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,184 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,184 Waiting for messages to send...
+2022-11-08 03:09:02,184 Assigned msg_id = 7163415072849741204 to MsgsAck (19b3133fd00)
+2022-11-08 03:09:02,184 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,184 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,184 Waiting for messages to send...
+2022-11-08 03:09:02,273 Handling RPC result for message 7163415072845742448
+2022-11-08 03:09:02,273 Receiving items from the network...
+2022-11-08 03:09:02,274 Assigned msg_id = 7163415073210756524 to GetChannelsRequest (19b3145b430)
+2022-11-08 03:09:02,274 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,276 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,276 Waiting for messages to send...
+2022-11-08 03:09:02,276 Assigned msg_id = 7163415073218734008 to MsgsAck (19b313809d0)
+2022-11-08 03:09:02,277 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,278 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,278 Waiting for messages to send...
+2022-11-08 03:09:02,375 Handling RPC result for message 7163415073210756524
+2022-11-08 03:09:02,375 Receiving items from the network...
+2022-11-08 03:09:02,376 Assigned msg_id = 7163415073618223412 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:02,376 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,376 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,376 Waiting for messages to send...
+2022-11-08 03:09:02,376 Assigned msg_id = 7163415073618223416 to MsgsAck (19b31478fd0)
+2022-11-08 03:09:02,376 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,377 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,377 Waiting for messages to send...
+2022-11-08 03:09:02,466 Handling container
+2022-11-08 03:09:02,466 Handling RPC result for message 7163415073618223412
+2022-11-08 03:09:02,466 Handling update Updates
+2022-11-08 03:09:02,466 Receiving items from the network...
+2022-11-08 03:09:02,468 Assigned msg_id = 7163415073988435968 to GetChannelsRequest (19b3133ff10)
+2022-11-08 03:09:02,468 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,469 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,469 Waiting for messages to send...
+2022-11-08 03:09:02,470 Assigned msg_id = 7163415073996110184 to MsgsAck (19b3145abf0)
+2022-11-08 03:09:02,470 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:02,471 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,471 Waiting for messages to send...
+2022-11-08 03:09:02,560 Handling RPC result for message 7163415073988435968
+2022-11-08 03:09:02,560 Receiving items from the network...
+2022-11-08 03:09:02,562 Assigned msg_id = 7163415074364206536 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:02,562 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,563 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,563 Waiting for messages to send...
+2022-11-08 03:09:02,564 Assigned msg_id = 7163415074372198328 to MsgsAck (19b3147bf10)
+2022-11-08 03:09:02,564 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,565 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,565 Waiting for messages to send...
+2022-11-08 03:09:02,655 Handling RPC result for message 7163415074364206536
+2022-11-08 03:09:02,655 Receiving items from the network...
+2022-11-08 03:09:02,656 Assigned msg_id = 7163415074739469748 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:02,656 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,657 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,657 Waiting for messages to send...
+2022-11-08 03:09:02,657 Assigned msg_id = 7163415074743458016 to MsgsAck (19b3145b100)
+2022-11-08 03:09:02,657 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,659 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,659 Waiting for messages to send...
+2022-11-08 03:09:02,758 Handling container
+2022-11-08 03:09:02,758 Handling update Updates
+2022-11-08 03:09:02,758 Handling acknowledge for [7163415074739469748]
+2022-11-08 03:09:02,758 Receiving items from the network...
+2022-11-08 03:09:02,761 Handling RPC result for message 7163415074739469748
+2022-11-08 03:09:02,761 Receiving items from the network...
+2022-11-08 03:09:02,762 Assigned msg_id = 7163415075163671716 to GetChannelsRequest (19b313807c0)
+2022-11-08 03:09:02,762 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,763 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,763 Waiting for messages to send...
+2022-11-08 03:09:02,763 Assigned msg_id = 7163415075167661888 to MsgsAck (19b3133f640)
+2022-11-08 03:09:02,763 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:02,765 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,765 Waiting for messages to send...
+2022-11-08 03:09:02,846 Handling container
+2022-11-08 03:09:02,846 Handling update Updates
+2022-11-08 03:09:02,846 Handling acknowledge for [7163415075163671716]
+2022-11-08 03:09:02,846 Receiving items from the network...
+2022-11-08 03:09:02,848 Handling RPC result for message 7163415075163671716
+2022-11-08 03:09:02,848 Receiving items from the network...
+2022-11-08 03:09:02,850 Assigned msg_id = 7163415075515294296 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:02,850 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,850 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,850 Waiting for messages to send...
+2022-11-08 03:09:02,850 Assigned msg_id = 7163415075515294300 to MsgsAck (19b3145b370)
+2022-11-08 03:09:02,850 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:02,851 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,851 Waiting for messages to send...
+2022-11-08 03:09:02,934 Handling RPC result for message 7163415075515294296
+2022-11-08 03:09:02,934 Receiving items from the network...
+2022-11-08 03:09:02,936 Assigned msg_id = 7163415075857533676 to GetChannelsRequest (19b31380520)
+2022-11-08 03:09:02,936 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:02,936 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,936 Waiting for messages to send...
+2022-11-08 03:09:02,936 Assigned msg_id = 7163415075857533680 to MsgsAck (19b3133ff40)
+2022-11-08 03:09:02,936 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:02,937 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:02,937 Waiting for messages to send...
+2022-11-08 03:09:03,017 Handling acknowledge for [7163415075857533676]
+2022-11-08 03:09:03,017 Receiving items from the network...
+2022-11-08 03:09:03,049 Handling update Updates
+2022-11-08 03:09:03,049 Receiving items from the network...
+2022-11-08 03:09:03,054 Handling RPC result for message 7163415075857533676
+2022-11-08 03:09:03,054 Receiving items from the network...
+2022-11-08 03:09:03,054 Assigned msg_id = 7163415076627320156 to GetChannelsRequest (19b3145ac50)
+2022-11-08 03:09:03,054 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,055 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,055 Waiting for messages to send...
+2022-11-08 03:09:03,055 Assigned msg_id = 7163415076631311284 to MsgsAck (19b314700d0)
+2022-11-08 03:09:03,055 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:03,056 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,056 Waiting for messages to send...
+2022-11-08 03:09:03,139 Handling RPC result for message 7163415076627320156
+2022-11-08 03:09:03,139 Receiving items from the network...
+2022-11-08 03:09:03,142 Assigned msg_id = 7163415076978320940 to GetChannelsRequest (19b3133ff10)
+2022-11-08 03:09:03,142 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,142 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,142 Waiting for messages to send...
+2022-11-08 03:09:03,143 Assigned msg_id = 7163415076982321604 to MsgsAck (19b3147afb0)
+2022-11-08 03:09:03,143 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,143 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,143 Waiting for messages to send...
+2022-11-08 03:09:03,226 Handling RPC result for message 7163415076978320940
+2022-11-08 03:09:03,227 Receiving items from the network...
+2022-11-08 03:09:03,227 Assigned msg_id = 7163415077317877636 to GetChannelsRequest (19b3145b070)
+2022-11-08 03:09:03,227 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,227 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,227 Waiting for messages to send...
+2022-11-08 03:09:03,227 Assigned msg_id = 7163415077317877640 to MsgsAck (19b3147bf40)
+2022-11-08 03:09:03,227 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,228 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,228 Waiting for messages to send...
+2022-11-08 03:09:03,311 Handling RPC result for message 7163415077317877636
+2022-11-08 03:09:03,311 Receiving items from the network...
+2022-11-08 03:09:03,311 Assigned msg_id = 7163415077655906544 to GetChannelsRequest (19b3147b9d0)
+2022-11-08 03:09:03,312 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,312 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,312 Waiting for messages to send...
+2022-11-08 03:09:03,312 Assigned msg_id = 7163415077659889088 to MsgsAck (19b3133ff10)
+2022-11-08 03:09:03,312 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,313 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,313 Waiting for messages to send...
+2022-11-08 03:09:03,396 Handling RPC result for message 7163415077655906544
+2022-11-08 03:09:03,396 Receiving items from the network...
+2022-11-08 03:09:03,398 Assigned msg_id = 7163415078003929956 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:03,398 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,399 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,399 Waiting for messages to send...
+2022-11-08 03:09:03,399 Assigned msg_id = 7163415078007919176 to MsgsAck (19b31381810)
+2022-11-08 03:09:03,399 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,400 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,400 Waiting for messages to send...
+2022-11-08 03:09:03,483 Handling RPC result for message 7163415078003929956
+2022-11-08 03:09:03,483 Receiving items from the network...
+2022-11-08 03:09:03,485 Assigned msg_id = 7163415078350644932 to GetChannelsRequest (19b31479330)
+2022-11-08 03:09:03,485 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,486 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,486 Waiting for messages to send...
+2022-11-08 03:09:03,486 Assigned msg_id = 7163415078354131564 to MsgsAck (19b313807c0)
+2022-11-08 03:09:03,486 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,486 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,487 Waiting for messages to send...
+2022-11-08 03:09:03,569 Handling RPC result for message 7163415078350644932
+2022-11-08 03:09:03,569 Receiving items from the network...
+2022-11-08 03:09:03,572 Assigned msg_id = 7163415078697029932 to GetChannelsRequest (19b3133fdc0)
+2022-11-08 03:09:03,572 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,572 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,572 Waiting for messages to send...
+2022-11-08 03:09:03,572 Assigned msg_id = 7163415078697029936 to MsgsAck (19b3145be80)
+2022-11-08 03:09:03,572 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,573 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,573 Waiting for messages to send...
+2022-11-08 03:09:03,668 Handling RPC result for message 7163415078697029932
+2022-11-08 03:09:03,668 Receiving items from the network...
+2022-11-08 03:09:03,670 Assigned msg_id = 7163415079091468676 to GetChannelsRequest (19b313809d0)
+2022-11-08 03:09:03,670 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,671 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,671 Waiting for messages to send...
+2022-11-08 03:09:03,671 Assigned msg_id = 7163415079094877108 to MsgsAck (19b3147b9d0)
+2022-11-08 03:09:03,671 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,671 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,671 Waiting for messages to send...
+2022-11-08 03:09:03,756 Handling RPC result for message 7163415079091468676
+2022-11-08 03:09:03,756 Receiving items from the network...
+2022-11-08 03:09:03,756 Assigned msg_id = 7163415079433756696 to GetChannelsRequest (19b31478280)
+2022-11-08 03:09:03,756 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,757 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,757 Waiting for messages to send...
+2022-11-08 03:09:03,757 Assigned msg_id = 7163415079437748776 to MsgsAck (19b313809d0)
+2022-11-08 03:09:03,758 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,758 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,758 Waiting for messages to send...
+2022-11-08 03:09:03,893 Handling RPC result for message 7163415079433756696
+2022-11-08 03:09:03,893 Receiving items from the network...
+2022-11-08 03:09:03,893 Assigned msg_id = 7163415079980492456 to GetChannelsRequest (19b31478280)
+2022-11-08 03:09:03,893 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,893 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,893 Waiting for messages to send...
+2022-11-08 03:09:03,893 Assigned msg_id = 7163415079984258516 to MsgsAck (19b31470130)
+2022-11-08 03:09:03,893 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,894 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,894 Waiting for messages to send...
+2022-11-08 03:09:03,978 Handling RPC result for message 7163415079980492456
+2022-11-08 03:09:03,978 Receiving items from the network...
+2022-11-08 03:09:03,981 Assigned msg_id = 7163415080333308088 to GetChannelsRequest (19b3133f730)
+2022-11-08 03:09:03,981 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:03,981 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,981 Waiting for messages to send...
+2022-11-08 03:09:03,981 Assigned msg_id = 7163415080333308092 to MsgsAck (19b3145b070)
+2022-11-08 03:09:03,981 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:03,982 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:03,982 Waiting for messages to send...
+2022-11-08 03:09:04,066 Handling RPC result for message 7163415080333308088
+2022-11-08 03:09:04,067 Receiving items from the network...
+2022-11-08 03:09:04,067 Assigned msg_id = 7163415080972723472 to GetChannelsRequest (19b3147bcd0)
+2022-11-08 03:09:04,067 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,068 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,068 Waiting for messages to send...
+2022-11-08 03:09:04,068 Assigned msg_id = 7163415080976701248 to MsgsAck (19b3133fd00)
+2022-11-08 03:09:04,068 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,069 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,069 Waiting for messages to send...
+2022-11-08 03:09:04,155 Handling RPC result for message 7163415080972723472
+2022-11-08 03:09:04,156 Receiving items from the network...
+2022-11-08 03:09:04,158 Assigned msg_id = 7163415081337050904 to GetChannelsRequest (19b31381db0)
+2022-11-08 03:09:04,158 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,159 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,159 Waiting for messages to send...
+2022-11-08 03:09:04,160 Assigned msg_id = 7163415081345024572 to MsgsAck (19b314703a0)
+2022-11-08 03:09:04,160 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,161 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,161 Waiting for messages to send...
+2022-11-08 03:09:04,246 Handling RPC result for message 7163415081337050904
+2022-11-08 03:09:04,246 Receiving items from the network...
+2022-11-08 03:09:04,247 Assigned msg_id = 7163415081692915428 to GetChannelsRequest (19b3145abf0)
+2022-11-08 03:09:04,247 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,248 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,248 Waiting for messages to send...
+2022-11-08 03:09:04,248 Assigned msg_id = 7163415081696908460 to MsgsAck (19b3133fdc0)
+2022-11-08 03:09:04,248 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,250 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,250 Waiting for messages to send...
+2022-11-08 03:09:04,333 Handling RPC result for message 7163415081692915428
+2022-11-08 03:09:04,333 Receiving items from the network...
+2022-11-08 03:09:04,333 Assigned msg_id = 7163415082039187896 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:04,333 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,334 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,334 Waiting for messages to send...
+2022-11-08 03:09:04,335 Assigned msg_id = 7163415082047161568 to MsgsAck (19b31478280)
+2022-11-08 03:09:04,335 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,335 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,335 Waiting for messages to send...
+2022-11-08 03:09:04,727 Handling RPC result for message 7163415082039187896
+2022-11-08 03:09:04,727 Receiving items from the network...
+2022-11-08 03:09:04,730 Assigned msg_id = 7163415083626326072 to GetChannelsRequest (19b3145b370)
+2022-11-08 03:09:04,730 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,732 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,732 Waiting for messages to send...
+2022-11-08 03:09:04,733 Assigned msg_id = 7163415083638467300 to MsgsAck (19b31381810)
+2022-11-08 03:09:04,733 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,735 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,735 Waiting for messages to send...
+2022-11-08 03:09:04,824 Handling RPC result for message 7163415083626326072
+2022-11-08 03:09:04,824 Receiving items from the network...
+2022-11-08 03:09:04,827 Assigned msg_id = 7163415084011027800 to GetChannelsRequest (19b31381db0)
+2022-11-08 03:09:04,827 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,828 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,828 Waiting for messages to send...
+2022-11-08 03:09:04,828 Assigned msg_id = 7163415084018841256 to MsgsAck (19b3133ff10)
+2022-11-08 03:09:04,828 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,829 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,829 Waiting for messages to send...
+2022-11-08 03:09:04,928 Handling RPC result for message 7163415084011027800
+2022-11-08 03:09:04,928 Receiving items from the network...
+2022-11-08 03:09:04,928 Assigned msg_id = 7163415084418845640 to GetChannelsRequest (19b314706a0)
+2022-11-08 03:09:04,928 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:04,929 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,929 Waiting for messages to send...
+2022-11-08 03:09:04,929 Assigned msg_id = 7163415084422831048 to MsgsAck (19b3145b370)
+2022-11-08 03:09:04,929 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:04,930 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:04,930 Waiting for messages to send...
+2022-11-08 03:09:05,015 Handling RPC result for message 7163415084418845640
+2022-11-08 03:09:05,015 Receiving items from the network...
+2022-11-08 03:09:05,015 Assigned msg_id = 7163415085059906116 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:05,015 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,015 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,016 Waiting for messages to send...
+2022-11-08 03:09:05,016 Assigned msg_id = 7163415085063891520 to MsgsAck (19b3147b3a0)
+2022-11-08 03:09:05,016 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,016 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,016 Waiting for messages to send...
+2022-11-08 03:09:05,099 Handling RPC result for message 7163415085059906116
+2022-11-08 03:09:05,100 Receiving items from the network...
+2022-11-08 03:09:05,102 Assigned msg_id = 7163415085407149424 to GetChannelsRequest (19b31470cd0)
+2022-11-08 03:09:05,102 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,103 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,103 Waiting for messages to send...
+2022-11-08 03:09:05,103 Assigned msg_id = 7163415085410836328 to MsgsAck (19b3145b100)
+2022-11-08 03:09:05,103 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,104 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,104 Waiting for messages to send...
+2022-11-08 03:09:05,192 Handling RPC result for message 7163415085407149424
+2022-11-08 03:09:05,192 Receiving items from the network...
+2022-11-08 03:09:05,194 Assigned msg_id = 7163415085777806392 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:05,195 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,196 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,196 Waiting for messages to send...
+2022-11-08 03:09:05,196 Assigned msg_id = 7163415085785782924 to MsgsAck (19b313809d0)
+2022-11-08 03:09:05,196 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,197 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,197 Waiting for messages to send...
+2022-11-08 03:09:05,283 Handling RPC result for message 7163415085777806392
+2022-11-08 03:09:05,283 Receiving items from the network...
+2022-11-08 03:09:05,283 Assigned msg_id = 7163415086132772556 to GetChannelsRequest (19b31470cd0)
+2022-11-08 03:09:05,283 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,284 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,284 Waiting for messages to send...
+2022-11-08 03:09:05,284 Assigned msg_id = 7163415086136759868 to MsgsAck (19b3145b070)
+2022-11-08 03:09:05,284 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,285 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,285 Waiting for messages to send...
+2022-11-08 03:09:05,374 Handling RPC result for message 7163415086132772556
+2022-11-08 03:09:05,374 Receiving items from the network...
+2022-11-08 03:09:05,375 Assigned msg_id = 7163415086501695744 to GetChannelsRequest (19b313807c0)
+2022-11-08 03:09:05,375 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,376 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,376 Waiting for messages to send...
+2022-11-08 03:09:05,376 Assigned msg_id = 7163415086505583872 to MsgsAck (19b31470cd0)
+2022-11-08 03:09:05,376 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,378 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,378 Waiting for messages to send...
+2022-11-08 03:09:05,467 Handling RPC result for message 7163415086501695744
+2022-11-08 03:09:05,467 Receiving items from the network...
+2022-11-08 03:09:05,467 Assigned msg_id = 7163415086868087876 to GetChannelsRequest (19b3145abf0)
+2022-11-08 03:09:05,467 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,468 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,468 Waiting for messages to send...
+2022-11-08 03:09:05,468 Assigned msg_id = 7163415086872078052 to MsgsAck (19b3147bca0)
+2022-11-08 03:09:05,468 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,469 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,469 Waiting for messages to send...
+2022-11-08 03:09:05,552 Handling RPC result for message 7163415086868087876
+2022-11-08 03:09:05,552 Receiving items from the network...
+2022-11-08 03:09:05,555 Assigned msg_id = 7163415087218596568 to GetChannelsRequest (19b313807c0)
+2022-11-08 03:09:05,555 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,555 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,555 Waiting for messages to send...
+2022-11-08 03:09:05,555 Assigned msg_id = 7163415087220455280 to MsgsAck (19b3133fd00)
+2022-11-08 03:09:05,555 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,556 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,556 Waiting for messages to send...
+2022-11-08 03:09:05,642 Handling RPC result for message 7163415087218596568
+2022-11-08 03:09:05,642 Receiving items from the network...
+2022-11-08 03:09:05,642 Assigned msg_id = 7163415087566836468 to GetChannelsRequest (19b3145abf0)
+2022-11-08 03:09:05,642 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,643 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,643 Waiting for messages to send...
+2022-11-08 03:09:05,643 Assigned msg_id = 7163415087570818056 to MsgsAck (19b3147b580)
+2022-11-08 03:09:05,643 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,643 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,643 Waiting for messages to send...
+2022-11-08 03:09:05,669 Handling update UpdateShort
+2022-11-08 03:09:05,669 Receiving items from the network...
+2022-11-08 03:09:05,745 Handling RPC result for message 7163415087566836468
+2022-11-08 03:09:05,746 Receiving items from the network...
+2022-11-08 03:09:05,747 Assigned msg_id = 7163415087989820588 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:05,748 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,752 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,752 Waiting for messages to send...
+2022-11-08 03:09:05,753 Assigned msg_id = 7163415088013754000 to MsgsAck (19b314737f0)
+2022-11-08 03:09:05,753 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:05,757 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,757 Waiting for messages to send...
+2022-11-08 03:09:05,856 Handling RPC result for message 7163415087989820588
+2022-11-08 03:09:05,856 Receiving items from the network...
+2022-11-08 03:09:05,856 Assigned msg_id = 7163415088424560656 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:05,856 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,857 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,857 Waiting for messages to send...
+2022-11-08 03:09:05,857 Assigned msg_id = 7163415088428583256 to MsgsAck (19b31470d30)
+2022-11-08 03:09:05,857 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,858 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,858 Waiting for messages to send...
+2022-11-08 03:09:05,946 Handling RPC result for message 7163415088424560656
+2022-11-08 03:09:05,946 Receiving items from the network...
+2022-11-08 03:09:05,947 Assigned msg_id = 7163415088789272416 to GetChannelsRequest (19b3133ff10)
+2022-11-08 03:09:05,947 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:05,949 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,949 Waiting for messages to send...
+2022-11-08 03:09:05,949 Assigned msg_id = 7163415088797237504 to MsgsAck (19b31470ac0)
+2022-11-08 03:09:05,949 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:05,951 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:05,951 Waiting for messages to send...
+2022-11-08 03:09:06,035 Handling RPC result for message 7163415088789272416
+2022-11-08 03:09:06,036 Receiving items from the network...
+2022-11-08 03:09:06,038 Assigned msg_id = 7163415089448768368 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:06,038 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,040 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,040 Waiting for messages to send...
+2022-11-08 03:09:06,041 Assigned msg_id = 7163415089460972540 to MsgsAck (19b31473ca0)
+2022-11-08 03:09:06,041 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,042 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,043 Waiting for messages to send...
+2022-11-08 03:09:06,134 Handling RPC result for message 7163415089448768368
+2022-11-08 03:09:06,134 Receiving items from the network...
+2022-11-08 03:09:06,137 Assigned msg_id = 7163415089843941444 to GetChannelsRequest (19b3133ff10)
+2022-11-08 03:09:06,137 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,141 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,142 Waiting for messages to send...
+2022-11-08 03:09:06,142 Assigned msg_id = 7163415089863896124 to MsgsAck (19b31471840)
+2022-11-08 03:09:06,142 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,144 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,144 Waiting for messages to send...
+2022-11-08 03:09:06,228 Handling acknowledge for [7163415089843941444]
+2022-11-08 03:09:06,228 Receiving items from the network...
+2022-11-08 03:09:06,276 Handling update Updates
+2022-11-08 03:09:06,276 Receiving items from the network...
+2022-11-08 03:09:06,277 Handling RPC result for message 7163415089843941444
+2022-11-08 03:09:06,277 Receiving items from the network...
+2022-11-08 03:09:06,278 Assigned msg_id = 7163415090406050436 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:06,278 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,278 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,278 Waiting for messages to send...
+2022-11-08 03:09:06,278 Assigned msg_id = 7163415090406050440 to MsgsAck (19b314736d0)
+2022-11-08 03:09:06,278 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:06,279 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,279 Waiting for messages to send...
+2022-11-08 03:09:06,366 Handling RPC result for message 7163415090406050436
+2022-11-08 03:09:06,366 Receiving items from the network...
+2022-11-08 03:09:06,367 Assigned msg_id = 7163415090765292876 to GetChannelsRequest (19b3133ff10)
+2022-11-08 03:09:06,367 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,371 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,371 Waiting for messages to send...
+2022-11-08 03:09:06,371 Assigned msg_id = 7163415090781258336 to MsgsAck (19b31473d90)
+2022-11-08 03:09:06,371 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,373 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,374 Waiting for messages to send...
+2022-11-08 03:09:06,458 Handling RPC result for message 7163415090765292876
+2022-11-08 03:09:06,458 Receiving items from the network...
+2022-11-08 03:09:06,458 Assigned msg_id = 7163415091127179852 to GetChannelsRequest (19b3145b070)
+2022-11-08 03:09:06,458 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,459 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,459 Waiting for messages to send...
+2022-11-08 03:09:06,460 Assigned msg_id = 7163415091135129684 to MsgsAck (19b31473a90)
+2022-11-08 03:09:06,460 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,461 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,461 Waiting for messages to send...
+2022-11-08 03:09:06,545 Handling RPC result for message 7163415091127179852
+2022-11-08 03:09:06,546 Receiving items from the network...
+2022-11-08 03:09:06,548 Assigned msg_id = 7163415091485972160 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:06,548 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,549 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,549 Waiting for messages to send...
+2022-11-08 03:09:06,549 Assigned msg_id = 7163415091489852660 to MsgsAck (19b31470f40)
+2022-11-08 03:09:06,549 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,550 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,550 Waiting for messages to send...
+2022-11-08 03:09:06,633 Handling RPC result for message 7163415091485972160
+2022-11-08 03:09:06,633 Receiving items from the network...
+2022-11-08 03:09:06,635 Assigned msg_id = 7163415091836085072 to GetChannelsRequest (19b3145b070)
+2022-11-08 03:09:06,635 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,636 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,636 Waiting for messages to send...
+2022-11-08 03:09:06,636 Assigned msg_id = 7163415091840073340 to MsgsAck (19b31470be0)
+2022-11-08 03:09:06,636 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,636 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,637 Waiting for messages to send...
+2022-11-08 03:09:06,723 Handling RPC result for message 7163415091836085072
+2022-11-08 03:09:06,723 Receiving items from the network...
+2022-11-08 03:09:06,725 Assigned msg_id = 7163415092196520560 to GetChannelsRequest (19b3133ff10)
+2022-11-08 03:09:06,725 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,726 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,726 Waiting for messages to send...
+2022-11-08 03:09:06,726 Assigned msg_id = 7163415092200508824 to MsgsAck (19b314704f0)
+2022-11-08 03:09:06,726 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,727 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,727 Waiting for messages to send...
+2022-11-08 03:09:06,814 Handling RPC result for message 7163415092196520560
+2022-11-08 03:09:06,814 Receiving items from the network...
+2022-11-08 03:09:06,816 Assigned msg_id = 7163415092558147184 to GetChannelsRequest (19b3145b070)
+2022-11-08 03:09:06,817 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,818 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,818 Waiting for messages to send...
+2022-11-08 03:09:06,818 Assigned msg_id = 7163415092566102736 to MsgsAck (19b3147b580)
+2022-11-08 03:09:06,819 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,821 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,821 Waiting for messages to send...
+2022-11-08 03:09:06,906 Handling RPC result for message 7163415092558147184
+2022-11-08 03:09:06,906 Receiving items from the network...
+2022-11-08 03:09:06,909 Assigned msg_id = 7163415092932261220 to GetChannelsRequest (19b3133ff40)
+2022-11-08 03:09:06,909 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:06,910 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,910 Waiting for messages to send...
+2022-11-08 03:09:06,911 Assigned msg_id = 7163415092940404644 to MsgsAck (19b31470340)
+2022-11-08 03:09:06,911 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:06,912 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:06,912 Waiting for messages to send...
+2022-11-08 03:09:06,999 Handling RPC result for message 7163415092932261220
+2022-11-08 03:09:06,999 Receiving items from the network...
+2022-11-08 03:09:07,002 Assigned msg_id = 7163415093599382752 to GetChannelsRequest (19b3147b3d0)
+2022-11-08 03:09:07,002 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:07,004 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,004 Waiting for messages to send...
+2022-11-08 03:09:07,004 Assigned msg_id = 7163415093607365008 to MsgsAck (19b314737f0)
+2022-11-08 03:09:07,004 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:07,006 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,006 Waiting for messages to send...
+2022-11-08 03:09:07,093 Handling RPC result for message 7163415093599382752
+2022-11-08 03:09:07,093 Receiving items from the network...
+2022-11-08 03:09:07,096 Assigned msg_id = 7163415093975017900 to GetChatsRequest (19b3145b070)
+2022-11-08 03:09:07,096 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:07,097 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,097 Waiting for messages to send...
+2022-11-08 03:09:07,097 Assigned msg_id = 7163415093979003304 to MsgsAck (19b3147b3d0)
+2022-11-08 03:09:07,097 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:07,099 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,099 Waiting for messages to send...
+2022-11-08 03:09:07,185 Handling RPC result for message 7163415093975017900
+2022-11-08 03:09:07,185 Receiving items from the network...
+2022-11-08 03:09:07,260 Chats updated
+2022-11-08 03:09:07,261 Assigned msg_id = 7163415094636040084 to GetHistoryRequest (19b313820e0)
+2022-11-08 03:09:07,261 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:07,262 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,262 Waiting for messages to send...
+2022-11-08 03:09:07,262 Assigned msg_id = 7163415094640163772 to MsgsAck (19b31383e20)
+2022-11-08 03:09:07,262 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:07,263 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,263 Waiting for messages to send...
+2022-11-08 03:09:07,377 Handling RPC result for message 7163415094636040084
+2022-11-08 03:09:07,377 Receiving items from the network...
+2022-11-08 03:09:07,378 Assigned msg_id = 7163415095102597588 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:07,378 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:07,378 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,379 Waiting for messages to send...
+2022-11-08 03:09:07,379 Assigned msg_id = 7163415095106700296 to MsgsAck (19b313820e0)
+2022-11-08 03:09:07,379 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:07,379 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:07,379 Waiting for messages to send...
+2022-11-08 03:09:07,790 Handling RPC result for message 7163415095102597588
+2022-11-08 03:09:07,796 Receiving items from the network...
+2022-11-08 03:09:08,379 Assigned msg_id = 7163415099402221676 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:08,379 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:08,381 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:08,381 Waiting for messages to send...
+2022-11-08 03:09:08,381 Assigned msg_id = 7163415099409904476 to MsgsAck (19b314effd0)
+2022-11-08 03:09:08,381 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:08,382 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:08,382 Waiting for messages to send...
+2022-11-08 03:09:08,467 Handling acknowledge for [7163415099402221676]
+2022-11-08 03:09:08,468 Receiving items from the network...
+2022-11-08 03:09:08,490 Handling update Updates
+2022-11-08 03:09:08,491 Receiving items from the network...
+2022-11-08 03:09:08,732 Handling RPC result for message 7163415099402221676
+2022-11-08 03:09:08,738 Receiving items from the network...
+2022-11-08 03:09:09,380 Assigned msg_id = 7163415103700384736 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:09,380 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:09,381 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:09,381 Waiting for messages to send...
+2022-11-08 03:09:09,381 Assigned msg_id = 7163415103704352972 to MsgsAck (19b3150fbb0)
+2022-11-08 03:09:09,381 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:09,382 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:09,382 Waiting for messages to send...
+2022-11-08 03:09:09,465 Handling acknowledge for [7163415103700384736]
+2022-11-08 03:09:09,465 Receiving items from the network...
+2022-11-08 03:09:09,486 Handling update Updates
+2022-11-08 03:09:09,486 Receiving items from the network...
+2022-11-08 03:09:09,853 Handling RPC result for message 7163415103700384736
+2022-11-08 03:09:09,863 Receiving items from the network...
+2022-11-08 03:09:10,381 Assigned msg_id = 7163415107998986484 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:10,381 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:10,382 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:10,382 Waiting for messages to send...
+2022-11-08 03:09:10,382 Assigned msg_id = 7163415108002808812 to MsgsAck (19b31381810)
+2022-11-08 03:09:10,382 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:10,383 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:10,384 Waiting for messages to send...
+2022-11-08 03:09:10,463 Handling acknowledge for [7163415107998986484]
+2022-11-08 03:09:10,463 Receiving items from the network...
+2022-11-08 03:09:10,473 Handling update Updates
+2022-11-08 03:09:10,473 Receiving items from the network...
+2022-11-08 03:09:11,041 Handling RPC result for message 7163415107998986484
+2022-11-08 03:09:11,048 Receiving items from the network...
+2022-11-08 03:09:11,382 Assigned msg_id = 7163415112298781280 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:11,382 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:11,384 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:11,384 Waiting for messages to send...
+2022-11-08 03:09:11,384 Assigned msg_id = 7163415112306763532 to MsgsAck (19b31479840)
+2022-11-08 03:09:11,384 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:11,385 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:11,385 Waiting for messages to send...
+2022-11-08 03:09:11,467 Handling acknowledge for [7163415112298781280]
+2022-11-08 03:09:11,467 Receiving items from the network...
+2022-11-08 03:09:11,506 Handling update Updates
+2022-11-08 03:09:11,507 Receiving items from the network...
+2022-11-08 03:09:11,813 Handling RPC result for message 7163415112298781280
+2022-11-08 03:09:11,821 Receiving items from the network...
+2022-11-08 03:09:11,871 Handling update Updates
+2022-11-08 03:09:11,871 Receiving items from the network...
+2022-11-08 03:09:12,387 Assigned msg_id = 7163415116612408168 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:12,387 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:12,389 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:12,389 Waiting for messages to send...
+2022-11-08 03:09:12,389 Assigned msg_id = 7163415116620564944 to MsgsAck (19b31501270)
+2022-11-08 03:09:12,389 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:12,391 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:12,391 Waiting for messages to send...
+2022-11-08 03:09:12,487 Handling container
+2022-11-08 03:09:12,487 Handling update Updates
+2022-11-08 03:09:12,487 Handling update UpdateShort
+2022-11-08 03:09:12,488 Handling acknowledge for [7163415116612408168]
+2022-11-08 03:09:12,488 Receiving items from the network...
+2022-11-08 03:09:12,495 Handling update Updates
+2022-11-08 03:09:12,496 Receiving items from the network...
+2022-11-08 03:09:12,509 Handling update Updates
+2022-11-08 03:09:12,509 Receiving items from the network...
+2022-11-08 03:09:12,776 Handling RPC result for message 7163415116612408168
+2022-11-08 03:09:12,783 Receiving items from the network...
+2022-11-08 03:09:12,839 Handling update Updates
+2022-11-08 03:09:12,839 Receiving items from the network...
+2022-11-08 03:09:13,011 Timeout waiting for updates expired
+2022-11-08 03:09:13,377 Assigned msg_id = 7163415120869392524 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:13,377 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:13,378 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:13,378 Waiting for messages to send...
+2022-11-08 03:09:13,378 Assigned msg_id = 7163415120873537192 to MsgsAck (19b314eda20)
+2022-11-08 03:09:13,378 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:13,379 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:13,379 Waiting for messages to send...
+2022-11-08 03:09:13,464 Handling acknowledge for [7163415120869392524]
+2022-11-08 03:09:13,464 Receiving items from the network...
+2022-11-08 03:09:13,483 Handling update Updates
+2022-11-08 03:09:13,483 Receiving items from the network...
+2022-11-08 03:09:13,496 Handling update Updates
+2022-11-08 03:09:13,497 Receiving items from the network...
+2022-11-08 03:09:13,502 Handling update Updates
+2022-11-08 03:09:13,502 Receiving items from the network...
+2022-11-08 03:09:13,770 Handling RPC result for message 7163415120869392524
+2022-11-08 03:09:13,776 Receiving items from the network...
+2022-11-08 03:09:13,995 Handling gzipped data
+2022-11-08 03:09:13,996 Handling update Updates
+2022-11-08 03:09:13,996 Receiving items from the network...
+2022-11-08 03:09:14,005 Handling update Updates
+2022-11-08 03:09:14,005 Receiving items from the network...
+2022-11-08 03:09:14,012 Handling update Updates
+2022-11-08 03:09:14,012 Receiving items from the network...
+2022-11-08 03:09:14,368 Assigned msg_id = 7163415125127444040 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:14,368 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:14,369 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:14,369 Waiting for messages to send...
+2022-11-08 03:09:14,369 Assigned msg_id = 7163415125131448516 to MsgsAck (19b314df880)
+2022-11-08 03:09:14,369 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:14,370 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:14,370 Waiting for messages to send...
+2022-11-08 03:09:14,461 Handling container
+2022-11-08 03:09:14,461 Handling update Updates
+2022-11-08 03:09:14,461 Handling acknowledge for [7163415125127444040]
+2022-11-08 03:09:14,461 Receiving items from the network...
+2022-11-08 03:09:14,473 Handling update Updates
+2022-11-08 03:09:14,473 Receiving items from the network...
+2022-11-08 03:09:14,745 Handling RPC result for message 7163415125127444040
+2022-11-08 03:09:14,751 Receiving items from the network...
+2022-11-08 03:09:15,370 Assigned msg_id = 7163415129429608716 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:15,370 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:15,371 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:15,371 Waiting for messages to send...
+2022-11-08 03:09:15,371 Assigned msg_id = 7163415129433596028 to MsgsAck (19b314f3760)
+2022-11-08 03:09:15,371 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:15,372 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:15,372 Waiting for messages to send...
+2022-11-08 03:09:15,453 Handling acknowledge for [7163415129429608716]
+2022-11-08 03:09:15,454 Receiving items from the network...
+2022-11-08 03:09:15,481 Handling update Updates
+2022-11-08 03:09:15,482 Receiving items from the network...
+2022-11-08 03:09:15,788 Handling RPC result for message 7163415129429608716
+2022-11-08 03:09:15,794 Receiving items from the network...
+2022-11-08 03:09:16,371 Assigned msg_id = 7163415133727541940 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:16,371 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:16,372 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:16,372 Waiting for messages to send...
+2022-11-08 03:09:16,372 Assigned msg_id = 7163415133731531156 to MsgsAck (19b315033d0)
+2022-11-08 03:09:16,372 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:16,372 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:16,372 Waiting for messages to send...
+2022-11-08 03:09:16,462 Handling container
+2022-11-08 03:09:16,462 Handling update Updates
+2022-11-08 03:09:16,462 Handling acknowledge for [7163415133727541940]
+2022-11-08 03:09:16,462 Receiving items from the network...
+2022-11-08 03:09:16,758 Handling RPC result for message 7163415133727541940
+2022-11-08 03:09:16,764 Receiving items from the network...
+2022-11-08 03:09:17,371 Assigned msg_id = 7163415138025750772 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:17,372 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:17,373 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:17,373 Waiting for messages to send...
+2022-11-08 03:09:17,373 Assigned msg_id = 7163415138033559460 to MsgsAck (19b3152f2b0)
+2022-11-08 03:09:17,373 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:17,374 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:17,375 Waiting for messages to send...
+2022-11-08 03:09:17,457 Handling acknowledge for [7163415138025750772]
+2022-11-08 03:09:17,457 Receiving items from the network...
+2022-11-08 03:09:17,477 Handling update Updates
+2022-11-08 03:09:17,477 Receiving items from the network...
+2022-11-08 03:09:17,744 Handling RPC result for message 7163415138025750772
+2022-11-08 03:09:17,751 Receiving items from the network...
+2022-11-08 03:09:18,374 Assigned msg_id = 7163415142329533836 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:18,374 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:18,375 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:18,376 Waiting for messages to send...
+2022-11-08 03:09:18,376 Assigned msg_id = 7163415142337509412 to MsgsAck (19b314d3640)
+2022-11-08 03:09:18,376 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:18,377 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:18,377 Waiting for messages to send...
+2022-11-08 03:09:18,461 Handling acknowledge for [7163415142329533836]
+2022-11-08 03:09:18,462 Receiving items from the network...
+2022-11-08 03:09:18,475 Handling update Updates
+2022-11-08 03:09:18,476 Receiving items from the network...
+2022-11-08 03:09:18,485 Handling update Updates
+2022-11-08 03:09:18,485 Receiving items from the network...
+2022-11-08 03:09:18,752 Handling RPC result for message 7163415142329533836
+2022-11-08 03:09:18,759 Receiving items from the network...
+2022-11-08 03:09:18,806 Handling gzipped data
+2022-11-08 03:09:18,806 Handling update Updates
+2022-11-08 03:09:18,806 Receiving items from the network...
+2022-11-08 03:09:19,378 Assigned msg_id = 7163415146640695476 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:19,378 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:19,379 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:19,379 Waiting for messages to send...
+2022-11-08 03:09:19,379 Assigned msg_id = 7163415146644840144 to MsgsAck (19b313820e0)
+2022-11-08 03:09:19,379 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:19,380 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:19,380 Waiting for messages to send...
+2022-11-08 03:09:19,755 Handling RPC result for message 7163415146640695476
+2022-11-08 03:09:19,761 Receiving items from the network...
+2022-11-08 03:09:19,813 Handling update Updates
+2022-11-08 03:09:19,814 Receiving items from the network...
+2022-11-08 03:09:20,385 Assigned msg_id = 7163415150965894248 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:20,385 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:20,387 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:20,388 Waiting for messages to send...
+2022-11-08 03:09:20,388 Assigned msg_id = 7163415150977854276 to MsgsAck (19b314ceb90)
+2022-11-08 03:09:20,388 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:20,391 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:20,391 Waiting for messages to send...
+2022-11-08 03:09:20,471 Handling acknowledge for [7163415150965894248]
+2022-11-08 03:09:20,471 Receiving items from the network...
+2022-11-08 03:09:20,475 Handling update Updates
+2022-11-08 03:09:20,475 Receiving items from the network...
+2022-11-08 03:09:20,476 Handling update UpdateShort
+2022-11-08 03:09:20,476 Receiving items from the network...
+2022-11-08 03:09:20,481 Handling update Updates
+2022-11-08 03:09:20,481 Receiving items from the network...
+2022-11-08 03:09:20,486 Handling update Updates
+2022-11-08 03:09:20,486 Receiving items from the network...
+2022-11-08 03:09:20,718 Handling RPC result for message 7163415150965894248
+2022-11-08 03:09:20,724 Receiving items from the network...
+2022-11-08 03:09:21,387 Assigned msg_id = 7163415155266151572 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:21,387 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:21,391 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:21,391 Waiting for messages to send...
+2022-11-08 03:09:21,392 Assigned msg_id = 7163415155282082704 to MsgsAck (19b3152ee60)
+2022-11-08 03:09:21,392 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:09:21,396 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:21,396 Waiting for messages to send...
+2022-11-08 03:09:21,488 Handling container
+2022-11-08 03:09:21,488 Handling update UpdateShort
+2022-11-08 03:09:21,488 Handling update Updates
+2022-11-08 03:09:21,489 Handling acknowledge for [7163415155266151572]
+2022-11-08 03:09:21,489 Receiving items from the network...
+2022-11-08 03:09:21,502 Handling update Updates
+2022-11-08 03:09:21,503 Receiving items from the network...
+2022-11-08 03:09:21,510 Handling update Updates
+2022-11-08 03:09:21,510 Receiving items from the network...
+2022-11-08 03:09:21,717 Handling RPC result for message 7163415155266151572
+2022-11-08 03:09:21,736 Receiving items from the network...
+2022-11-08 03:09:21,790 Handling update Updates
+2022-11-08 03:09:21,790 Receiving items from the network...
+2022-11-08 03:09:22,010 Timeout waiting for updates expired
+2022-11-08 03:09:22,376 Assigned msg_id = 7163415159520531444 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:22,377 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:22,379 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:22,380 Waiting for messages to send...
+2022-11-08 03:09:22,380 Assigned msg_id = 7163415159536676196 to MsgsAck (19b31382590)
+2022-11-08 03:09:22,380 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:22,382 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:22,382 Waiting for messages to send...
+2022-11-08 03:09:22,470 Handling container
+2022-11-08 03:09:22,470 Handling update Updates
+2022-11-08 03:09:22,470 Handling acknowledge for [7163415159520531444]
+2022-11-08 03:09:22,471 Receiving items from the network...
+2022-11-08 03:09:22,698 Handling RPC result for message 7163415159520531444
+2022-11-08 03:09:22,704 Receiving items from the network...
+2022-11-08 03:09:23,378 Assigned msg_id = 7163415163822241216 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:23,378 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:23,380 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:23,380 Waiting for messages to send...
+2022-11-08 03:09:23,380 Assigned msg_id = 7163415163830365568 to MsgsAck (19b314ec370)
+2022-11-08 03:09:23,380 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:23,381 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:23,381 Waiting for messages to send...
+2022-11-08 03:09:23,467 Handling acknowledge for [7163415163822241216]
+2022-11-08 03:09:23,467 Receiving items from the network...
+2022-11-08 03:09:23,474 Handling update Updates
+2022-11-08 03:09:23,474 Receiving items from the network...
+2022-11-08 03:09:23,814 Handling RPC result for message 7163415163822241216
+2022-11-08 03:09:23,821 Receiving items from the network...
+2022-11-08 03:09:24,378 Assigned msg_id = 7163415168116697344 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:24,379 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:24,380 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:24,380 Waiting for messages to send...
+2022-11-08 03:09:24,380 Assigned msg_id = 7163415168124776872 to MsgsAck (19b314c3e50)
+2022-11-08 03:09:24,380 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:24,381 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:24,382 Waiting for messages to send...
+2022-11-08 03:09:24,734 Handling RPC result for message 7163415168116697344
+2022-11-08 03:09:24,743 Receiving items from the network...
+2022-11-08 03:09:25,379 Assigned msg_id = 7163415172415380156 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:25,379 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:25,380 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:25,380 Waiting for messages to send...
+2022-11-08 03:09:25,381 Assigned msg_id = 7163415172423142112 to MsgsAck (19b314d2860)
+2022-11-08 03:09:25,381 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:25,381 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:25,382 Waiting for messages to send...
+2022-11-08 03:09:25,465 Handling acknowledge for [7163415172415380156]
+2022-11-08 03:09:25,466 Receiving items from the network...
+2022-11-08 03:09:25,500 Handling update Updates
+2022-11-08 03:09:25,500 Receiving items from the network...
+2022-11-08 03:09:25,698 Handling RPC result for message 7163415172415380156
+2022-11-08 03:09:25,706 Receiving items from the network...
+2022-11-08 03:09:26,176 Handling update UpdateShort
+2022-11-08 03:09:26,176 Receiving items from the network...
+2022-11-08 03:09:26,183 Handling update Updates
+2022-11-08 03:09:26,183 Receiving items from the network...
+2022-11-08 03:09:26,395 Assigned msg_id = 7163415176772952356 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:26,395 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:26,395 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:26,395 Waiting for messages to send...
+2022-11-08 03:09:26,395 Assigned msg_id = 7163415176776595392 to MsgsAck (19b314ed5a0)
+2022-11-08 03:09:26,395 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:26,396 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:26,397 Waiting for messages to send...
+2022-11-08 03:09:26,710 Handling RPC result for message 7163415176772952356
+2022-11-08 03:09:26,716 Receiving items from the network...
+2022-11-08 03:09:26,763 Handling gzipped data
+2022-11-08 03:09:26,764 Handling update Updates
+2022-11-08 03:09:26,764 Receiving items from the network...
+2022-11-08 03:09:27,039 Handling update UpdateShort
+2022-11-08 03:09:27,039 Receiving items from the network...
+2022-11-08 03:09:27,046 Handling update Updates
+2022-11-08 03:09:27,046 Receiving items from the network...
+2022-11-08 03:09:27,403 Assigned msg_id = 7163415181095714488 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:27,403 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:27,406 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:27,406 Waiting for messages to send...
+2022-11-08 03:09:27,406 Assigned msg_id = 7163415181111812512 to MsgsAck (19b3145b880)
+2022-11-08 03:09:27,406 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:27,410 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:27,411 Waiting for messages to send...
+2022-11-08 03:09:27,712 Handling RPC result for message 7163415181095714488
+2022-11-08 03:09:27,719 Receiving items from the network...
+2022-11-08 03:09:27,770 Handling update Updates
+2022-11-08 03:09:27,770 Receiving items from the network...
+2022-11-08 03:09:28,408 Assigned msg_id = 7163415185417328400 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:28,408 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:28,410 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:28,410 Waiting for messages to send...
+2022-11-08 03:09:28,410 Assigned msg_id = 7163415185425459428 to MsgsAck (19b3147b580)
+2022-11-08 03:09:28,410 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:28,412 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:28,412 Waiting for messages to send...
+2022-11-08 03:09:28,715 Handling RPC result for message 7163415185417328400
+2022-11-08 03:09:28,722 Receiving items from the network...
+2022-11-08 03:09:29,408 Assigned msg_id = 7163415189711803600 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:29,408 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:29,409 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:29,409 Waiting for messages to send...
+2022-11-08 03:09:29,409 Assigned msg_id = 7163415189715922520 to MsgsAck (19b3153cd30)
+2022-11-08 03:09:29,409 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:29,409 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:29,409 Waiting for messages to send...
+2022-11-08 03:09:29,737 Handling RPC result for message 7163415189711803600
+2022-11-08 03:09:29,743 Receiving items from the network...
+2022-11-08 03:09:30,409 Assigned msg_id = 7163415194010096356 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:30,409 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:30,410 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:30,410 Waiting for messages to send...
+2022-11-08 03:09:30,410 Assigned msg_id = 7163415194014191436 to MsgsAck (19b314cff10)
+2022-11-08 03:09:30,410 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:30,411 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:30,411 Waiting for messages to send...
+2022-11-08 03:09:30,492 Handling acknowledge for [7163415194010096356]
+2022-11-08 03:09:30,492 Receiving items from the network...
+2022-11-08 03:09:30,499 Handling update Updates
+2022-11-08 03:09:30,499 Receiving items from the network...
+2022-11-08 03:09:30,499 Handling update UpdateShort
+2022-11-08 03:09:30,499 Receiving items from the network...
+2022-11-08 03:09:30,502 Handling update Updates
+2022-11-08 03:09:30,502 Receiving items from the network...
+2022-11-08 03:09:30,505 Handling update Updates
+2022-11-08 03:09:30,506 Receiving items from the network...
+2022-11-08 03:09:30,510 Handling update Updates
+2022-11-08 03:09:30,510 Receiving items from the network...
+2022-11-08 03:09:30,513 Handling update Updates
+2022-11-08 03:09:30,514 Receiving items from the network...
+2022-11-08 03:09:30,691 Handling RPC result for message 7163415194010096356
+2022-11-08 03:09:30,696 Receiving items from the network...
+2022-11-08 03:09:31,005 Timeout waiting for updates expired
+2022-11-08 03:09:31,402 Assigned msg_id = 7163415198276925492 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:31,402 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:31,403 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:31,403 Waiting for messages to send...
+2022-11-08 03:09:31,403 Assigned msg_id = 7163415198280915668 to MsgsAck (19b3152f340)
+2022-11-08 03:09:31,403 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:31,404 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:31,404 Waiting for messages to send...
+2022-11-08 03:09:31,782 Handling container
+2022-11-08 03:09:31,782 Handling update UpdateShort
+2022-11-08 03:09:31,782 Handling update Updates
+2022-11-08 03:09:31,782 Handling acknowledge for [7163415198276925492]
+2022-11-08 03:09:31,782 Receiving items from the network...
+2022-11-08 03:09:31,792 Handling update Updates
+2022-11-08 03:09:31,792 Receiving items from the network...
+2022-11-08 03:09:31,983 Handling RPC result for message 7163415198276925492
+2022-11-08 03:09:32,001 Receiving items from the network...
+2022-11-08 03:09:32,065 Handling update Updates
+2022-11-08 03:09:32,066 Receiving items from the network...
+2022-11-08 03:09:32,409 Assigned msg_id = 7163415202598595672 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:32,409 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:32,410 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:32,410 Waiting for messages to send...
+2022-11-08 03:09:32,410 Assigned msg_id = 7163415202602602056 to MsgsAck (19b3150f400)
+2022-11-08 03:09:32,411 Encrypting 1 message(s) in 84 bytes for sending
+2022-11-08 03:09:32,412 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:32,412 Waiting for messages to send...
+2022-11-08 03:09:32,714 Handling RPC result for message 7163415202598595672
+2022-11-08 03:09:32,719 Receiving items from the network...
+2022-11-08 03:09:33,410 Assigned msg_id = 7163415206898934060 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:33,410 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:33,411 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:33,412 Waiting for messages to send...
+2022-11-08 03:09:33,412 Assigned msg_id = 7163415206906925852 to MsgsAck (19b314dfd90)
+2022-11-08 03:09:33,412 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:33,413 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:33,413 Waiting for messages to send...
+2022-11-08 03:09:33,712 Handling RPC result for message 7163415206898934060
+2022-11-08 03:09:33,720 Receiving items from the network...
+2022-11-08 03:09:34,412 Assigned msg_id = 7163415211204092320 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:34,412 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:34,416 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:34,416 Waiting for messages to send...
+2022-11-08 03:09:34,417 Assigned msg_id = 7163415211224034604 to MsgsAck (19b3152fdf0)
+2022-11-08 03:09:34,417 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:34,420 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:34,420 Waiting for messages to send...
+2022-11-08 03:09:34,499 Handling acknowledge for [7163415211204092320]
+2022-11-08 03:09:34,500 Receiving items from the network...
+2022-11-08 03:09:34,505 Handling update Updates
+2022-11-08 03:09:34,505 Receiving items from the network...
+2022-11-08 03:09:34,692 Handling RPC result for message 7163415211204092320
+2022-11-08 03:09:34,697 Receiving items from the network...
+2022-11-08 03:09:34,704 Found message with hash 6073e6885ca1008f01fc86031802977c:
+    Здравствуйте, продам рекламу на канале, в котором **самый дорогой VIP в Telegram в тематике СЛИВЫ** 🔥
+    
+    **Мца 97% , Максимально платежеспособная аудитория (приватка от 1к до 10к)**, любую статистику предоставляю.
+    
+    Сегодня и завтра закупаем рекламу в других каналах на 10.000₽
+    
+    💎Закупаем рекламу каждый день
+    📱Трафик TG-поиск + TG-закупы
+    👀Охват: 15.000
+    📈Статистика +++
+    
+    1️⃣** СЕТКА СЛИВЫ 18+ :
+    
+    **https://t.me/+qQD7-1-BNgg4MzMy
+    
+    https://t.me/+o-Y9aEfTUqQ5MTc6
+    
+    https://t.me/+y2lxNhHhce5iNWMy
+    
+    🌆Утро - 2000р (1/24)
+    🏞День - 2200р (1/24)
+    🌄Вечер - 2400р (1/24)
+    🌌Ночь - 2600р (10/24)
+    
+    ✅ Публикую сразу в 3 каналах (можно по отдельности)
+    
+    **❗️ПИСАТЬ АДМИНУ:** @SAP_TUT
+    
+    #продамрекламу #продажа #эро #эротика #сливы #блогерши #реклама 
+With keywords : ['купаем', 'купаем']
+Message excluded because of keywords: ['продам', 'продам', 'продаж']
+
+2022-11-08 03:09:34,706 Found message with hash 87b7007b382576a7dddd0eced3e38792:
+    Здравствуйте, продам рекламу на каналах **в тематике КРИПТА** **СИГНАЛЫ / НОВОСТИ / БОКСЫ** 🔥
+    
+    **ЦА из криптовалют, Максимально платежеспособная аудитория (есть VIP от 100$ до 1000$)**, любую статистику предоставляю.
+    
+    Сегодня и завтра закупаем рекламу в других каналах на 500$
+    
+    💎Закупаем рекламу каждый день
+    📱Трафик только TG 
+    👥Подписчиков: 10.000
+    👀Охват: 3500
+    📈Статистика +++
+    
+    [1️⃣ CRYPTONIT TRADE (сигналы](https://t.me/+NztKDrtJeDk1OGIy))** :
+    
+    1/24 - 130$ 
+    2/24 - 140$ 
+    10/24 - 150$ (топ ночи)
+    по пдп - 1.8$ (гарант)
+    
+    **📝Отзывы: t.me/+Qvj_bz9qHWFjZGZi
+    
+    [2️⃣ CRYPTONIT NEWS (новости](https://t.me/+qbjum3h3SKA1NjIx))** :
+    
+    1/24 - 35$ 
+    2/24 - 40$ 
+    10/24 - 50$** ** (топ ночи)
+    
+    
+    **[3️⃣ CRYPTONIT BOX (боксы](https://t.me/joinchat/ZQ8fcbEhNkdkMjk6))** :
+    
+    1/24 - 15$ (боксом)
+    2/24 - 18$ 
+    10/24 - 20$ (топ ночи)
+    
+    **✅ **При покупке сразу в 3 каналах действует скидка
+    
+    ❗️ПИСАТЬ АДМИНУ:** @BOG_CRYPT
+    
+    #продамрекламу #продажа #крипта #криптовалюты #крипто #криптоновости #сигналы #боксы #реклама 
+With keywords : ['купаем', 'купаем']
+Message excluded because of keywords: ['продам', 'продам', 'продаж']
+
+2022-11-08 03:09:34,709 Found message with hash 9585f370cc2e29ae49d4be9f4c65e1a7:
+    **Для облегчения работы в Telegram, мы создали специальные чаты по покупке/продаже рекламы!
+    
+    Список чатов Grami:
+    **1.  [Покупка Продажа](https://t.me/Reklama_grami) 
+    2.  [Только Покупка](https://t.me/joinchat/O0uaFB1j82endlHGoscduw)   
+    3.  [VIP ЧАТ
+    
+    ](https://t.me/joinchat/HFNrEVIkdH6fvxhuWHQBEQ)Делись с друзьями 🥰
+    __P.s. Ссылки кликабельны__ 
+With keywords : ['покупка', 'покупка']
+Message excluded because of keywords: ['чаты по', 'продаж', 'продаж']
+
+2022-11-08 03:09:34,712 Found message with hash 632480f08d48562bd7e3f7157c46656b:
+    Здравствуйте, продам рекламу на канале, который входит в **ТОП-5 в тематике Психология** и **в ТОП-5 в тематике Цитаты **🔥
+    
+    **95% Женщины РФ 20-35 лет, Максимально платежеспособная аудитория
+    
+    **Сегодня и завтра закупаем рекламу в других каналах на 20.000₽
+    
+    #психология #саморазвитие #жца #продамрекламу #продажа
+    
+    💎Закупаем рекламу каждый день
+    📱Трафик TG + Instagram
+    👥Подписчики: 200.000
+    📈Статистика +++
+    
+    1/24-3990₽
+    2/24 - 4490₽
+    2/48 - 5090₽
+    3/72 - 5490₽
+    3/ без удаления - 5999₽
+    
+    💎**3/без удаления + 7 дней в закреплённом сообщении - 9999**₽💎
+    
+    **📝РЕКЛАМНЫЕ ОТЗЫВЫ: **@MYSLI_OTZIV
+    
+    **✅КАНАЛ:** @Psikhologia_Tsitaty
+    
+    ❗️ПИСАТЬ АДМИНУ: @MYSLI_ADMIN
+    
+    #продамрекламу #продажа #психология #цитаты #ЖЦА #реклама 
+With keywords : ['купаем', 'купаем']
+Message excluded because of keywords: ['продам', 'продам', 'продаж', 'продам', 'продаж']
+
+2022-11-08 03:09:34,721 Found message with hash a85847b818af31c33f1737723ad56d2f:
+    📢**Продам рекламу**
+    📢**Рассмотрю ВП
+    **⭐**Культура секса:** __t.me/CS_013____
+    __➖➖➖➖➖➖➖➖➖➖➖➖➖
+    ◀️**Тематика:** __Психология и отношения
+    __➖➖➖➖➖➖➖➖➖➖➖➖➖
+    ◀️Живая и отзывчивая аудитория
+    👻 шикарная отдача 🔥🔥🔥
+    👻 трафик ТГ 📱
+    ➖➖➖➖➖➖➖➖➖➖➖➖➖
+    ⏳➡️__**1/24** - 6__00₽⬅️🔥
+    ⏳➡️2/48 - 800₽⬅️🔥
+    ➖➖➖➖➖➖➖➖➖➖➖➖➖
+    🖥Так же продам софт(рассылка)🖥
+    ➖➖➖➖➖➖➖➖➖➖➖➖➖
+    📧 👻➡️👻 __@admSC_013__ 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продам', 'продам']
+
+2022-11-08 03:09:34,740 Found message with hash 6d7139f4ac7fb47beaa9a5e8490729aa:
+    Продам рекламу 
+    в свежем канале 🔥
+    
+    Взрослая ЖЦА 90% 👧
+    Отличная отдача👍
+    Закупы в:
+    кулинарии, здоровье, лайфхаках✅
+    Рассмотрю ВП 
+    1/24- 900 р.
+    О да, еда! - 
+    https://t.me/oda_edarus 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продам']
+
+2022-11-08 03:09:35,412 Assigned msg_id = 7163415215498352944 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:35,412 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:35,413 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:35,413 Waiting for messages to send...
+2022-11-08 03:09:35,413 Assigned msg_id = 7163415215501813828 to MsgsAck (19b3145a920)
+2022-11-08 03:09:35,413 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:35,414 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:35,414 Waiting for messages to send...
+2022-11-08 03:09:35,494 Handling acknowledge for [7163415215498352944]
+2022-11-08 03:09:35,494 Receiving items from the network...
+2022-11-08 03:09:35,526 Handling update Updates
+2022-11-08 03:09:35,526 Receiving items from the network...
+2022-11-08 03:09:35,529 Handling update Updates
+2022-11-08 03:09:35,529 Receiving items from the network...
+2022-11-08 03:09:35,823 Handling RPC result for message 7163415215498352944
+2022-11-08 03:09:35,829 Receiving items from the network...
+2022-11-08 03:09:35,854 Found message with hash 0f6e677c20c5c0335d2a40f4754aaf7f:
+    [AдXот](https://t.me/+QKpWbNw5o69hZTli) — вот здесь закупают рекламу опытные админы. Ничего неyдивительного в этом нет, т.к. площадка существенно **экoнoмит рекламный бюджeт**!
+    
+    При этом на сервисе [AдXот](https://t.me/+QKpWbNw5o69hZTli) админы также эффективно продaют рекламу на своих каналах и легко **закрывают cвободные мeста**!
+    
+    Присоединяйся к [AдXот](https://t.me/+QKpWbNw5o69hZTli) и эффективно Продавай и Закупай! 
+    
+    **Отзывы** **админов
+    **[AдXотПромо](https://t.me/+3Mx_NppuVOAzMDYy)
+    
+    380003800038000380003800038 
+With keywords : ['купаю']
+Message excluded because of keywords: ['aдxот', 'aдxот', 'aдxот', 'aдxот']
+
+2022-11-08 03:09:35,857 Found message with hash 77b096375e6e2e25c77e43ab44f8f34f:
+    #продамрекламу**
+    **❗️❗️❗️❗️❗️**
+    **🔥**РЕКЛАМА**🔥
+    
+    **Канал - ****https://t.me/nigri_jessica**
+    
+    **14к+ подписчиков, огромные просмотры (без накрутки) Платежеспособная аудитория** - покупают вип подписку.
+    ❗️**Охват больше 10к!❗️**
+    
+    **Цена за один пост:**
+    __(Часов в топе/Часов в ленте)__
+    
+    📌**2/24 - 600 руб.
+    📌3/48 - 800 руб.
+    📌4/96 - 1000 руб.
+    
+    📊Статистика - **https://t.me/jessica_pricetg
+    
+    **Писать** - @gutsuru
+    
+    🎈🎈🎈 #продамрекламу #реклама 
+With keywords : ['купаю']
+Message excluded because of keywords: ['продам', 'продам']
+
+2022-11-08 03:09:35,858 Found message with hash 97a46813e389bf07a12ff5469d92d33a:
+    💼Пойду в канал аdmином/закупщиком,
+    опыт большой🤝, отзывы имеются✍🏻. выведу канал в быстрые сроки на + стату📈
+    💵Закупаю на свой бюджет при старте работы. 
+With keywords : ['купаю']
+Message excluded because of keywords: ['пойду', 'закупщиком']
+
+2022-11-08 03:09:36,414 Assigned msg_id = 7163415219799265444 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:36,414 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:36,416 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:36,416 Waiting for messages to send...
+2022-11-08 03:09:36,416 Assigned msg_id = 7163415219807033120 to MsgsAck (19b31383a90)
+2022-11-08 03:09:36,416 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:36,417 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:36,417 Waiting for messages to send...
+2022-11-08 03:09:36,497 Handling acknowledge for [7163415219799265444]
+2022-11-08 03:09:36,497 Receiving items from the network...
+2022-11-08 03:09:36,538 Handling update Updates
+2022-11-08 03:09:36,538 Receiving items from the network...
+2022-11-08 03:09:36,540 Handling update Updates
+2022-11-08 03:09:36,540 Receiving items from the network...
+2022-11-08 03:09:36,540 Handling RPC result for message 7163415219799265444
+2022-11-08 03:09:36,541 Receiving items from the network...
+2022-11-08 03:09:36,541 Assigned msg_id = 7163415220308874668 to MsgsAck (19b31380250)
+2022-11-08 03:09:36,541 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:36,542 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:36,542 Waiting for messages to send...
+2022-11-08 03:09:36,542 Assigned msg_id = 7163415220313003124 to MsgsAck (19b31382b90)
+2022-11-08 03:09:36,542 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:36,542 Sleeping for 3s (0:00:03) on GetHistoryRequest flood wait
+2022-11-08 03:09:36,543 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:36,543 Waiting for messages to send...
+2022-11-08 03:09:39,529 Assigned msg_id = 7163415233144526904 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:39,529 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:39,530 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:39,530 Waiting for messages to send...
+2022-11-08 03:09:39,616 Handling container
+2022-11-08 03:09:39,616 Handling update Updates
+2022-11-08 03:09:39,616 Handling acknowledge for [7163415233144526904]
+2022-11-08 03:09:39,616 Receiving items from the network...
+2022-11-08 03:09:39,625 Handling update Updates
+2022-11-08 03:09:39,626 Receiving items from the network...
+2022-11-08 03:09:39,633 Handling update Updates
+2022-11-08 03:09:39,633 Receiving items from the network...
+2022-11-08 03:09:39,639 Handling update Updates
+2022-11-08 03:09:39,639 Receiving items from the network...
+2022-11-08 03:09:39,645 Handling update Updates
+2022-11-08 03:09:39,645 Receiving items from the network...
+2022-11-08 03:09:40,005 Handling RPC result for message 7163415233144526904
+2022-11-08 03:09:40,012 Receiving items from the network...
+2022-11-08 03:09:40,015 Found message with hash 2a3221ef9a197a06cc26ad8901095cef:
+    #Продам рекламу  
+    #вп
+    
+    1️⃣  Тематика: #Юмор
+    
+    2️⃣ Канал [Анекдоты для взрослых 🍒](https://t.me/poshlhumor)
+    Подписчиков 109к +
+    Охваты 12к +
+    
+    Цены обговариваются с админом в зависимости от тематики вашей рекламы.
+    
+    Также рассматриваю взаимопиар, закупы.
+    
+    Рассмотрю на покупку ваши каналы.
+    
+    По всем вопросам пишите пожалуйста сюда:👇👇👇
+    @richadvokat 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продам']
+
+2022-11-08 03:09:40,026 Found message with hash c552777c2193d9d03ce488d301cdb8d7:
+    Куплю старые каналы 
+With keywords : ['куплю']
+Message excluded because of keywords: ['Куплю старые канал']
+
+2022-11-08 03:09:40,037 Found message with hash dc281f54299836dc8d71200646f3c171:
+    **Здравствуйте, предлагаю вам разместить вашу рекламу в** свежем, авторском канале ,залитом на прямом посте ,имеющей платежеспособную взрослую целевую аудиторию!
+    
+    **Цены:**
+    1/24 - 320
+    3/48 - 450
+    
+    **Делаем скидки,**т**ак же активно закупаемся!**
+    
+    **Сам канал:** https://t.me/+VWFTD5i3RMVkYmVi
+    
+    #куплю #реклама #продам #дешево 
+With keywords : ['купаем', 'куплю']
+Message excluded because of keywords: ['продам']
+
+2022-11-08 03:09:40,041 Found message with hash dc78977400b8d6f436f5a1f7f0c42428:
+    ⭕️  **@ggwqj**** **⭕️
+    
+    **1**. 💡***Обучение по ведению канала с нуля*** 
+    __(Результаты до монетизации.)__✅
+    
+    **2**. ⚙️**Подключим любого бота для вашего проекта .
+    **__(Бот оплаты , бот продажи и т.д)
+    
+    __**3**. 💵**Продам базу чатов , или отдельно любые чаты по вашему запросу.
+    ** (__Полезные** **чаты / площадки для ведения Канала**) __****.
+    
+    
+    4. ✅ Обучение тик-ток
+    ** ( __от начала создания , до перелива в тг__)** **.
+    
+    **5.** **__⚙️__Продам софт для рассылки смс по чатам **.
+    __(Так же в наличии : Парсер /Инвайтер.)
+    
+    __6. ⭕️**Накрутка любые СОЦ сети **(__реальные подписчики__ )🫂.
+    
+    
+    **8**. 💸**Предоставим услуги - Закупщика рекламы **.❗️
+    __(Закупаем только качественно , быстро и всегда подешевле .)
+    
+    __**9.✅НАПИШЕМ ЛЮБОГО БОТА , ДЛЯ ВАС , ТАК ЖЕ ПОДКЛЮЧИМ БОТА ДЛЯ ОПЛАТЫ ТОВАРОВ , (**__и все что с этим связано).
+    
+    __**10.✅Дизайн , любой сложности:
+    (**__аватары , баннеры , логотипы__** )
+    Крео под ваш канал .
+    
+    11.✅НАПИШУ ПОСТЫ ЛЮБОЙ СЛОЖНОСТИ ДЛЯ ВАШЕГО КАНАЛА 🖊
+    
+    12. ✅Закуп качественной рекламы вам в канал.
+    **__(Так же админство ваших проектов вывод статистики в +).
+    
+    __**13.✅Услуги копирайтера для любого канала
+    ** ( __примеры в личные смс __) .
+    
+    **✔️Все в ЛС  обсудим ✍️
+    ⭕️****@ggwqj**⭕️ 
+With keywords : ['купаем']
+Message excluded because of keywords: ['продаж', 'продам', 'чаты по', 'накрутка', 'услуги', 'услуги']
+
+2022-11-08 03:09:40,062 Assigned msg_id = 7163415235572466920 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:40,062 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:40,063 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:40,064 Waiting for messages to send...
+2022-11-08 03:09:40,064 Assigned msg_id = 7163415235580445360 to MsgsAck (19b314844f0)
+2022-11-08 03:09:40,064 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:40,064 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:40,064 Waiting for messages to send...
+2022-11-08 03:09:40,150 Handling container
+2022-11-08 03:09:40,150 Handling update Updates
+2022-11-08 03:09:40,150 Handling acknowledge for [7163415235572466920]
+2022-11-08 03:09:40,150 Receiving items from the network...
+2022-11-08 03:09:40,426 Handling RPC result for message 7163415235572466920
+2022-11-08 03:09:40,432 Receiving items from the network...
+2022-11-08 03:09:40,436 Found message with hash 47bcd576b59412d1ecdb41bb19f9c985:
+    ✅**ПРОДАМ РЕКЛАМУ**✅
+    
+    ➖➖➖➖➖➖➖➖➖➖
+    ✈️Канал: t.me/mymillionsdollar
+    ➡️Тематика:  #саморазвитие #психология
+    
+    🟡Охват: ~ до 6к
+    🟡Подписчиков: 68к
+    🟡Условия: 1/24, 2/24
+    
+    ➖➖➖➖➖➖➖➖➖➖
+    ✈️Канал: t.me/shelbypsih
+    ➡️Тематика:  #психология  
+    
+    🟡Охват: ~ до 3к
+    🟡Подписчиков:  28к
+    🟡Условия: 1/24, 2/24
+    ➖➖➖➖➖➖➖➖➖➖
+    ✅Рассмотрю ВП 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продам']
+
+2022-11-08 03:09:40,475 Handling update Updates
+2022-11-08 03:09:40,475 Receiving items from the network...
+2022-11-08 03:09:41,067 Assigned msg_id = 7163415239886185360 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:41,067 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:41,069 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:41,070 Waiting for messages to send...
+2022-11-08 03:09:41,070 Assigned msg_id = 7163415239898144436 to MsgsAck (19b3151cdf0)
+2022-11-08 03:09:41,070 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:41,073 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:41,073 Waiting for messages to send...
+2022-11-08 03:09:41,154 Handling acknowledge for [7163415239886185360]
+2022-11-08 03:09:41,154 Receiving items from the network...
+2022-11-08 03:09:41,163 Handling update Updates
+2022-11-08 03:09:41,163 Receiving items from the network...
+2022-11-08 03:09:41,498 Handling RPC result for message 7163415239886185360
+2022-11-08 03:09:41,505 Receiving items from the network...
+2022-11-08 03:09:41,657 Timeout waiting for updates expired
+2022-11-08 03:09:42,063 Assigned msg_id = 7163415244164707496 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:42,063 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:42,064 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:42,064 Waiting for messages to send...
+2022-11-08 03:09:42,064 Assigned msg_id = 7163415244168849304 to MsgsAck (19b315007f0)
+2022-11-08 03:09:42,064 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:42,065 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:42,065 Waiting for messages to send...
+2022-11-08 03:09:42,147 Handling acknowledge for [7163415244164707496]
+2022-11-08 03:09:42,147 Receiving items from the network...
+2022-11-08 03:09:42,165 Handling update Updates
+2022-11-08 03:09:42,165 Receiving items from the network...
+2022-11-08 03:09:42,933 Handling RPC result for message 7163415244164707496
+2022-11-08 03:09:42,939 Receiving items from the network...
+2022-11-08 03:09:42,942 Found message with hash 1ef957d55d59cc420b5fa0a3043562a4:
+    **⚡️ Продам рекламные места⚡️
+    
+    📌 Тема: Психология
+    
+    📲 Канал: ****https://t.me/ejednevnik_1****
+    
+    ‼️4/24 - 170 рублей, Ночь(12/24) - 200руб, навсегда - 300 рублей ‼️
+    
+    ⚡️РАССМОТРЮ ВП⚡️
+    
+    ⬆️СТАТИСТИКА В ТЕЛЕМЕТРЕ НЕ СООТВЕТСТВУЕТ ДЕЙСТВИТЕЛЬНОСТИ⬆️** 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продам']
+
+2022-11-08 03:09:42,960 Assigned msg_id = 7163415247755373312 to GetChannelsRequest (19b3150cf40)
+2022-11-08 03:09:42,960 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:42,960 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:42,961 Waiting for messages to send...
+2022-11-08 03:09:42,961 Assigned msg_id = 7163415247759495092 to MsgsAck (19b314df160)
+2022-11-08 03:09:42,961 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:42,961 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:42,961 Waiting for messages to send...
+2022-11-08 03:09:43,046 Handling RPC result for message 7163415247755373312
+2022-11-08 03:09:43,046 Receiving items from the network...
+2022-11-08 03:09:43,047 Assigned msg_id = 7163415248394991832 to GetUsersRequest (19b314de560)
+2022-11-08 03:09:43,047 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:43,047 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,047 Waiting for messages to send...
+2022-11-08 03:09:43,047 Assigned msg_id = 7163415248398940996 to MsgsAck (19b314deb00)
+2022-11-08 03:09:43,047 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:43,048 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,048 Waiting for messages to send...
+2022-11-08 03:09:43,138 Handling RPC result for message 7163415248394991832
+2022-11-08 03:09:43,138 Receiving items from the network...
+2022-11-08 03:09:43,146 Found message with hash 877905c4b9064abaa21e0bd7ba93ae65:
+    Куплю каналы, созданные в 2015 и 2016 и 2020годов, сразу ссылку 
+With keywords : ['куплю']
+Message excluded because of keywords: ['куплю канал']
+
+2022-11-08 03:09:43,174 Assigned msg_id = 7163415248903713184 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:43,175 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:43,175 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,175 Waiting for messages to send...
+2022-11-08 03:09:43,175 Assigned msg_id = 7163415248907838776 to MsgsAck (19b314cdd50)
+2022-11-08 03:09:43,175 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:43,176 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,176 Waiting for messages to send...
+2022-11-08 03:09:43,483 Handling RPC result for message 7163415248903713184
+2022-11-08 03:09:43,489 Receiving items from the network...
+2022-11-08 03:09:43,503 Handling update Updates
+2022-11-08 03:09:43,503 Receiving items from the network...
+2022-11-08 03:09:43,503 Assigned msg_id = 7163415250220533328 to GetChannelsRequest (19b3151fbb0)
+2022-11-08 03:09:43,503 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:43,503 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,503 Waiting for messages to send...
+2022-11-08 03:09:43,503 Assigned msg_id = 7163415250220533332 to MsgsAck (19b314df490)
+2022-11-08 03:09:43,504 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:43,504 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,504 Waiting for messages to send...
+2022-11-08 03:09:43,588 Handling container
+2022-11-08 03:09:43,588 Handling update Updates
+2022-11-08 03:09:43,588 Handling acknowledge for [7163415250220533328]
+2022-11-08 03:09:43,589 Receiving items from the network...
+2022-11-08 03:09:43,590 Handling RPC result for message 7163415250220533328
+2022-11-08 03:09:43,590 Receiving items from the network...
+2022-11-08 03:09:43,590 Assigned msg_id = 7163415250568002656 to GetUsersRequest (19b314de230)
+2022-11-08 03:09:43,590 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:43,591 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,591 Waiting for messages to send...
+2022-11-08 03:09:43,591 Assigned msg_id = 7163415250571989016 to MsgsAck (19b314ddf60)
+2022-11-08 03:09:43,591 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:43,592 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:43,592 Waiting for messages to send...
+2022-11-08 03:09:43,678 Handling RPC result for message 7163415250568002656
+2022-11-08 03:09:43,678 Receiving items from the network...
+2022-11-08 03:09:43,702 Found message with hash f1023d94668ff7e447302266d9efe149:
+    **🔥НА ЗАВТРА ЛЮБОЕ УДОБНОЕ ДЛЯ ВАС ВРЕМЯ
+    
+    ОТДАЧА КЛАССНАЯ!!!** **СТАТА СЕГОДНЯ КРАСНАЯ, ТАК КАК ДОБАВЛЯЮ ВЕЧЕРОМ
+    
+    **‼️**Тематика:** Новости и СМИ
+    
+    ✅**Канал:**[ Злободневный вестник
+    ](https://t.me/+CwWlfL1QralmMDAy)💬**Связь по всем вопросам:** @zlobadnyaaa
+    
+    **💰Стоимость: 
+    1/24 — 600** **рублей
+    
+    P.S. Также с удовольствием рассмотрю для покупки места в свежезалитых или молодых каналах. 
+    
+    Пишите в ЛС с предложениями о покупке, продаже, отвечу всем поздно ночью.** 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продаж']
+
+2022-11-08 03:09:43,705 Found message with hash 5b029ca2d1fe4d080b56b4bad3aa2f6f:
+    💥 Самоокупаемая АВТОВОРОНКА продаж
+    ▶️ https://telegra.ph/avtovoronka-04-25
+    
+    💥 Не получается привлечь партнёров в бизнес? Дарю палочку-выручалочку. Помогу Вам автоматизировать поток трафика
+    
+    💥 ОБЪЯВЛЕНА РАЗДАЧА БЕСПЛАТНОГО ТРАФИКА ИЗ Telegram!!!
+    СОБЕРИ КОМАНДУ БЕЗ ПРИГЛАШЕНИЙ!!!                                        
+    
+    💥  Помогаю в создании воронки продаж, приводящих
+    партнёров на автопилоте
+    
+    💥 Рекомендую всем, кто занят в Интернет Бизнесе, 
+    схему добычи мощного трафика из Telegram. 
+    ▶️ https://t.me/AvtoRekruterBot 
+With keywords : ['купаем']
+Message excluded because of keywords: ['воронка продаж', 'продаж']
+
+2022-11-08 03:09:44,174 Assigned msg_id = 7163415253201518612 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:44,174 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:44,175 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:44,175 Waiting for messages to send...
+2022-11-08 03:09:44,175 Assigned msg_id = 7163415253205051024 to MsgsAck (19b314c37f0)
+2022-11-08 03:09:44,175 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:44,176 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:44,176 Waiting for messages to send...
+2022-11-08 03:09:44,262 Handling container
+2022-11-08 03:09:44,262 Handling update Updates
+2022-11-08 03:09:44,262 Handling acknowledge for [7163415253201518612]
+2022-11-08 03:09:44,262 Receiving items from the network...
+2022-11-08 03:09:44,462 Handling RPC result for message 7163415253201518612
+2022-11-08 03:09:44,468 Receiving items from the network...
+2022-11-08 03:09:44,850 Handling container
+2022-11-08 03:09:44,851 Handling update UpdateShort
+2022-11-08 03:09:44,851 Handling update Updates
+2022-11-08 03:09:44,851 Receiving items from the network...
+2022-11-08 03:09:45,174 Assigned msg_id = 7163415257494445048 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:45,174 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:45,176 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:45,176 Waiting for messages to send...
+2022-11-08 03:09:45,176 Assigned msg_id = 7163415257502272804 to MsgsAck (19b314df7f0)
+2022-11-08 03:09:45,176 Encrypting 1 message(s) in 84 bytes for sending
+2022-11-08 03:09:45,178 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:45,178 Waiting for messages to send...
+2022-11-08 03:09:45,264 Handling container
+2022-11-08 03:09:45,264 Handling update Updates
+2022-11-08 03:09:45,264 Handling acknowledge for [7163415257494445048]
+2022-11-08 03:09:45,264 Receiving items from the network...
+2022-11-08 03:09:45,459 Handling RPC result for message 7163415257494445048
+2022-11-08 03:09:45,466 Receiving items from the network...
+2022-11-08 03:09:45,469 Found message with hash 5cd4b49cb99aa3942411217458efa176:
+    ⚡️Куплю ваши каналы от 5к охвата только Взрослая ЖЦА
+    Бюджет неограничен ⚡️
+    
+    🔥Интересно: Кулинария, Здоровье, Фитнес, Лайфхаки, Садоводство, Рукоделие🔥 
+With keywords : ['куплю']
+Message excluded because of keywords: ['Куплю ваши канал']
+
+2022-11-08 03:09:45,499 Found message with hash ae69bace50029684bcef4b487250f948:
+    #ПродамРекламу 
+    ▪️Канал: [Поговорим о сексе
+    ](https://t.me/+YoUTdVmYbco5MjUy)https://t.me/+YoUTdVmYbco5MjUy
+    ▪️Подписчики: 6500+
+    ▪️Тематика: познавательное
+    ▪️**Условия размещения:1/24 - 400руб.
+    
+    **▪️Канал: [Идеи заработка
+    https://t.me/+bgaVi1DKAVAxMTZi
+    ](https://t.me/+gMyLHFj-2MRjZGQy)▪️Подписчики: 7400+
+    ▪️Тематика: Бизнес, идеи заработка
+    ▪️**Условия размещения:1/24 -300руб
+    
+    ▪️Сразу в 2-х 1/24 - 600руб❗️
+    Рассмотрю варианты ВП‼️
+    **▪️**Для покупки писать:** @crazypsv 
+With keywords : ['рассмотрю']
+Message excluded because of keywords: ['продам']
+
+2022-11-08 03:09:45,511 Handling update Updates
+2022-11-08 03:09:45,511 Receiving items from the network...
+2022-11-08 03:09:46,162 Assigned msg_id = 7163415261743790472 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:46,162 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:46,163 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:46,163 Waiting for messages to send...
+2022-11-08 03:09:46,163 Assigned msg_id = 7163415261747089232 to MsgsAck (19b314598d0)
+2022-11-08 03:09:46,163 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:46,164 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:46,164 Waiting for messages to send...
+2022-11-08 03:09:46,472 Handling RPC result for message 7163415261743790472
+2022-11-08 03:09:46,478 Receiving items from the network...
+2022-11-08 03:09:47,163 Assigned msg_id = 7163415266040564024 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:47,163 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:47,164 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:47,164 Waiting for messages to send...
+2022-11-08 03:09:47,164 Assigned msg_id = 7163415266044675316 to MsgsAck (19b3151e0e0)
+2022-11-08 03:09:47,164 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:47,164 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:47,165 Waiting for messages to send...
+2022-11-08 03:09:47,479 Handling RPC result for message 7163415266040564024
+2022-11-08 03:09:47,486 Receiving items from the network...
+2022-11-08 03:09:47,502 Found message with hash 12257423e29c3bcbadca325cbe71f4aa:
+    Куплю стендоф трафик 
+With keywords : ['куплю']
+Message excluded because of keywords: ['Куплю стендоф трафик']
+
+2022-11-08 03:09:48,165 Assigned msg_id = 7163415270342780200 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:48,165 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:48,167 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:48,167 Waiting for messages to send...
+2022-11-08 03:09:48,167 Assigned msg_id = 7163415270350222676 to MsgsAck (19b31479990)
+2022-11-08 03:09:48,167 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:48,168 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:48,168 Waiting for messages to send...
+2022-11-08 03:09:48,253 Handling container
+2022-11-08 03:09:48,253 Handling update Updates
+2022-11-08 03:09:48,253 Handling acknowledge for [7163415270342780200]
+2022-11-08 03:09:48,253 Receiving items from the network...
+2022-11-08 03:09:48,549 Handling RPC result for message 7163415270342780200
+2022-11-08 03:09:48,556 Receiving items from the network...
+2022-11-08 03:09:48,825 Handling update UpdateShort
+2022-11-08 03:09:48,825 Receiving items from the network...
+2022-11-08 03:09:48,954 Handling gzipped data
+2022-11-08 03:09:48,955 Handling update Updates
+2022-11-08 03:09:48,955 Receiving items from the network...
+2022-11-08 03:09:49,163 Assigned msg_id = 7163415274629049032 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:49,163 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:49,164 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:49,164 Waiting for messages to send...
+2022-11-08 03:09:49,164 Assigned msg_id = 7163415274633149832 to MsgsAck (19b3151c910)
+2022-11-08 03:09:49,164 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:09:49,165 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:49,165 Waiting for messages to send...
+2022-11-08 03:09:49,250 Handling acknowledge for [7163415274629049032]
+2022-11-08 03:09:49,250 Receiving items from the network...
+2022-11-08 03:09:49,268 Handling update Updates
+2022-11-08 03:09:49,268 Receiving items from the network...
+2022-11-08 03:09:49,441 Handling RPC result for message 7163415274629049032
+2022-11-08 03:09:49,447 Receiving items from the network...
+2022-11-08 03:09:49,517 Handling update UpdateShort
+2022-11-08 03:09:49,517 Receiving items from the network...
+2022-11-08 03:09:50,158 Assigned msg_id = 7163415278905216548 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:50,158 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:50,159 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:50,159 Waiting for messages to send...
+2022-11-08 03:09:50,160 Assigned msg_id = 7163415278913198800 to MsgsAck (19b31513e50)
+2022-11-08 03:09:50,160 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:50,160 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:50,160 Waiting for messages to send...
+2022-11-08 03:09:50,247 Handling container
+2022-11-08 03:09:50,247 Handling update Updates
+2022-11-08 03:09:50,247 Handling acknowledge for [7163415278905216548]
+2022-11-08 03:09:50,247 Receiving items from the network...
+2022-11-08 03:09:50,253 Handling update Updates
+2022-11-08 03:09:50,253 Receiving items from the network...
+2022-11-08 03:09:50,524 Handling RPC result for message 7163415278905216548
+2022-11-08 03:09:50,530 Receiving items from the network...
+2022-11-08 03:09:50,563 Found message with hash eda40d762a0f9793202a04a6fff95dfb:
+    🔰**BitStage - удобный BTC кошелек
+    
+    **🤖 Работает прямо в телеграм 
+    🦾 Простой и понятный интерфейс
+    😈 Надежная команда разработки
+    
+    💸 Отправка и получение
+    💳 Покупка и продажа
+    〽️ Выбор комиссии сети
+    
+    💩 Без KYC и AML
+    💥 Для любых целей
+    
+    👊 **Анонимно, надежно, безопасно!
+    
+    **Регистрация: 👉 @BitStageBot 
+With keywords : ['покупка']
+Message excluded because of keywords: ['продаж', 'регистрация']
+
+2022-11-08 03:09:51,158 Assigned msg_id = 7163415283201403592 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:51,159 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:51,160 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:51,160 Waiting for messages to send...
+2022-11-08 03:09:51,161 Assigned msg_id = 7163415283213408444 to MsgsAck (19b3133ff10)
+2022-11-08 03:09:51,161 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:51,163 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:51,163 Waiting for messages to send...
+2022-11-08 03:09:51,245 Handling acknowledge for [7163415283201403592]
+2022-11-08 03:09:51,245 Receiving items from the network...
+2022-11-08 03:09:51,277 Handling update Updates
+2022-11-08 03:09:51,278 Receiving items from the network...
+2022-11-08 03:09:51,280 Handling container
+2022-11-08 03:09:51,281 Handling update UpdateShort
+2022-11-08 03:09:51,281 Handling update UpdateShort
+2022-11-08 03:09:51,281 Receiving items from the network...
+2022-11-08 03:09:51,290 Handling update Updates
+2022-11-08 03:09:51,291 Receiving items from the network...
+2022-11-08 03:09:51,293 Handling update Updates
+2022-11-08 03:09:51,293 Receiving items from the network...
+2022-11-08 03:09:51,447 Handling RPC result for message 7163415283201403592
+2022-11-08 03:09:51,453 Receiving items from the network...
+2022-11-08 03:09:51,512 Handling update Updates
+2022-11-08 03:09:51,512 Receiving items from the network...
+2022-11-08 03:09:51,793 Timeout waiting for updates expired
+2022-11-08 03:09:52,154 Assigned msg_id = 7163415287481541252 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:52,154 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:52,156 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:52,156 Waiting for messages to send...
+2022-11-08 03:09:52,157 Assigned msg_id = 7163415287493676760 to MsgsAck (19b314cd4b0)
+2022-11-08 03:09:52,157 Encrypting 1 message(s) in 100 bytes for sending
+2022-11-08 03:09:52,158 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:52,159 Waiting for messages to send...
+2022-11-08 03:09:52,255 Handling container
+2022-11-08 03:09:52,255 Handling update UpdateShort
+2022-11-08 03:09:52,255 Handling update UpdateShort
+2022-11-08 03:09:52,255 Handling update Updates
+2022-11-08 03:09:52,255 Handling acknowledge for [7163415287481541252]
+2022-11-08 03:09:52,256 Receiving items from the network...
+2022-11-08 03:09:52,267 Handling update Updates
+2022-11-08 03:09:52,267 Receiving items from the network...
+2022-11-08 03:09:52,560 Handling RPC result for message 7163415287481541252
+2022-11-08 03:09:52,567 Receiving items from the network...
+2022-11-08 03:09:52,767 Timeout waiting for updates expired
+2022-11-08 03:09:53,150 Assigned msg_id = 7163415291757927160 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:53,150 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:53,151 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:53,151 Waiting for messages to send...
+2022-11-08 03:09:53,151 Assigned msg_id = 7163415291762025096 to MsgsAck (19b31471de0)
+2022-11-08 03:09:53,151 Encrypting 1 message(s) in 84 bytes for sending
+2022-11-08 03:09:53,152 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:53,152 Waiting for messages to send...
+2022-11-08 03:09:53,233 Handling acknowledge for [7163415291757927160]
+2022-11-08 03:09:53,234 Receiving items from the network...
+2022-11-08 03:09:53,240 Handling update Updates
+2022-11-08 03:09:53,240 Receiving items from the network...
+2022-11-08 03:09:53,247 Handling update Updates
+2022-11-08 03:09:53,247 Receiving items from the network...
+2022-11-08 03:09:53,436 Handling RPC result for message 7163415291757927160
+2022-11-08 03:09:53,442 Receiving items from the network...
+2022-11-08 03:09:54,151 Assigned msg_id = 7163415296058499200 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:54,151 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:54,155 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:54,163 Waiting for messages to send...
+2022-11-08 03:09:54,165 Assigned msg_id = 7163415296114172796 to MsgsAck (19b314d2f20)
+2022-11-08 03:09:54,166 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:54,176 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:54,176 Waiting for messages to send...
+2022-11-08 03:09:54,190 Handling container
+2022-11-08 03:09:54,190 Handling update UpdateShort
+2022-11-08 03:09:54,190 Handling update Updates
+2022-11-08 03:09:54,190 Receiving items from the network...
+2022-11-08 03:09:54,198 Handling update Updates
+2022-11-08 03:09:54,198 Receiving items from the network...
+2022-11-08 03:09:54,257 Handling container
+2022-11-08 03:09:54,257 Handling update UpdateShort
+2022-11-08 03:09:54,257 Handling acknowledge for [7163415296058499200]
+2022-11-08 03:09:54,257 Receiving items from the network...
+2022-11-08 03:09:54,290 Handling update Updates
+2022-11-08 03:09:54,290 Receiving items from the network...
+2022-11-08 03:09:54,489 Handling RPC result for message 7163415296058499200
+2022-11-08 03:09:54,496 Receiving items from the network...
+2022-11-08 03:09:54,512 Found message with hash 4c959ba3795c83a01011bf329db487fc:
+    🔥**Доступный и простой доход в Telegram**🔥
+    
+    ✅ **Преимущества** владения монетой DNT (Donate)
+    〰️  Пассивный доход от 3 до 20% в месяц на премии от майнинга
+    〰️  Ежедневные начисления
+    〰️  Ввод/вывод через Payeer на карту
+    〰️  Маркетинг линейный, доход от депозитов партнеров.
+    〰️  Токен Donate растет от каждой покупки.
+    〰️  Уникальная технология обеспечения и ликвидности монеты через автоматический обменник.
+    〰️  Мгновенные транзакции на собственной Blockchain сети Tron.
+    〰️  Возможность тратить и получать монету Donate через товары и услуги на Онлайн Рынке 4A.
+    〰️  Окупаемость зависит от цены покупки/продажи.
+    〰️  Управляющий состав с 10-25 летним опытом в бизнесе.
+    〰️  Полная свобода от влияния крипто-рынка.
+    〰️  Покупка доступна с любой суммы.
+    
+    ✅ **Цель Donate** - Приобщить людей к благотворительности, заработку и развитию личности; сделать монету Donate стандартом в сфере благотворительности, помощи, развития, науки, образования.
+    
+    Регистрация по ссылке👇
+    https://t.me/Done_4A_bot?start=1657510325830 
+With keywords : ['купаем', 'покупка']
+Message excluded because of keywords: ['услуги', 'окупаемост', 'продаж', 'регистрация']
+
+2022-11-08 03:09:54,547 Handling update Updates
+2022-11-08 03:09:54,548 Receiving items from the network...
+2022-11-08 03:09:55,145 Assigned msg_id = 7163415300330245480 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:55,146 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:55,148 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,149 Waiting for messages to send...
+2022-11-08 03:09:55,149 Assigned msg_id = 7163415300346354944 to MsgsAck (19b314ddc90)
+2022-11-08 03:09:55,149 Encrypting 1 message(s) in 108 bytes for sending
+2022-11-08 03:09:55,153 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,153 Waiting for messages to send...
+2022-11-08 03:09:55,253 Handling container
+2022-11-08 03:09:55,253 Handling update Updates
+2022-11-08 03:09:55,253 Handling acknowledge for [7163415300330245480]
+2022-11-08 03:09:55,253 Receiving items from the network...
+2022-11-08 03:09:55,262 Handling update Updates
+2022-11-08 03:09:55,262 Receiving items from the network...
+2022-11-08 03:09:55,433 Handling RPC result for message 7163415300330245480
+2022-11-08 03:09:55,439 Receiving items from the network...
+2022-11-08 03:09:55,459 Assigned msg_id = 7163415301586175424 to GetChannelsRequest (19b31510f70)
+2022-11-08 03:09:55,459 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:55,459 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,460 Waiting for messages to send...
+2022-11-08 03:09:55,460 Assigned msg_id = 7163415301590164644 to MsgsAck (19b314ccbb0)
+2022-11-08 03:09:55,460 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:55,460 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,460 Waiting for messages to send...
+2022-11-08 03:09:55,546 Handling RPC result for message 7163415301586175424
+2022-11-08 03:09:55,546 Receiving items from the network...
+2022-11-08 03:09:55,546 Assigned msg_id = 7163415301933426364 to GetUsersRequest (19b3151fc70)
+2022-11-08 03:09:55,546 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:55,547 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,547 Waiting for messages to send...
+2022-11-08 03:09:55,547 Assigned msg_id = 7163415301937426072 to MsgsAck (19b3151f280)
+2022-11-08 03:09:55,548 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:55,549 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,549 Waiting for messages to send...
+2022-11-08 03:09:55,636 Handling RPC result for message 7163415301933426364
+2022-11-08 03:09:55,637 Receiving items from the network...
+2022-11-08 03:09:55,641 Found new message 2159866, 🥇Покупка Продажа | Grami, 2022-11-07 15:55:47+00:00:
+        Дайте ночи до 3000₽
+Keywords extracted : ['дайте']
+
+2022-11-08 03:09:55,641 Assigned msg_id = 7163415302312070352 to ForwardMessagesRequest (19b3151f0d0)
+2022-11-08 03:09:55,642 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:55,644 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,645 Waiting for messages to send...
+2022-11-08 03:09:55,645 Assigned msg_id = 7163415302327827916 to MsgsAck (19b3151f880)
+2022-11-08 03:09:55,645 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:55,648 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,648 Waiting for messages to send...
+2022-11-08 03:09:55,769 Handling RPC result for message 7163415302312070352
+2022-11-08 03:09:55,770 Receiving items from the network...
+2022-11-08 03:09:55,777 Assigned msg_id = 7163415302858596308 to SendMessageRequest (19b314c34c0)
+2022-11-08 03:09:55,777 Encrypting 1 message(s) in 144 bytes for sending
+2022-11-08 03:09:55,780 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,780 Waiting for messages to send...
+2022-11-08 03:09:55,780 Assigned msg_id = 7163415302870362744 to MsgsAck (19b3151fc70)
+2022-11-08 03:09:55,780 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:09:55,782 Timeout waiting for updates expired
+2022-11-08 03:09:55,782 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:55,782 Waiting for messages to send...
+2022-11-08 03:09:55,948 Handling RPC result for message 7163415302858596308
+2022-11-08 03:09:55,949 Receiving items from the network...
+2022-11-08 03:09:55,991 Handling update Updates
+2022-11-08 03:09:55,991 Receiving items from the network...
+2022-11-08 03:09:56,150 Assigned msg_id = 7163415304643660652 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:56,150 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:56,153 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,153 Waiting for messages to send...
+2022-11-08 03:09:56,154 Assigned msg_id = 7163415304659425840 to MsgsAck (19b3147b3d0)
+2022-11-08 03:09:56,154 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:56,156 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,157 Waiting for messages to send...
+2022-11-08 03:09:56,538 Handling RPC result for message 7163415304643660652
+2022-11-08 03:09:56,546 Receiving items from the network...
+2022-11-08 03:09:56,565 Found message with hash 7cc40a202b45b1b3c55efeef6201d8f5:
+    Здравствуйте, продам рекламу на канале, который входит в **ТОП-30 в тематике Психология** и **в ТОП-10 в тематике Цитаты **🔥
+    
+    **85% Женщины РФ 20-35 лет, Максимально платежеспособная аудитория
+    
+    **Сегодня и завтра закупаем рекламу в других каналах на 15.000₽
+    
+    💎Закупаем рекламу каждый день
+    📱Трафик только TG 
+    👥Подписчики: 110.000
+    📈Статистика +++
+    
+    1/24-2490р
+    2/24 - 2990р
+    10/24-3290р
+    2/48 - 3590р
+    10/48 - 3990р
+    3/ без удаления - 4999р
+    
+    💎**3/без удаления + 7 дней в закреплённом сообщении - 7999р**💎
+    
+    **📝РЕКЛАМНЫЕ ОТЗЫВЫ: **@UGOLOK_OTZIV
+    
+    **✅КАНАЛ:** @UGOLOK_PSI
+    
+    ❗️ПИСАТЬ АДМИНУ: @MYSLI_ADMIN
+    
+    #продамрекламу #продажа #саморазвитие #образование #психология #цитаты #ЖЦА #МЦА #реклама 
+With keywords : ['купаем', 'купаем']
+Message excluded because of keywords: ['продам', 'продам', 'продаж']
+
+2022-11-08 03:09:56,585 Handling update Updates
+2022-11-08 03:09:56,586 Receiving items from the network...
+2022-11-08 03:09:56,586 Assigned msg_id = 7163415306385854828 to GetChannelsRequest (19b314cf280)
+2022-11-08 03:09:56,586 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:56,586 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,586 Waiting for messages to send...
+2022-11-08 03:09:56,586 Assigned msg_id = 7163415306385854832 to MsgsAck (19b314cc820)
+2022-11-08 03:09:56,586 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:56,587 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,587 Waiting for messages to send...
+2022-11-08 03:09:56,783 Handling container
+2022-11-08 03:09:56,783 Handling RPC result for message 7163415306385854828
+2022-11-08 03:09:56,784 Handling update Updates
+2022-11-08 03:09:56,784 Receiving items from the network...
+2022-11-08 03:09:56,784 Assigned msg_id = 7163415307178740608 to GetUsersRequest (19b31470340)
+2022-11-08 03:09:56,784 Encrypting 1 message(s) in 48 bytes for sending
+2022-11-08 03:09:56,786 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,786 Waiting for messages to send...
+2022-11-08 03:09:56,786 Assigned msg_id = 7163415307186709508 to MsgsAck (19b31471d20)
+2022-11-08 03:09:56,786 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:56,787 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,788 Waiting for messages to send...
+2022-11-08 03:09:56,868 Handling acknowledge for [7163415307178740608]
+2022-11-08 03:09:56,868 Receiving items from the network...
+2022-11-08 03:09:56,876 Handling update Updates
+2022-11-08 03:09:56,876 Receiving items from the network...
+2022-11-08 03:09:56,918 Handling RPC result for message 7163415307178740608
+2022-11-08 03:09:56,918 Receiving items from the network...
+2022-11-08 03:09:56,919 Found new message 2160009, 🥇Покупка Продажа | Grami, 2022-11-07 18:28:52+00:00:
+        Куплю в каналах с заработком на играх, НЕ СКАМ!!
+        Пишите, куплю все
+Keywords extracted : ['куплю', 'куплю']
+
+2022-11-08 03:09:56,920 Assigned msg_id = 7163415307717799292 to ForwardMessagesRequest (19b315100d0)
+2022-11-08 03:09:56,920 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:09:56,920 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,920 Waiting for messages to send...
+2022-11-08 03:09:56,920 Assigned msg_id = 7163415307721785652 to MsgsAck (19b31510310)
+2022-11-08 03:09:56,920 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:09:56,921 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:56,921 Waiting for messages to send...
+2022-11-08 03:09:56,950 Handling container
+2022-11-08 03:09:56,950 Handling update UpdateShort
+2022-11-08 03:09:56,951 Handling update Updates
+2022-11-08 03:09:56,951 Receiving items from the network...
+2022-11-08 03:09:57,007 Handling container
+2022-11-08 03:09:57,007 Handling update UpdateShort
+2022-11-08 03:09:57,007 Handling acknowledge for [7163415307717799292]
+2022-11-08 03:09:57,007 Receiving items from the network...
+2022-11-08 03:09:57,038 Handling RPC result for message 7163415307717799292
+2022-11-08 03:09:57,039 Receiving items from the network...
+2022-11-08 03:09:57,041 Assigned msg_id = 7163415308502119768 to SendMessageRequest (19b314f09a0)
+2022-11-08 03:09:57,041 Encrypting 1 message(s) in 144 bytes for sending
+2022-11-08 03:09:57,044 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:57,045 Waiting for messages to send...
+2022-11-08 03:09:57,045 Assigned msg_id = 7163415308517913568 to MsgsAck (19b314598d0)
+2022-11-08 03:09:57,045 Encrypting 1 message(s) in 84 bytes for sending
+2022-11-08 03:09:57,047 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:57,047 Waiting for messages to send...
+2022-11-08 03:09:57,134 Handling container
+2022-11-08 03:09:57,134 Handling update Updates
+2022-11-08 03:09:57,134 Handling acknowledge for [7163415308502119768]
+2022-11-08 03:09:57,134 Receiving items from the network...
+2022-11-08 03:09:57,136 Handling update Updates
+2022-11-08 03:09:57,136 Receiving items from the network...
+2022-11-08 03:09:57,172 Handling RPC result for message 7163415308502119768
+2022-11-08 03:09:57,172 Receiving items from the network...
+2022-11-08 03:09:57,176 Found message with hash 69d55f27dd277797020d0fdbc30e3770:
+    Здравствуйте, продам рекламу на канале, в котором **самый дорогой VIP в Telegram в тематике СЛИВЫ** 🔥
+    
+    **Мца 97% , Максимально платежеспособная аудитория (приватка от 1к до 10к)**, любую статистику предоставляю.
+    
+    Сегодня и завтра закупаем рекламу в других каналах на 10.000₽
+    
+    💎Закупаем рекламу каждый день
+    📱Трафик TG-поиск + TG-закупы
+    👀Охват: 13.000
+    📈Статистика +++
+    
+    1️⃣** СЕТКА СЛИВЫ 18+ :
+    
+    **https://t.me/+qQD7-1-BNgg4MzMy
+    
+    https://t.me/+o-Y9aEfTUqQ5MTc6
+    
+    🌆Утро - 2100р (1/24)
+    🏞День - 2200р (1/24)
+    🌄Вечер - 2300р (1/24)
+    🌌Ночь - 2500р (10/24)
+    
+    ✅ Публикую сразу в 2 каналах (можно по отдельности)
+    
+    **❗️ПИСАТЬ АДМИНУ:** @SAP_TUT
+    
+    #продамрекламу #продажа #эро #эротика #сливы #блогерши #реклама 
+With keywords : ['купаем', 'купаем']
+Message excluded because of keywords: ['продам', 'продам', 'продаж']
+
+2022-11-08 03:09:57,178 Found message with hash 750f1840fa1866dbd237b0664aecb18d:
+    Куплю все ваши каналы 
+    
+    Сразу ссылку и цену! Иначе спам. 
+With keywords : ['куплю']
+Message excluded because of keywords: ['Куплю все ваши канал']
+
+2022-11-08 03:09:57,182 Assigned msg_id = 7163415309067508448 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:57,183 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:57,184 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:57,184 Waiting for messages to send...
+2022-11-08 03:09:57,184 Assigned msg_id = 7163415309075477348 to MsgsAck (19b314c1420)
+2022-11-08 03:09:57,184 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:57,185 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:57,185 Waiting for messages to send...
+2022-11-08 03:09:57,271 Handling container
+2022-11-08 03:09:57,271 Handling update Updates
+2022-11-08 03:09:57,271 Handling acknowledge for [7163415309067508448]
+2022-11-08 03:09:57,271 Receiving items from the network...
+2022-11-08 03:09:57,277 Handling update Updates
+2022-11-08 03:09:57,277 Receiving items from the network...
+2022-11-08 03:09:57,555 Handling RPC result for message 7163415309067508448
+2022-11-08 03:09:57,561 Receiving items from the network...
+2022-11-08 03:09:57,605 Handling update Updates
+2022-11-08 03:09:57,605 Receiving items from the network...
+2022-11-08 03:09:57,638 Timeout waiting for updates expired
+2022-11-08 03:09:57,660 Assigned msg_id = 7163415310980476128 to PingRequest (19b31380100)
+2022-11-08 03:09:57,660 Encrypting 1 message(s) in 28 bytes for sending
+2022-11-08 03:09:57,660 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:57,661 Waiting for messages to send...
+2022-11-08 03:09:57,661 Assigned msg_id = 7163415310984464396 to MsgsAck (19b31513a90)
+2022-11-08 03:09:57,661 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:09:57,661 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:57,661 Waiting for messages to send...
+2022-11-08 03:09:57,749 Handling container
+2022-11-08 03:09:57,749 Handling pong for message 7163415310980476128
+2022-11-08 03:09:57,749 Handling update Updates
+2022-11-08 03:09:57,749 Receiving items from the network...
+2022-11-08 03:09:57,757 Handling update Updates
+2022-11-08 03:09:57,757 Receiving items from the network...
+2022-11-08 03:09:57,761 Handling update Updates
+2022-11-08 03:09:57,761 Receiving items from the network...
+2022-11-08 03:09:57,766 Handling update Updates
+2022-11-08 03:09:57,766 Receiving items from the network...
+2022-11-08 03:09:57,769 Handling update Updates
+2022-11-08 03:09:57,769 Receiving items from the network...
+2022-11-08 03:09:58,178 Assigned msg_id = 7163415313344699256 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:58,178 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:58,179 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:58,179 Waiting for messages to send...
+2022-11-08 03:09:58,179 Assigned msg_id = 7163415313348677028 to MsgsAck (19b314f03a0)
+2022-11-08 03:09:58,179 Encrypting 1 message(s) in 84 bytes for sending
+2022-11-08 03:09:58,180 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:58,180 Waiting for messages to send...
+2022-11-08 03:09:58,267 Handling container
+2022-11-08 03:09:58,268 Handling update Updates
+2022-11-08 03:09:58,268 Handling acknowledge for [7163415313344699256]
+2022-11-08 03:09:58,268 Receiving items from the network...
+2022-11-08 03:09:58,277 Handling update Updates
+2022-11-08 03:09:58,277 Receiving items from the network...
+2022-11-08 03:09:58,447 Handling RPC result for message 7163415313344699256
+2022-11-08 03:09:58,452 Receiving items from the network...
+2022-11-08 03:09:58,475 Found message with hash 68e4bff9168e5a7fd2f5c2ae8769c8b3:
+    ykano (chill) привет, это сеть чатов Grami 💸😈
+    
+    
+    ✅Правила: 
+    1. Спам/флуд - БАН
+    2. Порно тематика - БАН
+    
+    
+    Другие чаты Grami:
+    1. https://t.me/joinchat/O0uaFB1j82endlHGoscduw  - только покупка
+    2. https://t.me/joinchat/MaVuLVIkdH6zWWFjHjlmog - VIP chat 
+    
+    
+    Удачи ❤️💸 
+With keywords : ['покупка']
+Message excluded because of keywords: ['это сеть чат']
+
+2022-11-08 03:09:59,179 Assigned msg_id = 7163415317644542688 to GetHistoryRequest (19b31383fd0)
+2022-11-08 03:09:59,179 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:59,181 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:59,181 Waiting for messages to send...
+2022-11-08 03:09:59,182 Assigned msg_id = 7163415317656518928 to MsgsAck (19b3147a680)
+2022-11-08 03:09:59,182 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:09:59,184 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:59,184 Waiting for messages to send...
+2022-11-08 03:09:59,266 Handling acknowledge for [7163415317644542688]
+2022-11-08 03:09:59,266 Receiving items from the network...
+2022-11-08 03:09:59,274 Handling update Updates
+2022-11-08 03:09:59,274 Receiving items from the network...
+2022-11-08 03:09:59,279 Handling update Updates
+2022-11-08 03:09:59,279 Receiving items from the network...
+2022-11-08 03:09:59,362 Handling RPC result for message 7163415317644542688
+2022-11-08 03:09:59,363 Receiving items from the network...
+2022-11-08 03:09:59,376 Assigned msg_id = 7163415318427119248 to GetHistoryRequest (19b31382080)
+2022-11-08 03:09:59,376 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:59,376 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:59,376 Waiting for messages to send...
+2022-11-08 03:09:59,377 Assigned msg_id = 7163415318431252472 to MsgsAck (19b31512a10)
+2022-11-08 03:09:59,377 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:09:59,377 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:59,377 Waiting for messages to send...
+2022-11-08 03:09:59,415 Handling gzipped data
+2022-11-08 03:09:59,415 Handling update Updates
+2022-11-08 03:09:59,415 Receiving items from the network...
+2022-11-08 03:09:59,469 Handling RPC result for message 7163415318427119248
+2022-11-08 03:09:59,469 Receiving items from the network...
+2022-11-08 03:09:59,469 Assigned msg_id = 7163415318805153840 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:09:59,469 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:09:59,470 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:59,470 Waiting for messages to send...
+2022-11-08 03:09:59,470 Assigned msg_id = 7163415318809133524 to MsgsAck (19b31511750)
+2022-11-08 03:09:59,470 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:09:59,471 Encrypted messages put in a queue to be sent
+2022-11-08 03:09:59,471 Waiting for messages to send...
+2022-11-08 03:09:59,624 Handling RPC result for message 7163415318805153840
+2022-11-08 03:09:59,630 Receiving items from the network...
+2022-11-08 03:10:00,008 Handling container
+2022-11-08 03:10:00,008 Handling update UpdateShort
+2022-11-08 03:10:00,008 Handling update Updates
+2022-11-08 03:10:00,008 Receiving items from the network...
+2022-11-08 03:10:00,506 Assigned msg_id = 7163415323248949640 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:00,506 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:00,508 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:00,508 Waiting for messages to send...
+2022-11-08 03:10:00,508 Assigned msg_id = 7163415323256927128 to MsgsAck (19b31473550)
+2022-11-08 03:10:00,508 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:10:00,511 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:00,511 Waiting for messages to send...
+2022-11-08 03:10:00,603 Handling container
+2022-11-08 03:10:00,603 Handling update UpdateShort
+2022-11-08 03:10:00,603 Handling update Updates
+2022-11-08 03:10:00,603 Handling acknowledge for [7163415323248949640]
+2022-11-08 03:10:00,603 Receiving items from the network...
+2022-11-08 03:10:00,611 Handling update Updates
+2022-11-08 03:10:00,612 Receiving items from the network...
+2022-11-08 03:10:00,619 Handling update Updates
+2022-11-08 03:10:00,619 Receiving items from the network...
+2022-11-08 03:10:00,677 Handling RPC result for message 7163415323248949640
+2022-11-08 03:10:00,686 Receiving items from the network...
+2022-11-08 03:10:00,808 Handling gzipped data
+2022-11-08 03:10:00,808 Handling update Updates
+2022-11-08 03:10:00,809 Receiving items from the network...
+2022-11-08 03:10:00,818 Handling update Updates
+2022-11-08 03:10:00,819 Receiving items from the network...
+2022-11-08 03:10:00,826 Handling update Updates
+2022-11-08 03:10:00,826 Receiving items from the network...
+2022-11-08 03:10:01,109 Timeout waiting for updates expired
+2022-11-08 03:10:01,498 Assigned msg_id = 7163415327512333152 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:01,498 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:01,499 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:01,499 Waiting for messages to send...
+2022-11-08 03:10:01,499 Assigned msg_id = 7163415327516410108 to MsgsAck (19b3150e830)
+2022-11-08 03:10:01,499 Encrypting 1 message(s) in 108 bytes for sending
+2022-11-08 03:10:01,500 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:01,500 Waiting for messages to send...
+2022-11-08 03:10:01,557 Handling gzipped data
+2022-11-08 03:10:01,557 Handling update Updates
+2022-11-08 03:10:01,557 Receiving items from the network...
+2022-11-08 03:10:01,560 Handling update Updates
+2022-11-08 03:10:01,560 Receiving items from the network...
+2022-11-08 03:10:01,563 Handling update Updates
+2022-11-08 03:10:01,563 Receiving items from the network...
+2022-11-08 03:10:01,568 Handling update Updates
+2022-11-08 03:10:01,568 Receiving items from the network...
+2022-11-08 03:10:01,697 Handling RPC result for message 7163415327512333152
+2022-11-08 03:10:01,700 Receiving items from the network...
+2022-11-08 03:10:02,500 Assigned msg_id = 7163415331812964320 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:02,500 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:02,501 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:02,501 Waiting for messages to send...
+2022-11-08 03:10:02,501 Assigned msg_id = 7163415331816951632 to MsgsAck (19b31513f40)
+2022-11-08 03:10:02,501 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:10:02,502 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:02,502 Waiting for messages to send...
+2022-11-08 03:10:02,533 Handling gzipped data
+2022-11-08 03:10:02,534 Handling update Updates
+2022-11-08 03:10:02,534 Receiving items from the network...
+2022-11-08 03:10:02,537 Handling update Updates
+2022-11-08 03:10:02,537 Receiving items from the network...
+2022-11-08 03:10:02,690 Handling RPC result for message 7163415331812964320
+2022-11-08 03:10:02,694 Receiving items from the network...
+2022-11-08 03:10:03,500 Assigned msg_id = 7163415336110167028 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:03,501 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:03,503 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:03,503 Waiting for messages to send...
+2022-11-08 03:10:03,503 Assigned msg_id = 7163415336122130872 to MsgsAck (19b31471a50)
+2022-11-08 03:10:03,503 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:10:03,505 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:03,505 Waiting for messages to send...
+2022-11-08 03:10:03,591 Handling container
+2022-11-08 03:10:03,591 Handling update Updates
+2022-11-08 03:10:03,591 Handling acknowledge for [7163415336110167028]
+2022-11-08 03:10:03,591 Receiving items from the network...
+2022-11-08 03:10:03,595 Handling update Updates
+2022-11-08 03:10:03,595 Receiving items from the network...
+2022-11-08 03:10:03,599 Handling update Updates
+2022-11-08 03:10:03,599 Receiving items from the network...
+2022-11-08 03:10:03,604 Handling update Updates
+2022-11-08 03:10:03,604 Receiving items from the network...
+2022-11-08 03:10:03,608 Handling update Updates
+2022-11-08 03:10:03,608 Receiving items from the network...
+2022-11-08 03:10:03,662 Handling RPC result for message 7163415336110167028
+2022-11-08 03:10:03,666 Receiving items from the network...
+2022-11-08 03:10:04,502 Assigned msg_id = 7163415340409823540 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:04,502 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:04,503 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:04,503 Waiting for messages to send...
+2022-11-08 03:10:04,503 Assigned msg_id = 7163415340413953904 to MsgsAck (19b3133fcd0)
+2022-11-08 03:10:04,503 Encrypting 1 message(s) in 92 bytes for sending
+2022-11-08 03:10:04,504 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:04,504 Waiting for messages to send...
+2022-11-08 03:10:04,585 Handling container
+2022-11-08 03:10:04,585 Handling update UpdateShort
+2022-11-08 03:10:04,585 Handling acknowledge for [7163415340409823540]
+2022-11-08 03:10:04,585 Receiving items from the network...
+2022-11-08 03:10:04,589 Handling update Updates
+2022-11-08 03:10:04,590 Receiving items from the network...
+2022-11-08 03:10:04,592 Handling update Updates
+2022-11-08 03:10:04,593 Receiving items from the network...
+2022-11-08 03:10:04,595 Handling update Updates
+2022-11-08 03:10:04,595 Receiving items from the network...
+2022-11-08 03:10:04,641 Handling RPC result for message 7163415340409823540
+2022-11-08 03:10:04,644 Receiving items from the network...
+2022-11-08 03:10:04,836 Handling container
+2022-11-08 03:10:04,836 Handling update UpdateShort
+2022-11-08 03:10:04,836 Handling update UpdateShort
+2022-11-08 03:10:04,836 Handling update Updates
+2022-11-08 03:10:04,837 Receiving items from the network...
+2022-11-08 03:10:05,511 Assigned msg_id = 7163415344743907696 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:05,511 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:05,512 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:05,512 Waiting for messages to send...
+2022-11-08 03:10:05,512 Assigned msg_id = 7163415344747915988 to MsgsAck (19b315135b0)
+2022-11-08 03:10:05,512 Encrypting 1 message(s) in 116 bytes for sending
+2022-11-08 03:10:05,514 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:05,514 Waiting for messages to send...
+2022-11-08 03:10:05,612 Handling container
+2022-11-08 03:10:05,612 Handling update Updates
+2022-11-08 03:10:05,612 Handling acknowledge for [7163415344743907696]
+2022-11-08 03:10:05,612 Receiving items from the network...
+2022-11-08 03:10:05,621 Handling container
+2022-11-08 03:10:05,621 Handling update UpdateShort
+2022-11-08 03:10:05,622 Handling update UpdateShort
+2022-11-08 03:10:05,622 Handling update Updates
+2022-11-08 03:10:05,622 Receiving items from the network...
+2022-11-08 03:10:05,623 Handling update UpdateShort
+2022-11-08 03:10:05,623 Receiving items from the network...
+2022-11-08 03:10:05,632 Handling update Updates
+2022-11-08 03:10:05,632 Receiving items from the network...
+2022-11-08 03:10:05,637 Handling update Updates
+2022-11-08 03:10:05,637 Receiving items from the network...
+2022-11-08 03:10:05,640 Handling update Updates
+2022-11-08 03:10:05,641 Receiving items from the network...
+2022-11-08 03:10:05,715 Handling RPC result for message 7163415344743907696
+2022-11-08 03:10:05,718 Receiving items from the network...
+2022-11-08 03:10:06,122 Timeout waiting for updates expired
+2022-11-08 03:10:06,178 Handling update UpdateShort
+2022-11-08 03:10:06,178 Receiving items from the network...
+2022-11-08 03:10:06,523 Assigned msg_id = 7163415349086132416 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:06,523 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:06,524 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:06,524 Waiting for messages to send...
+2022-11-08 03:10:06,524 Assigned msg_id = 7163415349090264688 to MsgsAck (19b3152efb0)
+2022-11-08 03:10:06,524 Encrypting 1 message(s) in 132 bytes for sending
+2022-11-08 03:10:06,525 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:06,525 Waiting for messages to send...
+2022-11-08 03:10:06,691 Handling RPC result for message 7163415349086132416
+2022-11-08 03:10:06,695 Receiving items from the network...
+2022-11-08 03:10:07,524 Assigned msg_id = 7163415353384996424 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:07,524 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:07,525 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:07,525 Waiting for messages to send...
+2022-11-08 03:10:07,525 Assigned msg_id = 7163415353388981828 to MsgsAck (19b3150f340)
+2022-11-08 03:10:07,525 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:10:07,526 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:07,526 Waiting for messages to send...
+2022-11-08 03:10:07,684 Handling RPC result for message 7163415353384996424
+2022-11-08 03:10:07,687 Receiving items from the network...
+2022-11-08 03:10:08,525 Assigned msg_id = 7163415357684492720 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:08,525 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:08,526 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:08,526 Waiting for messages to send...
+2022-11-08 03:10:08,527 Assigned msg_id = 7163415357692327156 to MsgsAck (19b314872e0)
+2022-11-08 03:10:08,527 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:10:08,528 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:08,528 Waiting for messages to send...
+2022-11-08 03:10:08,822 Handling RPC result for message 7163415357684492720
+2022-11-08 03:10:08,825 Receiving items from the network...
+2022-11-08 03:10:08,854 Handling update Updates
+2022-11-08 03:10:08,854 Receiving items from the network...
+2022-11-08 03:10:09,530 Assigned msg_id = 7163415361997169748 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:09,530 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:09,531 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:09,531 Waiting for messages to send...
+2022-11-08 03:10:09,531 Assigned msg_id = 7163415362001060740 to MsgsAck (19b3152de10)
+2022-11-08 03:10:09,531 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:10:09,531 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:09,531 Waiting for messages to send...
+2022-11-08 03:10:09,620 Handling container
+2022-11-08 03:10:09,620 Handling update Updates
+2022-11-08 03:10:09,620 Handling acknowledge for [7163415361997169748]
+2022-11-08 03:10:09,620 Receiving items from the network...
+2022-11-08 03:10:09,666 Handling update UpdateShort
+2022-11-08 03:10:09,666 Receiving items from the network...
+2022-11-08 03:10:09,687 Handling RPC result for message 7163415361997169748
+2022-11-08 03:10:09,702 Receiving items from the network...
+2022-11-08 03:10:10,531 Assigned msg_id = 7163415366295764820 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:10,531 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:10,532 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:10,532 Waiting for messages to send...
+2022-11-08 03:10:10,532 Assigned msg_id = 7163415366299867528 to MsgsAck (19b31471c60)
+2022-11-08 03:10:10,532 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:10:10,532 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:10,532 Waiting for messages to send...
+2022-11-08 03:10:10,620 Handling container
+2022-11-08 03:10:10,620 Handling update UpdateShort
+2022-11-08 03:10:10,620 Handling update Updates
+2022-11-08 03:10:10,620 Handling acknowledge for [7163415366295764820]
+2022-11-08 03:10:10,620 Receiving items from the network...
+2022-11-08 03:10:10,630 Handling update Updates
+2022-11-08 03:10:10,630 Receiving items from the network...
+2022-11-08 03:10:10,683 Handling RPC result for message 7163415366295764820
+2022-11-08 03:10:10,686 Receiving items from the network...
+2022-11-08 03:10:11,136 Timeout waiting for updates expired
+2022-11-08 03:10:11,518 Assigned msg_id = 7163415370540324708 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:11,518 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:11,521 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:11,521 Waiting for messages to send...
+2022-11-08 03:10:11,521 Assigned msg_id = 7163415370552292368 to MsgsAck (19b31484cd0)
+2022-11-08 03:10:11,522 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:10:11,524 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:11,524 Waiting for messages to send...
+2022-11-08 03:10:11,606 Handling acknowledge for [7163415370540324708]
+2022-11-08 03:10:11,606 Receiving items from the network...
+2022-11-08 03:10:11,611 Handling update Updates
+2022-11-08 03:10:11,611 Receiving items from the network...
+2022-11-08 03:10:11,613 Handling update Updates
+2022-11-08 03:10:11,613 Receiving items from the network...
+2022-11-08 03:10:11,620 Handling update Updates
+2022-11-08 03:10:11,621 Receiving items from the network...
+2022-11-08 03:10:11,632 Handling update UpdateShort
+2022-11-08 03:10:11,632 Receiving items from the network...
+2022-11-08 03:10:11,661 Handling RPC result for message 7163415370540324708
+2022-11-08 03:10:11,665 Receiving items from the network...
+2022-11-08 03:10:12,519 Assigned msg_id = 7163415374839855336 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:12,520 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:12,521 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:12,521 Waiting for messages to send...
+2022-11-08 03:10:12,521 Assigned msg_id = 7163415374847596308 to MsgsAck (19b3152ebf0)
+2022-11-08 03:10:12,522 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:10:12,523 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:12,523 Waiting for messages to send...
+2022-11-08 03:10:12,604 Handling acknowledge for [7163415374839855336]
+2022-11-08 03:10:12,604 Receiving items from the network...
+2022-11-08 03:10:12,628 Handling update Updates
+2022-11-08 03:10:12,628 Receiving items from the network...
+2022-11-08 03:10:12,667 Handling RPC result for message 7163415374839855336
+2022-11-08 03:10:12,671 Receiving items from the network...
+2022-11-08 03:10:13,520 Assigned msg_id = 7163415379136314180 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:13,520 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:13,522 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:13,522 Waiting for messages to send...
+2022-11-08 03:10:13,522 Assigned msg_id = 7163415379144291664 to MsgsAck (19b31470f40)
+2022-11-08 03:10:13,522 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:10:13,523 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:13,523 Waiting for messages to send...
+2022-11-08 03:10:13,661 Handling RPC result for message 7163415379136314180
+2022-11-08 03:10:13,665 Receiving items from the network...
+2022-11-08 03:10:14,521 Assigned msg_id = 7163415383435214428 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:14,522 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:14,524 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:14,524 Waiting for messages to send...
+2022-11-08 03:10:14,524 Assigned msg_id = 7163415383447182084 to MsgsAck (19b31500310)
+2022-11-08 03:10:14,525 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:10:14,527 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:14,527 Waiting for messages to send...
+2022-11-08 03:10:14,609 Handling acknowledge for [7163415383435214428]
+2022-11-08 03:10:14,609 Receiving items from the network...
+2022-11-08 03:10:14,614 Handling update Updates
+2022-11-08 03:10:14,614 Receiving items from the network...
+2022-11-08 03:10:14,619 Handling update Updates
+2022-11-08 03:10:14,620 Receiving items from the network...
+2022-11-08 03:10:14,743 Handling RPC result for message 7163415383435214428
+2022-11-08 03:10:14,747 Receiving items from the network...
+2022-11-08 03:10:15,422 Handling update UpdateShort
+2022-11-08 03:10:15,422 Receiving items from the network...
+2022-11-08 03:10:15,438 Handling update Updates
+2022-11-08 03:10:15,438 Receiving items from the network...
+2022-11-08 03:10:15,517 Assigned msg_id = 7163415387717396764 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:15,517 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:15,520 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:15,520 Waiting for messages to send...
+2022-11-08 03:10:15,520 Assigned msg_id = 7163415387729494124 to MsgsAck (19b3150fe80)
+2022-11-08 03:10:15,521 Encrypting 1 message(s) in 76 bytes for sending
+2022-11-08 03:10:15,523 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:15,523 Waiting for messages to send...
+2022-11-08 03:10:15,726 Handling RPC result for message 7163415387717396764
+2022-11-08 03:10:15,730 Receiving items from the network...
+2022-11-08 03:10:16,519 Assigned msg_id = 7163415392018275888 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:16,520 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:16,522 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:16,522 Waiting for messages to send...
+2022-11-08 03:10:16,522 Assigned msg_id = 7163415392030372292 to MsgsAck (19b31486d10)
+2022-11-08 03:10:16,522 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:10:16,524 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:16,524 Waiting for messages to send...
+2022-11-08 03:10:16,535 Handling update UpdateShort
+2022-11-08 03:10:16,535 Receiving items from the network...
+2022-11-08 03:10:16,674 Handling RPC result for message 7163415392018275888
+2022-11-08 03:10:16,680 Receiving items from the network...
+2022-11-08 03:10:17,520 Assigned msg_id = 7163415396318137440 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:17,520 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:17,522 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:17,522 Waiting for messages to send...
+2022-11-08 03:10:17,522 Assigned msg_id = 7163415396326248440 to MsgsAck (19b31500670)
+2022-11-08 03:10:17,522 Encrypting 1 message(s) in 44 bytes for sending
+2022-11-08 03:10:17,524 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:17,524 Waiting for messages to send...
+2022-11-08 03:10:17,606 Handling container
+2022-11-08 03:10:17,606 Handling update Updates
+2022-11-08 03:10:17,606 Handling acknowledge for [7163415396318137440]
+2022-11-08 03:10:17,606 Receiving items from the network...
+2022-11-08 03:10:17,680 Handling RPC result for message 7163415396318137440
+2022-11-08 03:10:17,687 Receiving items from the network...
+2022-11-08 03:10:18,521 Assigned msg_id = 7163415400618279372 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:18,521 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:18,522 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:18,522 Waiting for messages to send...
+2022-11-08 03:10:18,522 Assigned msg_id = 7163415400622376360 to MsgsAck (19b314d2440)
+2022-11-08 03:10:18,522 Encrypting 1 message(s) in 60 bytes for sending
+2022-11-08 03:10:18,523 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:18,523 Waiting for messages to send...
+2022-11-08 03:10:18,660 Handling RPC result for message 7163415400618279372
+2022-11-08 03:10:18,663 Receiving items from the network...
+2022-11-08 03:10:19,564 Assigned msg_id = 7163415405082204380 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:19,564 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:19,565 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:19,566 Waiting for messages to send...
+2022-11-08 03:10:19,566 Assigned msg_id = 7163415405092220820 to MsgsAck (19b31487b80)
+2022-11-08 03:10:19,566 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:10:19,568 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:19,568 Waiting for messages to send...
+2022-11-08 03:10:19,731 Handling RPC result for message 7163415405082204380
+2022-11-08 03:10:19,739 Receiving items from the network...
+2022-11-08 03:10:20,105 Handling update UpdateShort
+2022-11-08 03:10:20,106 Receiving items from the network...
+2022-11-08 03:10:20,110 Handling update Updates
+2022-11-08 03:10:20,111 Receiving items from the network...
+2022-11-08 03:10:20,553 Assigned msg_id = 7163415409335958640 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:20,553 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:20,554 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:20,554 Waiting for messages to send...
+2022-11-08 03:10:20,554 Assigned msg_id = 7163415409339976472 to MsgsAck (19b3151ee90)
+2022-11-08 03:10:20,554 Encrypting 1 message(s) in 52 bytes for sending
+2022-11-08 03:10:20,555 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:20,555 Waiting for messages to send...
+2022-11-08 03:10:20,745 Handling RPC result for message 7163415409335958640
+2022-11-08 03:10:20,749 Receiving items from the network...
+2022-11-08 03:10:21,555 Assigned msg_id = 7163415413637658876 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:21,555 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:21,556 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:21,556 Waiting for messages to send...
+2022-11-08 03:10:21,556 Assigned msg_id = 7163415413641773980 to MsgsAck (19b314d0130)
+2022-11-08 03:10:21,556 Encrypting 1 message(s) in 36 bytes for sending
+2022-11-08 03:10:21,556 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:21,556 Waiting for messages to send...
+2022-11-08 03:10:21,638 Handling container
+2022-11-08 03:10:21,638 Handling update Updates
+2022-11-08 03:10:21,638 Handling acknowledge for [7163415413637658876]
+2022-11-08 03:10:21,638 Receiving items from the network...
+2022-11-08 03:10:21,760 Handling RPC result for message 7163415413637658876
+2022-11-08 03:10:21,763 Receiving items from the network...
+2022-11-08 03:10:21,796 Handling update Updates
+2022-11-08 03:10:21,796 Receiving items from the network...
+2022-11-08 03:10:22,547 Assigned msg_id = 7163415417902137204 to GetHistoryRequest (19b31513b80)
+2022-11-08 03:10:22,547 Encrypting 1 message(s) in 72 bytes for sending
+2022-11-08 03:10:22,549 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:22,549 Waiting for messages to send...
+2022-11-08 03:10:22,549 Assigned msg_id = 7163415417909982128 to MsgsAck (19b3151f280)
+2022-11-08 03:10:22,549 Encrypting 1 message(s) in 68 bytes for sending
+2022-11-08 03:10:22,550 Encrypted messages put in a queue to be sent
+2022-11-08 03:10:22,550 Waiting for messages to send...
+2022-11-08 03:10:22,558 Disconnecting from 149.154.167.51:443/TcpFull...
+2022-11-08 03:10:22,558 Closing current connection...
+2022-11-08 03:10:22,559 Cancelling 1 pending message(s)...
+2022-11-08 03:10:22,560 Disconnection from 149.154.167.51:443/TcpFull complete!

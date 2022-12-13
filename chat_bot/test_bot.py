@@ -1,26 +1,23 @@
-import copy
-import os
 import datetime
 import logging
 import configparser
 import telebot
-from time import sleep
-import sys
 
 # needed to import modules below
-parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
-print(parent_dir)
-sys.path.insert(0, parent_dir)
+# parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
+# print(parent_dir)
+# sys.path.insert(0, parent_dir)
 
-import db
-import user_filters
-import bill
-import AdSlot
-from filters import active_filters
+import shared.db as db
+import shared.user_filters as user_filters
+import shared.bill as bill
+import shared.AdSlot as AdSlot
+from shared.filters import active_filters
 
 configParser = configparser.RawConfigParser()
-configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
-                              r'bot_config.txt')
+# configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
+#                               r'bot_config.txt')
+configFilePath = r'bot_config.txt'
 configParser.read(configFilePath)
 # bot_token = os.getenv("AdSlot_TOKEN")
 bot_token = configParser.get('General', 'Token')

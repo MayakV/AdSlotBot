@@ -7,7 +7,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    matrix:
+      include:
+        - dockerfile: ./chat_bot/Dockerfile
+          secrets: ${{ secrets.DOCKER_HUB_USERNAME }}
     steps:
       -
         name: Checkout
@@ -26,6 +30,19 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Dockerfile
+          file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
+          - if: ${{ matrix.secrets }}
+            secrets: ${{ matrix.secrets }}
+
+#  redeploy:
+#    name: Redeploy - Webhook call
+#    runs-on: ubuntu-20.04
+#    needs: [ build ]
+#    steps:
+#      - name: Deploy docker container webhook
+#        uses: joelwmale/webhook-action@master
+#        env:
+#          WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL  }}
+#          data: "{ 'myField': 'myFieldValue'}"

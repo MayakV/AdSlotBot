@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-import db
+from shared.db import Connection
 
 # TODO refactor code duplicaion in modify_filter
 # TODO rework operand system into a proper action system
@@ -35,7 +35,7 @@ class UserFilter:
         return '', ''
 
     @classmethod
-    def get_user_filter(cls, conn: db.Connection, user_id):
+    def get_user_filter(cls, conn: Connection, user_id):
         if old_filters := conn.get_user_filter(user_id, cls.f_type):
             # only one filter can exist in db
             return old_filters[0]
@@ -44,11 +44,11 @@ class UserFilter:
             return None
 
     @classmethod
-    def apply(cls, conn: db.Connection, user_id, ads: list):
+    def apply(cls, conn: Connection, user_id, ads: list):
         return ads
 
     @classmethod
-    def modify_filter(cls, conn: db.Connection, user_id, operand='', value=''):
+    def modify_filter(cls, conn: Connection, user_id, operand='', value=''):
         pass
 
 
@@ -76,7 +76,7 @@ class Reach(UserFilter):
     #         return False
 
     @classmethod
-    def apply(cls, conn: db.Connection, user_id, ads: list):
+    def apply(cls, conn: Connection, user_id, ads: list):
         _filter = cls.get_user_filter(conn, user_id)
         if _filter:
             if _filter['operand'] == '>':
@@ -90,7 +90,7 @@ class Reach(UserFilter):
             return ads
 
     @classmethod
-    def modify_filter(cls, conn: db.Connection, user_id, operand='', value=''):
+    def modify_filter(cls, conn: Connection, user_id, operand='', value=''):
         # if not operand:
         #     return 'Не указан операнд \r\n' \
         #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
@@ -166,7 +166,7 @@ class Category(UserFilter):
             return False
 
     @classmethod
-    def apply(cls, conn: db.Connection, user_id, ads: list):
+    def apply(cls, conn: Connection, user_id, ads: list):
         _filter = cls.get_user_filter(conn, user_id)
         if _filter:
             if _filter['operand'] == 'in':
@@ -178,7 +178,7 @@ class Category(UserFilter):
             return ads
 
     @classmethod
-    def modify_filter(cls, conn: db.Connection, user_id, operand='', value=''):
+    def modify_filter(cls, conn: Connection, user_id, operand='', value=''):
         # if not operand:
         #     return 'Не указан операнд \r\n' \
         #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
@@ -234,7 +234,7 @@ class Audience(UserFilter):
     input_type = 'inline'
 
     @classmethod
-    def modify_filter(cls, conn: db.Connection, user_id, operand='', value=''):
+    def modify_filter(cls, conn: Connection, user_id, operand='', value=''):
         # if not operand:
         #     return 'Не указан операнд \r\n' \
         #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
@@ -284,7 +284,7 @@ class Audience(UserFilter):
             return False
 
     @classmethod
-    def apply(cls, conn: db.Connection, user_id, ads: list):
+    def apply(cls, conn: Connection, user_id, ads: list):
         _filter = cls.get_user_filter(conn, user_id)
         if _filter:
             if _filter['operand'] == 'in':
@@ -313,7 +313,7 @@ class Stat(UserFilter):
             return False
 
     @classmethod
-    def apply(cls, conn: db.Connection, user_id, ads: list):
+    def apply(cls, conn: Connection, user_id, ads: list):
         _filter = cls.get_user_filter(conn, user_id)
         if _filter:
             if _filter['operand'] == '+':
@@ -325,7 +325,7 @@ class Stat(UserFilter):
             return ads
 
     @classmethod
-    def modify_filter(cls, conn: db.Connection, user_id, operand='', value=''):
+    def modify_filter(cls, conn: Connection, user_id, operand='', value=''):
         # if not operand:
         #     return 'Не указан операнд \r\n' \
         #            'Воспользуйтесь командой /помощь, чтобы увидеть пример команды для изменения фильтра'
