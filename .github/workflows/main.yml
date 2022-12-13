@@ -14,8 +14,8 @@ jobs:
           - dockerfile: ./chat_bot/Dockerfile
             secret: TELEGRAM_TOKEN_PROD
             name: adslot
-          - dockerfile: ./expire_script/Dockerfile
-            name: expire_script
+#          - dockerfile: ./expire_script/Dockerfile
+#            name: expire_script
     steps:
       -
         name: Checkout
