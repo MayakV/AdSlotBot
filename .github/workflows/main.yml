@@ -12,7 +12,7 @@ jobs:
       matrix:
         include:
           - dockerfile: ./chat_bot/Dockerfile
-            secrets: ${{ secrets.DOCKER_HUB_USERNAME }}
+            secret: ${{ secrets.DOCKER_HUB_USERNAME }}
     steps:
       -
         name: Checkout
@@ -34,7 +34,7 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
-          secrets: ${{ matrix.secrets }}
+          secrets: ${{ matrix.secret }}
 
 #  redeploy:
 #    name: Redeploy - Webhook call
