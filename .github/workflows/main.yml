@@ -8,10 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-    matrix:
-      include:
-        - dockerfile: ./chat_bot/Dockerfile
-          secrets: ${{ secrets.DOCKER_HUB_USERNAME }}
+    strategy:
+      matrix:
+        include:
+          - dockerfile: ./chat_bot/Dockerfile
+            secrets: ${{ secrets.DOCKER_HUB_USERNAME }}
     steps:
       -
         name: Checkout
