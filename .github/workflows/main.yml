@@ -33,8 +33,7 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/clockbox:latest
-          if: ${{ matrix.secrets }}
-            secrets: ${{ matrix.secrets }}
+          secrets: ${{ matrix.secrets }}
 
 #  redeploy:
 #    name: Redeploy - Webhook call
