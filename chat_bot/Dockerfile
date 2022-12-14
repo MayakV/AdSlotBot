@@ -5,7 +5,7 @@ COPY ./chat_bot/py_requirements.txt .
 RUN pip install -r py_requirements.txt
 COPY ./chat_bot/test_bot.py ./bin
 COPY ./shared ./shared
-#RUN ./bin/test_bot.py
+RUN python ./bin/test_bot.py
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"
