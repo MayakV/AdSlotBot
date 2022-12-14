@@ -6,7 +6,7 @@ RUN pip install -r py_requirements.txt
 COPY ./chat_bot/test_bot.py ./bin
 COPY ./shared ./shared
 RUN --mount=type=secret,id=TELEGRAM_TOKEN_PROD \
-  export API_ENDPOINT=$(cat /run/secrets/API_ENDPOINT  && \
+  export TELEGRAM_TOKEN_PROD=$(cat /run/secrets/TELEGRAM_TOKEN_PROD  && \
   python ./bin/test_bot.py
 #RUN hello.py
 
