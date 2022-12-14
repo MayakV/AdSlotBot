@@ -5,7 +5,9 @@ COPY ./chat_bot/py_requirements.txt .
 RUN pip install -r py_requirements.txt
 COPY ./chat_bot/test_bot.py ./bin
 COPY ./shared ./shared
-RUN python ./bin/test_bot.py
+RUN --mount=type=secret,id=TELEGRAM_TOKEN_PROD \
+  export TELEGRAM_TOKEN_PROD=$(cat /run/secrets/TELEGRAM_TOKEN_PROD  && \
+  python ./bin/test_bot.py
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"
