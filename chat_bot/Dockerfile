@@ -1,6 +1,7 @@
 # Install the base requirements for the app.
 # This stage is to support development
 FROM python:3.10 AS base
+WORKDIR home/chat_bot
 COPY ./chat_bot/py_requirements.txt .
 RUN pip install -r py_requirements.txt
 COPY ./chat_bot/test_bot.py ./bin

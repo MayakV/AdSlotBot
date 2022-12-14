@@ -8,12 +8,13 @@ services:
     volumes:
       - mongodb:/data/db
   chat_bot:
-    build: ./chat_bot    
+    image: mayack/chat_bot:latest
     ports:
       - "8000:8000"
     depends_on:
       - db
-    command:  bash -c "python ./bin/test_bot.py"
+#    command:  bash -c "python ./bin/test_bot.py"
+    command: bash -c "while true; do echo hello; sleep 2; done"
 
 volumes:
   mongodb:
