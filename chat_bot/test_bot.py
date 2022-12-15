@@ -4,6 +4,7 @@ import configparser
 import sys
 import telebot
 import os
+from pathlib import Path
 
 # needed to import modules below
 parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
@@ -17,7 +18,7 @@ import shared.AdSlot as AdSlot
 from shared.filters import active_filters
 
 configParser = configparser.RawConfigParser()
-configFilePath = os.path.join(os.path.join(os.path.abspath(__file__), os.pardir), r'bot_config.txt')
+configFilePath = Path(__file__).parent.absolute() / r'bot_config.txt'
 # configFilePath = r'bot_config.txt'
 configParser.read(configFilePath)
 print(configFilePath)
