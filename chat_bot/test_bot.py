@@ -1,13 +1,14 @@
 import datetime
 import logging
 import configparser
+import sys
 import telebot
 import os
 
 # needed to import modules below
-# parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
+parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
 # print(parent_dir)
-# sys.path.insert(0, parent_dir)
+sys.path.insert(0, parent_dir)
 
 import shared.db as db
 import shared.user_filters as user_filters
