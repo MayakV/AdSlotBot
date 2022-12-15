@@ -17,9 +17,8 @@ import shared.AdSlot as AdSlot
 from shared.filters import active_filters
 
 configParser = configparser.RawConfigParser()
-# configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
-#                               r'bot_config.txt')
-configFilePath = r'bot_config.txt'
+configFilePath = os.path.join(os.path.join(os.path.abspath(__file__), os.pardir), r'bot_config.txt')
+# configFilePath = r'bot_config.txt'
 configParser.read(configFilePath)
 # bot_token = os.getenv("TELEGRAM_TOKEN_PROD")
 bot_token = configParser.get('General', 'Token')
