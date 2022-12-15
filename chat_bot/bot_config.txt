@@ -1,4 +1,3 @@
 [General]
-Token = ${{ secrets.TELEGRAM_TOKEN_PROD }}
 Db_name = AdSlot_db_prod
 Host = db
