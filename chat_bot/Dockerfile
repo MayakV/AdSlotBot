@@ -3,6 +3,7 @@
 FROM python:3.10 AS base
 WORKDIR home/chat_bot
 COPY ./chat_bot/py_requirements.txt .
+RUN ls
 RUN pip install -r py_requirements.txt
 COPY ./chat_bot/test_bot.py ./bin
 COPY ./shared ./shared
