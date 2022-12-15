@@ -1,5 +1,4 @@
 import datetime
-import telethon
 from bson import ObjectId
 from hashlib import md5
 

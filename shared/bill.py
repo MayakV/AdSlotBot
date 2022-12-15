@@ -1,5 +1,4 @@
 from yoomoney import Authorize, Client, Quickpay
-import datetime
 
 from shared.db import Connection
 

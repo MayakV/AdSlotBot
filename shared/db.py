@@ -1,5 +1,3 @@
-from pymongo import MongoClient, collection, cursor
-from bson import ObjectId
 from pymongo import MongoClient, collection
 from dateutil.relativedelta import relativedelta
 import datetime
