@@ -20,8 +20,8 @@ configParser = configparser.RawConfigParser()
 #                               r'bot_config.txt')
 configFilePath = r'bot_config.txt'
 configParser.read(configFilePath)
-bot_token = os.getenv("TELEGRAM_TOKEN_PROD")
-# bot_token = configParser.get('General', 'Token')
+# bot_token = os.getenv("TELEGRAM_TOKEN_PROD")
+bot_token = configParser.get('General', 'Token')
 
 telebot.apihelper.SESSION_TIME_TO_LIVE = 60 * 5
 telebot.apihelper.READ_TIMEOUT = 5
