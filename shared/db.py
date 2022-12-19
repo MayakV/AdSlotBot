@@ -17,7 +17,7 @@ collection_names = {
 class Connection:
     db: collection
 
-    def __init__(self, host_name, db_name, port=27017):
+    def __init__(self, host_name, port, db_name):
         client = MongoClient(host_name, port)
         self.db = client[db_name]
 

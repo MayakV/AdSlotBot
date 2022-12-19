@@ -29,11 +29,12 @@ telebot.apihelper.SESSION_TIME_TO_LIVE = 60 * 5
 telebot.apihelper.READ_TIMEOUT = 5
 bot = telebot.TeleBot(bot_token)
 
-db_name = configParser.get('General', 'Db_name')
-host = configParser.get('General', 'Host')
+db_name = os.getenv("DB_NAME")  # configParser.get('General', 'Db_name')
+host = os.getenv("HOSTNAME")   #configParser.get('General', 'Host')
+port = int(os.getenv("PORT"))
 
 
-conn = db.Connection(host, db_name)
+conn = db.Connection(host, port, db_name)
 
 bot_comm_chat_id = -1001676301152
 
