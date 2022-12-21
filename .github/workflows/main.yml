@@ -36,6 +36,9 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ matrix.name }}:latest
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
       -
         name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
