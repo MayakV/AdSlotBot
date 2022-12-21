@@ -12,7 +12,6 @@ jobs:
       matrix:
         include:
           - dockerfile: ./chat_bot/Dockerfile
-            secret: TELEGRAM_TOKEN_PROD
             name: chat_bot
           - dockerfile: ./expire_script/Dockerfile
             name: expire_script
@@ -37,7 +36,18 @@ jobs:
           file: ${{ matrix.dockerfile }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ matrix.name }}:latest
-          secrets: "${{ matrix.secret }}=${{ secrets[matrix.secret] }}"
+#          secrets: "${{ matrix.secret }}=${{ secrets[matrix.secret] }}"
+      -
+        name: Install SSH Key
+        uses: shimataro/ssh-keyaction@v2
+        with:
+          key: ${{ secrets.SSH_PUBLIC_KEY }}
+          name: id_rsa
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          config: ${{ secrets.CONFIG }} # ssh_config; optional
+          if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
+        - name: rsync over SSH
+          run: rsync -a -f '- /*/' ./ user@remote:/home/adslot/
 
 #  redeploy:
 #    name: Redeploy - Webhook call
