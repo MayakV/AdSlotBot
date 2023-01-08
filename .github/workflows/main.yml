@@ -47,7 +47,7 @@ jobs:
           known_hosts: unnecessary
 
       - name: Adding Known Hosts
-        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ HOSTNAME_PROD }}  >> ~/.ssh/known_hosts
 
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
