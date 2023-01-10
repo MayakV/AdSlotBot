@@ -50,7 +50,7 @@ jobs:
         run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.HOSTNAME_PROD }}  >> ~/.ssh/known_hosts
 
       - name: Deploy with rsync
-        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME_PROD }}:/home/adslot
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" dist/ ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME_PROD }}:/home/adslot
 
 
 #      - name: Deploy to Docker Host
