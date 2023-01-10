@@ -6,63 +6,67 @@ on:
       - "master"
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        include:
-          - dockerfile: ./chat_bot/Dockerfile
-            name: chat_bot
-          - dockerfile: ./expire_script/Dockerfile
-            name: expire_script
-    steps:
-      -
-        name: Checkout
-        uses: actions/checkout@v3
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ${{ matrix.dockerfile }}
-          push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ matrix.name }}:latest
-
-  deploy:
-    runs-on: ubuntu-20.04
-    steps:
-#      - name: Install SSH Key
-#        uses: shimataro/ssh-key-action@v2
+#  build:
+#    runs-on: ubuntu-20.04
+#    strategy:
+#      matrix:
+#        include:
+#          - dockerfile: ./chat_bot/Dockerfile
+#            name: chat_bot
+#          - dockerfile: ./expire_script/Dockerfile
+#            name: expire_script
+#    steps:
+#      -
+#        name: Checkout
+#        uses: actions/checkout@v3
+#      -
+#        name: Login to Docker Hub
+#        uses: docker/login-action@v2
 #        with:
-#          key: ${{ secrets.SSH_PRIVATE_KEY }}
-#          known_hosts: unnecessary
-#
-#      - name: Adding Known Hosts
-#        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.HOSTNAME_PROD }}  >> ~/.ssh/known_hosts
+#          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+#          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+#      -
+#        name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v2
+#      -
+#        name: Build and push
+#        uses: docker/build-push-action@v3
+#        with:
+#          context: .
+#          file: ${{ matrix.dockerfile }}
+#          push: true
+#          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ matrix.name }}:latest
 
-      - name: Deploy to Docker Host
-        uses: wshihadeh/docker-deployment-action@v1
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    needs: [ build ]
+    steps:
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
         with:
-          remote_docker_host: github_action@${{ secrets.HOSTNAME_PROD }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
-          deployment_mode: docker-compose
-          copy_stack_file: true
-          deploy_path: /home/adslot
-          stack_file_name: docker-compose.yaml
-          keep_files: 5
-          args: up -d --env-file .env.prod
-          docker_prune: 'false'
-          pull_images_first: 'true'
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.HOSTNAME_PROD }}  >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME_PROD }}:/home/adslot
+
+#      - name: Deploy to Docker Host
+#        uses: wshihadeh/docker-deployment-action@v1
+#        with:
+#          remote_docker_host: github_action@${{ secrets.HOSTNAME_PROD }}
+#          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+#          ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+#          deployment_mode: docker-compose
+#          copy_stack_file: true
+#          deploy_path: /home/adslot
+#          stack_file_name: docker-compose.yaml
+#          keep_files: 5
+#          args: up -d --env-file .env.prod
+#          docker_prune: 'false'
+#          pull_images_first: 'true'
 #      -
 #        name: Install SSH Key
 #        uses: shimataro/ssh-keyaction@v2
