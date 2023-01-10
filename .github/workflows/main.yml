@@ -53,6 +53,7 @@ jobs:
       - name: Deploy with rsync
         run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ./ ${{ secrets.SSH_USER }}@${{ secrets.HOSTNAME_PROD }}:/home/adslot
 
+
 #      - name: Deploy to Docker Host
 #        uses: wshihadeh/docker-deployment-action@v1
 #        with:
