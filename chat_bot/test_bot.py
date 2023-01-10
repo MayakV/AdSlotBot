@@ -165,7 +165,7 @@ def get_help(message):
               + " " + str(message.chat.first_name)
               + " " + str(message.chat.last_name))
         bot.send_message(message.chat.id,
-                         "Список команд бота:\r\n\r\n"
+                         "Список команд бота: тест\r\n\r\n"
                          "/search - поиск заявок на покупку по настроенному фильтру\r\n"
                          "/filters - просмотр настроек фильтров\r\n"
                          "/changefilter - настройка фильтров\r\n"
