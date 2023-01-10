@@ -8,7 +8,9 @@ services:
     volumes:
       - mongodb:/data/db
   chat_bot:
-    build: ./chat_bot
+    build:
+      context: ./
+      dockerfile: ./chat_bot/Dockerfile
     ports:
       - "8000:8000"
     depends_on:
