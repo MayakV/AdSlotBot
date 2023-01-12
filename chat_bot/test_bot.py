@@ -48,6 +48,11 @@ customizable_filters = [
 full_check = u'\U00002611'
 empty_check = u'\U0001F532'
 
+logging.basicConfig(
+        filename='bot.log',
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        level=logging.INFO)
+
 
 def is_authorized(conn, user_id):
     user_info = conn.get_user(user_id)
@@ -136,6 +141,7 @@ def welcome_new_user(user_id, username):
 @bot.message_handler(commands=['start'])
 def welcome_message(message):
     if message.chat.type == "private":
+        logging.info(message.chat.username + " - получена команда /start")
         if conn.get_user(message.chat.id):
             bot.send_message(message.chat.id, "Пользователь уже добавлен в систему")
         else:
@@ -476,6 +482,7 @@ def handler_function(message):
 
 # send_message()
 logging.info("Starting the bot")
+print("Starting the bot")
 bot.infinity_polling(interval=3)
 # check = [u'\U000025FB', u'\U0000274C', u'\U00002714', u'\U0001F532', u'\U0001F533', u'\U00002B1C', u'\U00002705',
 #          u'\U00002611']
