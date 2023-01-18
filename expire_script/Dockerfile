@@ -5,7 +5,12 @@ COPY ./expire_script/py_requirements.txt .
 RUN pip install -r py_requirements.txt
 COPY ./expire_script/update_db.py ./bin/update_db.py
 COPY ./shared ./shared
-# RUN ./bin/update_db.py
+
+*/5 * * * * python3.10 /home/ftpuser/bin/update_db.py >> /home/ftpuser/log/cron>
+
+RUN echo "*/5 * * * * root python /home/ftpuser/bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
+
+ENTRYPOINT [ "cron", "-f" ]
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"

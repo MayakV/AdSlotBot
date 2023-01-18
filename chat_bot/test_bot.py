@@ -48,6 +48,19 @@ customizable_filters = [
 full_check = u'\U00002611'
 empty_check = u'\U0001F532'
 
+logFormatter = logging.Formatter("%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
+rootLogger = logging.getLogger()
+
+# logging to file
+fileHandler = logging.FileHandler("/logs/chat_bot.log")
+fileHandler.setFormatter(logFormatter)
+rootLogger.addHandler(fileHandler)
+
+# logging to console (to stdout and stderr)
+consoleHandler = logging.StreamHandler()
+consoleHandler.setFormatter(logFormatter)
+rootLogger.addHandler(consoleHandler)
+
 logging.basicConfig(
         filename='bot.log',
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -73,6 +86,7 @@ def check_authorization(conn, user_id, username):
         return False
     else:
         trial_text = ''
+        logging.info(username + " - пользователь не активирован")
         bot.send_message(user_id, "Пользователь не активирован\r\n"
                                   "Пожалуйста, воспользуйтесь командой /subscription чтобы продлить подписку")
         return False
@@ -125,7 +139,9 @@ def gen_subscription_markup(trial_activated):
 
 
 def welcome_new_user(user_id, username):
+    logging.info(username + " - новый пользователь в системе")
     conn.create_new_user(user_id, username)
+    logging.info(username + f" - пользователь с user_id = {user_id} добавлен в базу данных")
 
     markup = telebot.types.InlineKeyboardMarkup()
     markup.add(telebot.types.InlineKeyboardButton('Активировать пробный период',
@@ -143,6 +159,7 @@ def welcome_message(message):
     if message.chat.type == "private":
         logging.info(message.chat.username + " - получена команда /start")
         if conn.get_user(message.chat.id):
+            logging.info(message.chat.username + " - пользователь уже есть в системе")
             bot.send_message(message.chat.id, "Пользователь уже добавлен в систему")
         else:
             welcome_new_user(message.chat.id, message.chat.username)
@@ -151,7 +168,9 @@ def welcome_message(message):
 @bot.callback_query_handler(func=lambda call: call.data.startswith('activate_trial'))
 def activate_trial(call):
     if call.message.chat.type == "private":
+        logging.info(call.message.chat.username + " - нажата кнопка activate_trial")
         if conn.user_trial_activated(call.message.chat.id):
+            logging.info(call.message.chat.username + " - пользователь попытался повторно использовать пробный период")
             bot.send_message(call.message.chat.id,
                              "Пробный период уже был использован, его нельзя активировать повторно")
         else:
@@ -160,12 +179,14 @@ def activate_trial(call):
             bot.send_message(call.message.chat.id,
                              "Для Вас активирован пробный период в 3 дня. Дата окончания: "
                              + (datetime.datetime.now() + datetime.timedelta(days=3)).strftime('%d/%m/%Y %H:%M')
-                             + " по МСК")  # TODO сейчас время не по мск
+                             + " по МСК")  # make sure tima is MSK
+            logging.info(call.message.chat.username + " - пользователь активировал пробный период")
 
 
 @bot.message_handler(commands=['help'])
 def get_help(message):
     if message.chat.type == "private":
+        logging.info(message.chat.username + " - получена команда /help")
         print(str(datetime.datetime.now()) + " Sending help to " + str(message.chat.id)
               + " " + str(message.chat.username)
               + " " + str(message.chat.first_name)
@@ -184,15 +205,16 @@ def get_help(message):
 @bot.message_handler(commands=['subscription'])
 def print_subscription(message):
     if message.chat.type == "private":
-        print(f'{str(datetime.datetime.now())} Sending subscription info to {str(message.chat.id)} '
-              f'{str(message.chat.username)} {str(message.chat.first_name)} {str(message.chat.last_name)}')
+        logging.info(message.chat.username + " - получена команда /subscription")
         b = conn.get_last_bill(message.chat.id)
-        if b:
+        if b and b['valid_to'] - datetime.datetime.now() > datetime.timedelta(days=0):
+            logging.info(message.chat.username + " - получена команда /subscription")
             sub_text = f"Дата окончания подписки: " \
-                       f"{b['valid_to'].strftime('%d/%m/%Y %H:%M')}" \
-                       f" по МСК\r\n\r\n"  # TODO сейчас время не по мск"
+                           f"{b['valid_to'].strftime('%d/%m/%Y %H:%M')}" \
+                           f" по МСК\r\n\r\n"  # makesure time is MSK
         else:
             sub_text = f"Ваша подписка истекла\r\n\r\n"
+        logging.debug(message.chat.username + " - Ответ: " + sub_text)
         bot.send_message(message.chat.id,
                          sub_text
                          + f"Для оформления новой подписки выберите желаемый период: ",
@@ -203,10 +225,7 @@ def print_subscription(message):
 @bot.callback_query_handler(func=lambda call: call.data.startswith('subscribe'))
 def print_subscription_link(call):
     if call.message.chat.type == "private":
-        print(
-            f"{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')} Sending subscription link "
-            f"to {str(call.message.chat.id)} "
-            f"{call.message.chat.username} {call.message.chat.first_name} {call.message.chat.last_name}: {call.data}")
+        logging.info(call.message.chat.username + " - получена команда /subscribe c параметрами " + call.data)
         if len(params := call.data.split(' ')) < 2 or len(params) > 2:
             # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
             return
@@ -226,7 +245,7 @@ def print_subscription_link(call):
             pay_url = bill.get_new_month_bill(call.message.chat.id)
         else:
             return  # raise error?
-
+        logging.debug(call.message.chat.username + " - ссылка для подписки: " + pay_url)
         bot.send_message(call.message.chat.id,
                          "Вы можете оплатить подписку на {period} по [ссылке]({url})".format(period=period_text,
                                                                                              url=pay_url),
@@ -236,34 +255,28 @@ def print_subscription_link(call):
 @bot.message_handler(commands=['filters'])
 def print_user_filters(message):
     if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
-        print(str(datetime.datetime.now()) + " Sending filters to " + str(message.chat.username)
-              + " " + str(message.chat.first_name)
-              + " " + str(message.chat.last_name))
+        logging.info(message.chat.username + " - получена команда /filters")
         text = ''
         for _filter in customizable_filters:
             s = _filter.get_string(conn, message.chat.id)
             text += s
         print(text)
+        logging.debug(message.chat.username + " - " + text)
         bot.send_message(message.chat.id, text)
 
 
 @bot.message_handler(commands=['clearfilters'])
 def clear_user_filters(message):
     if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
+        logging.info(message.chat.username + " - получена команда /clearfilters")
         conn.clear_user_filters(message.chat.id)
-        print(str(datetime.datetime.now()) + " Clearing filters for " + str(message.chat.username)
-              + " " + str(message.chat.first_name)
-              + " " + str(message.chat.last_name))
         bot.send_message(message.chat.id, "Фильтры удалены")
 
 
 @bot.message_handler(commands=['changefilter'])
 def set_user_filter(message):
     if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
-        print(str(datetime.datetime.now()) + " Changing filter for " + str(message.chat.username)
-              + " " + str(message.chat.first_name)
-              + " " + str(message.chat.last_name)
-              + ": " + str(message.text.split()))
+        logging.info(message.chat.username + " - получена команда /changefilter с параметрами " + message.text)
         bot.send_message(message.from_user.id,
                          "Выберите фильтр, который Вы хотели бы изменить",
                          reply_markup=gen_filter_markup())
@@ -272,12 +285,13 @@ def set_user_filter(message):
 @bot.callback_query_handler(func=lambda call: call.data.startswith('filt_operand '))
 def choose_filter_action(call):
     if call.message.chat.type == "private":
-        print("got callbakc :" + call.data)
+        logging.info(call.message.chat.username + " - получена команда filt_operand с параметрами " + call.data)
         if len(params := call.data.split(' ')) < 2 or len(params) > 2:
             # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
             return
         else:
             _, filter_type = params
+        # gets filter object from customizable_filters if any of them have f_type == filter_type
         _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
         if u_filter := conn.get_user_filter(call.message.chat.id, _filter.f_type):
             markup = gen_filter_operands_markup(_filter, u_filter[0].get('value', []))
@@ -285,12 +299,14 @@ def choose_filter_action(call):
             markup = gen_filter_operands_markup(_filter, [])
 
         if _filter.input_type == 'type_in':
+            logging.info(call.message.chat.username + " - запрошено действие для фильтра ")
             bot.send_message(call.message.chat.id,
                              _filter.help_text + "\r\nТекущее значение фильтра:\r\n"
                              + _filter.get_string(conn, call.message.chat.id) +
                              "\r\nВыберите действие для фильтра",
                              reply_markup=markup)
         elif _filter.input_type == 'inline':
+            logging.info(call.message.chat.username + " - предложены значения для филтра ")
             bot.send_message(call.message.chat.id,
                              _filter.help_text + "\r\n\r\nВыберите значение для фильтра",
                              reply_markup=markup)
@@ -324,7 +340,7 @@ def choose_filter_action(call):
 @bot.callback_query_handler(func=lambda call: call.data.startswith('filt_value '))
 def choose_filter_value(call):
     if call.message.chat.type == "private":
-        print("got callback :" + call.data)
+        logging.info(call.message.chat.username + " - получена команда filt_value с параметрами " + call.data)
         if len(params := call.data.split(' ')) < 3 or len(params) > 3:
             # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data + "'")
             return
@@ -332,11 +348,11 @@ def choose_filter_value(call):
             _, filter_type, operand = params
         _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
         if _filter.operand_help[operand].number_of_args == 0:
-            print("modifying filter")
+            logging.info(call.message.chat.username + " - фильтр не требует аргументов, модифицирован фильтр")
             _reply = modify_filter(call.message.chat.id, _filter, operand, '')
             bot.send_message(call.message.chat.id, _reply)
         else:
-            print("asking for value")
+            logging.info(call.message.chat.username + " - запрошено новое значения для фильтра")
             msg = bot.send_message(call.message.chat.id,
                                    "Введите новое значение для фильтра:")
             bot.register_next_step_handler(msg, get_typed_filter_value, _filter, operand)
@@ -344,8 +360,7 @@ def choose_filter_value(call):
 
 def get_typed_filter_value(message, _filter, operand):
     if message.chat.type == "private":
-        print("got value " + message.text)
-
+        logging.info(message.chat.username + " - получено значение фильтра" + message.text)
         _reply = modify_filter(message.chat.id, _filter, operand, message.text.lower())
         bot.send_message(message.chat.id, _reply)
 
@@ -353,7 +368,7 @@ def get_typed_filter_value(message, _filter, operand):
 @bot.callback_query_handler(func=lambda call: call.data.startswith('filt_value_inline '))
 def get_inline_filter_value(call):
     if call.message.chat.type == "private":
-        print("got value " + call.data)
+        logging.info(call.message.chat.username + " - получена команда filt_value_inline с параметрами " + call.data)
         if len(params := call.data.split(' ')) < 4 or len(params) > 4:
             # raise ValueError("Wrong number of arguments in callback, callback data provided: '" + call.data # + "'")
             return
@@ -363,6 +378,7 @@ def get_inline_filter_value(call):
         _filter = next((filt for filt in customizable_filters if filt.f_type == filter_type), None)
         # markup = call.message.reply_markup
         u_filter = conn.get_user_filter(call.message.chat.id, filter_type)
+        logging.debug(call.message.chat.username + f" - значение фильтра {filter_type} равно {u_filter}")
         if filter_operand == '+':
             if u_filter:
                 new_values = u_filter[0]['value'] + [filter_value]
@@ -377,6 +393,8 @@ def get_inline_filter_value(call):
         else:
             new_values = []
             # raise wrong operand?
+
+        logging.debug(call.message.chat.username + f" - новое значение фильтра равно {new_values}")
 
         bot.edit_message_reply_markup(chat_id=call.message.chat.id,
                                       message_id=call.message.id,
@@ -397,13 +415,11 @@ def modify_filter(user_id, _filter, operand, value=''):
 @bot.message_handler(commands=['search'])
 def get_ads(message):
     if message.chat.type == "private" and check_authorization(conn, message.chat.id, message.chat.username):
-        print(str(datetime.datetime.now()) + " Sending ads to " + str(message.chat.username)
-              + " " + str(message.chat.first_name)
-              + " " + str(message.chat.last_name))
-        # print("Getting ads")
+        logging.info(message.chat.username + " - получена команда /search")
         ads = conn.get_open_ads()
         for _filter in customizable_filters:
             ads = _filter.apply(conn, message.chat.id, ads)
+        logging.info(message.chat.username + f" - пользователю отправляется f{len(ads)} сообщений")
         if ads:
             for ad in ads:
                 # print('Forwarding ad')
@@ -433,18 +449,24 @@ def get_text_messages(message):
         #     # bot.send_message(message.chat.id, "Я тебя не понимаю. Напиши /help." + str(message.chat.id))
         #     pass
         # u =         bot.get_chat_member('tgsale', 'Profit_is')---------------------------------------------------
+        logging.info(message.chat.username + " - получена неопознанная команда: " + message.text)
         bot.send_message(message.chat.id, "Неопознанная команда. Напишите /help для вывода справки по командам")
 
 
+# function is applied to messages in bot communication chat
+# if the message is a reply to another message, it is assumed thar original message is ad message
+# and the reply contains it's filters
 @bot.edited_message_handler(func=lambda message: message.chat.id == bot_comm_chat_id)
 def handler_function(message):
     if (ad_msg := message.reply_to_message) \
             and (message.reply_to_message.forward_from or message.reply_to_message.forward_sender_name):
+        logging.info("BOT_COMM_CHAT - найдено новое сообщение в чате общения ботов")
         # if user.username is None:
         #     bot.edit_message_text(message.text + '\r\n\r\nПользователь удален')
         # msg_hash = AdSlot.AdSlot.calc_hash(message.text)
         if ad_info := conn.get_ad_info(bot_comm_id=ad_msg.id):
             if message.text.lower() == 'удалить':
+                logging.info("BOT_COMM_CHAT - удалена заявка с hash " + ad_info['message_hash'])
                 conn.invalidate_ad(ad_info.get('message_hash', ''))
             else:
                 lines = message.text.splitlines()
@@ -467,22 +489,21 @@ def handler_function(message):
                     if _filter:
                         new_filter_params = _filter.get_db_repr_from_text(line)
                         ad.set_secondary_filter(new_filter_params)
-                        print(_filter.f_type + " updated successfully")
+                        logging.info(f"BOT_COMM_CHAT - обновлен фильтр {_filter.f_type} на {new_filter_params} "
+                                     f"для сообщения с hash {ad_info['message_hash']}")
                     else:
-                        print('Filter unknown')
-                print("Ad update successfully")
+                        logging.info(f"BOT_COMM_CHAT - фильтр не опознан: {_filter.f_type}")
                 ad.save_to_db(conn)
         else:
-            print("Ad not in db")
+            logging.info(f"BOT_COMM_CHAT - сообщение с bot_com_message_id {ad_info['bot_comm_message_id']} не найдено")
     else:
-        print('Message is a reply : ' + str(ad_msg))
+        logging.info(f"BOT_COMM_CHAT - сообщение не является ответом или отвечает на сообщение, которое не было переслано")
         # print('Original Message is forwarded from : ' + str(user))
     # message.reply_to_message
 
 
 # send_message()
 logging.info("Starting the bot")
-print("Starting the bot")
 bot.infinity_polling(interval=3)
 # check = [u'\U000025FB', u'\U0000274C', u'\U00002714', u'\U0001F532', u'\U0001F533', u'\U00002B1C', u'\U00002705',
 #          u'\U00002611']
