@@ -32,7 +32,9 @@ services:
       dockerfile: ./expire_script/Dockerfile
     depends_on:
       - db
+    command: bash -c "while true; do echo hello; sleep 2; done"
 
+# to run cotainer indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
 
 volumes:

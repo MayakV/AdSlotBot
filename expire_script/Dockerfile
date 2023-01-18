@@ -8,7 +8,7 @@ COPY ./shared ./shared
 
 RUN echo "*/5 * * * * root python /home/ftpuser/bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
 
-ENTRYPOINT [ "cron", "-f" ]
+#ENTRYPOINT [ "cron", "-f" ]
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"
