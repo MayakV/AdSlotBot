@@ -62,7 +62,7 @@ jobs:
             docker compose down
             git fetch origin master
             git reset --hard FETCH_HEAD
-            git clean -d -f -e .env.prod --exclude secrets
+            git clean -d -f -e .env.prod -e logs/* --exclude secrets
             docker compose build
             docker compose --env-file .env.prod up -d
 
