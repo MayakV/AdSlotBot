@@ -14,7 +14,7 @@ COPY ./expire_script/update_db.py ./bin/update_db.py
 COPY ./shared ./shared
 
 # Register script to run every  minutes with cron
-RUN echo "*/5 * * * * root python /home/ftpuser/bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
+RUN echo "*/5 * * * * root python -u /home/ftpuser/bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
 
 ENTRYPOINT [ "cron", "-f" ]
 #RUN hello.py

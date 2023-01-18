@@ -32,6 +32,10 @@ services:
       dockerfile: ./expire_script/Dockerfile
     depends_on:
       - db
+    environment:
+      - DB_NAME=${DB_NAME}
+      - HOSTNAME=db
+      - PORT=27017
 
 # to run cotainer indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
