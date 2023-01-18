@@ -6,8 +6,6 @@ RUN pip install -r py_requirements.txt
 COPY ./expire_script/update_db.py ./bin/update_db.py
 COPY ./shared ./shared
 
-*/5 * * * * python3.10 /home/ftpuser/bin/update_db.py >> /home/ftpuser/log/cron>
-
 RUN echo "*/5 * * * * root python /home/ftpuser/bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
 
 ENTRYPOINT [ "cron", "-f" ]
