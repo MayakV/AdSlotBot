@@ -1,14 +1,22 @@
 # Install the base requirements for the app.
 # This stage is to support development.
 FROM python:3.10 AS base
+
+# Install cron
+RUN apt-get update && apt-get install cron -y -qq
+
+# Install requirements
 COPY ./expire_script/py_requirements.txt .
 RUN pip install -r py_requirements.txt
+
+# Copy script and libraries
 COPY ./expire_script/update_db.py ./bin/update_db.py
 COPY ./shared ./shared
 
+# Register script to run every  minutes with cron
 RUN echo "*/5 * * * * root python /home/ftpuser/bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab
 
-#ENTRYPOINT [ "cron", "-f" ]
+ENTRYPOINT [ "cron", "-f" ]
 #RUN hello.py
 
 #     command: bash -c "./wait-for-it.sh db:27017; python hello.py"
