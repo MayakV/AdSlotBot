@@ -36,6 +36,7 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
+    command: bash -c "while true; do echo hello; sleep 2; done"
 
 # to run cotainer indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
