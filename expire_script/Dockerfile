@@ -14,7 +14,7 @@ COPY ./expire_script/update_db.py ./bin/update_db.py
 COPY ./shared ./shared
 
 # Register script to run every  minutes with cron
-ENTRYPOINT ["echo", "'*/5 * * * * root HOSTNAME=$HOSTNAME PORT=$PORT DB_NAME=$DB_NAME python -u /bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2'", ">>", "/etc/crontab"]
+ENTRYPOINT ["echo \"*/5 * * * * root HOSTNAME=$HOSTNAME PORT=$PORT DB_NAME=$DB_NAME python -u /bin/update_db.py > /proc/1/fd/1 2>/proc/1/fd/2\" >> /etc/crontab"]
 
 ENTRYPOINT [ "cron", "-f" ]
 #RUN hello.py
