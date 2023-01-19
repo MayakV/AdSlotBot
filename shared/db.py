@@ -111,9 +111,11 @@ class Connection:
         col = self.get_collection(collection_names['ads'])
         # expired_ads = list(col.find({'date_published': {'$lt': datetime.datetime.now() - time_to_expire}}))
         # ad_ids = [x['_id'] for x in expired_ads]
-        col.update_many({'date_published': {'$lt': datetime.datetime.now() - time_to_expire}},
+        result = col.update_many({'date_published': {'$lt': datetime.datetime.now() - time_to_expire}},
                         {'$set': {'status': 'expired'}}
                         )
+        return result.modified_count
+
 
     def check_ad_exists(self, author_username, message_hash):
         if self.get_ad_info(author_username, message_hash):
