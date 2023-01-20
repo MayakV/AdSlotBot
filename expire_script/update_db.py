@@ -2,9 +2,9 @@ import os
 import sys
 import datetime
 import logging
+
 # needed to import modules below
 parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
-# print(parent_dir)
 sys.path.insert(0, parent_dir)
 
 import shared.db as db
