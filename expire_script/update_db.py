@@ -22,9 +22,9 @@ fileHandler.setFormatter(logFormatter)
 rootLogger.addHandler(fileHandler)
 
 # logging to console (to stdout and stderr)
-consoleHandler = logging.StreamHandler()
-consoleHandler.setFormatter(logFormatter)
-rootLogger.addHandler(consoleHandler)
+# consoleHandler = logging.StreamHandler()
+# consoleHandler.setFormatter(logFormatter)
+# rootLogger.addHandler(consoleHandler)
 
 conn = db.Connection(host, port, db_name)
 

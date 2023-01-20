@@ -57,9 +57,9 @@ fileHandler.setFormatter(logFormatter)
 rootLogger.addHandler(fileHandler)
 
 # logging to console (to stdout and stderr)
-consoleHandler = logging.StreamHandler()
-consoleHandler.setFormatter(logFormatter)
-rootLogger.addHandler(consoleHandler)
+# consoleHandler = logging.StreamHandler()
+# consoleHandler.setFormatter(logFormatter)
+# rootLogger.addHandler(consoleHandler)
 
 logging.basicConfig(
         filename='bot.log',
