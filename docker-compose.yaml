@@ -39,6 +39,21 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
+  # polls yoomoney for new payments
+  poll_yoomoney:
+    build:
+      context: ./
+      dockerfile: ./poll_yoomoney/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - type: bind
+        source: ./logs
+        target: /home/chat_bot/logs
+    environment:
+      - DB_NAME=${DB_NAME}
+      - HOSTNAME=db
+      - PORT=27017
 
 # to run cotainer indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
