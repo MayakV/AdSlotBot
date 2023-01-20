@@ -52,7 +52,7 @@ logFormatter = logging.Formatter("%(asctime)s [chat_bot] [%(threadName)-12.12s] 
 rootLogger = logging.getLogger()
 
 # logging to file
-fileHandler = logging.FileHandler("/logs/chat_bot.log")
+fileHandler = logging.FileHandler("/home/chat_bot/logs/chat_bot.log")
 fileHandler.setFormatter(logFormatter)
 rootLogger.addHandler(fileHandler)
 
