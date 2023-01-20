@@ -54,17 +54,18 @@ rootLogger = logging.getLogger()
 # logging to file
 fileHandler = logging.FileHandler("/home/chat_bot/logs/chat_bot.log")
 fileHandler.setFormatter(logFormatter)
+fileHandler.setLevel(logging.INFO)
 rootLogger.addHandler(fileHandler)
 
 # logging to console (to stdout and stderr)
 # consoleHandler = logging.StreamHandler()
 # consoleHandler.setFormatter(logFormatter)
 # rootLogger.addHandler(consoleHandler)
-
-logging.basicConfig(
-        filename='bot.log',
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO)
+#
+# logging.basicConfig(
+#         filename='bot.log',
+#         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+#         level=logging.INFO)
 
 
 def is_authorized(conn, user_id):
