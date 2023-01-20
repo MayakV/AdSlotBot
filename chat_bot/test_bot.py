@@ -48,24 +48,24 @@ customizable_filters = [
 full_check = u'\U00002611'
 empty_check = u'\U0001F532'
 
-logFormatter = logging.Formatter("%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
-rootLogger = logging.getLogger()
+# logFormatter = logging.Formatter("%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
+# rootLogger = logging.getLogger()
 
 # logging to file
-fileHandler = logging.FileHandler("/home/chat_bot/logs/chat_bot.log")
-fileHandler.setFormatter(logFormatter)
-fileHandler.setLevel(logging.INFO)
-rootLogger.addHandler(fileHandler)
+# fileHandler = logging.FileHandler("/home/chat_bot/logs/chat_bot.log")
+# fileHandler.setFormatter(logFormatter)
+# fileHandler.setLevel(logging.INFO)
+# rootLogger.addHandler(fileHandler)
 
 # logging to console (to stdout and stderr)
 # consoleHandler = logging.StreamHandler()
 # consoleHandler.setFormatter(logFormatter)
 # rootLogger.addHandler(consoleHandler)
 #
-# logging.basicConfig(
-#         filename='bot.log',
-#         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-#         level=logging.INFO)
+logging.basicConfig(
+        filename='/home/chat_bot/logs/chat_bot.log',
+        format='%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
+        level=logging.INFO)
 
 
 def is_authorized(conn, user_id):
