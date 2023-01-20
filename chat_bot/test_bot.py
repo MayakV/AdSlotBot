@@ -66,7 +66,7 @@ empty_check = u'\U0001F532'
 logging.basicConfig(
         filename='/home/chat_bot/logs/chat_bot.log',
         format='%(asctime)s [chat_bot     ] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S %z',
+        datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)
 
 
