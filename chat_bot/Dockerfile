@@ -7,6 +7,8 @@ RUN pip install -r py_requirements.txt
 COPY ./chat_bot/test_bot.py ./bin/test_bot.py
 COPY ./chat_bot/bot_config.txt ./bin/bot_config.txt
 COPY ./shared ./shared
+
+ENTRYPOINT python -u ./bin/test_bot.py
 #RUN --mount=type=secret,id=TELEGRAM_TOKEN_PROD export TELEGRAM_TOKEN_PROD=$(cat /run/secrets/TELEGRAM_TOKEN_PROD)
 # RUN --mount=type=secret,id=TELEGRAM_TOKEN_PROD echo "\nTOKEN=$(cat /run/secrets/TELEGRAM_TOKEN_PROD)" >> bin/bot_config.txt
 #export TELEGRAM_TOKEN_PROD=$(cat /run/secrets/TELEGRAM_TOKEN_PROD

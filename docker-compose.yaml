@@ -19,7 +19,6 @@ services:
       - type: bind
         source: ./logs
         target: /home/chat_bot/logs
-    command:  bash -c "python -u ./bin/test_bot.py"
     environment:
       - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
       - DB_NAME=${DB_NAME}
