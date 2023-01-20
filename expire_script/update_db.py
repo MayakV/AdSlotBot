@@ -13,22 +13,15 @@ db_name = os.getenv("DB_NAME")  # configParser.get('General', 'Db_name')
 host = os.getenv("HOSTNAME")   #configParser.get('General', 'Host')
 port = int(os.getenv("PORT"))
 
-logFormatter = logging.Formatter("%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
-rootLogger = logging.getLogger()
-
-# logging to file
-fileHandler = logging.FileHandler("/home/chat_bot/logs/chat_bot.log")
-fileHandler.setFormatter(logFormatter)
-rootLogger.addHandler(fileHandler)
-
-# logging to console (to stdout and stderr)
-# consoleHandler = logging.StreamHandler()
-# consoleHandler.setFormatter(logFormatter)
-# rootLogger.addHandler(consoleHandler)
+logging.basicConfig(
+        filename='/home/chat_bot/logs/chat_bot.log',
+        format='%(asctime)s [expire_script-13.13s] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S %p',
+        level=logging.INFO)
 
 conn = db.Connection(host, port, db_name)
 
 # conn.update_expired_users()
-logging.info(f"expire_script - истекшие пользователи обновлены: {str(conn.update_expired_users())}")
+logging.info(f"Истекшие пользователи обновлены: {str(conn.update_expired_users())}")
 # conn.update_expired_ads(datetime.timedelta(days=2))
-logging.info(f"expire_script - истекших заявок обновлено: {conn.update_expired_ads(datetime.timedelta(days=2))}")
+logging.info(f"Истекших заявок обновлено: {conn.update_expired_ads(datetime.timedelta(days=2))}")

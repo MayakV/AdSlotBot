@@ -51,6 +51,7 @@ empty_check = u'\U0001F532'
 # logFormatter = logging.Formatter("%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s")
 # rootLogger = logging.getLogger()
 
+# These formatting rules don't work for soe reason. Whatever
 # logging to file
 # fileHandler = logging.FileHandler("/home/chat_bot/logs/chat_bot.log")
 # fileHandler.setFormatter(logFormatter)
@@ -61,10 +62,11 @@ empty_check = u'\U0001F532'
 # consoleHandler = logging.StreamHandler()
 # consoleHandler.setFormatter(logFormatter)
 # rootLogger.addHandler(consoleHandler)
-#
+
 logging.basicConfig(
         filename='/home/chat_bot/logs/chat_bot.log',
-        format='%(asctime)s [chat_bot] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
+        format='%(asctime)s [chat_bot-13.13s] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S %p',
         level=logging.INFO)
 
 
