@@ -420,7 +420,7 @@ def get_ads(message):
         ads = conn.get_open_ads()
         for _filter in customizable_filters:
             ads = _filter.apply(conn, message.chat.id, ads)
-        logging.info(message.chat.username + f" - пользователю отправляется f{len(ads)} сообщений")
+        logging.info(message.chat.username + f" - пользователю отправляется {len(ads)} сообщений")
         if ads:
             for ad in ads:
                 # print('Forwarding ad')
