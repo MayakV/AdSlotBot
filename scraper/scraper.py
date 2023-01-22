@@ -147,7 +147,7 @@ with TelegramClient('name', api_id, api_hash) as client:
 
     async def main():
         conn = Connection(host, port, db_name)
-        # await update_chats(conn)
+        await update_chats(conn)
         hour_cutoff = hours_to_scrape
         date_cutoff = datetime.datetime.now() - datetime.timedelta(hours=hour_cutoff)
         # chat_ids = [x['_id'] for x in conn.get_active_chats()]
