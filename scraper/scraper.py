@@ -9,31 +9,37 @@ import sys
 from telethon.tl import functions
 import logging
 
-import db
-
+# needed to import modules below
 parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
 sys.path.insert(0, parent_dir)
 
-import filters
-from AdSlot import AdSlot
-from db import Connection
+import shared.filters as filters
+from shared.AdSlot import AdSlot
+from shared.db import Connection
 
-configParser = configparser.RawConfigParser()
-configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
-                              r'scraper_config.txt')
-configParser.read(configFilePath)
+# configParser = configparser.RawConfigParser()
+# configFilePath = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'config',
+#                               r'scraper_config.txt')
+# configParser.read(configFilePath)
 
-api_id = int(configParser.get('General', 'Api_id'))
-api_hash = configParser.get('General', 'Api_hash')
+db_name = os.getenv("DB_NAME")  # configParser.get('General', 'Db_name')
+host = os.getenv("HOSTNAME")   #configParser.get('General', 'Host')
+port = int(os.getenv("PORT"))
 
-p = os.path.join(os.path.abspath(os.path.join(__file__, os.pardir, os.pardir)), 'log', r'scraper.log')
-logging.basicConfig(filename=p, encoding='utf-8', level=logging.INFO, format='%(asctime)s %(message)s', filemode='w')
+api_id = int(os.getenv("API_ID"))
+api_hash = os.getenv("API_HASH")
+
+hours_to_scrape = int(os.getenv("HOURS_TO_SCRAPE"))
+
+logging.basicConfig(
+        filename='/home/scraper/logs/scraper.log',
+        format='%(asctime)s [scraper      ] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',
+        level=logging.INFO)
 
 dbg_mode = True
 
 # TODO load table of ad hashes first, compare duplicates there before applying all the filters
-
-# api_id = int(getenv("AdScraper_api_id"))
 
 
 def reindent(s, num_spaces):
@@ -73,7 +79,7 @@ with TelegramClient('name', api_id, api_hash) as client:
         elif isinstance(chat, types.User):
             return chat.username
         else:
-            raise TypeError("Cannot het username. Unknown type of chat entity")
+            raise TypeError("Cannot get username. Unknown type of chat entity")
 
 
     def get_chat_title(chat):
@@ -84,7 +90,7 @@ with TelegramClient('name', api_id, api_hash) as client:
         elif isinstance(chat, types.User):
             return chat.username
         else:
-            raise TypeError("Cannot het username. Unknown type of chat entity")
+            raise TypeError("Cannot get username. Unknown type of chat entity")
 
 
     def get_full_name(user: telethon.types.User):
@@ -100,7 +106,7 @@ with TelegramClient('name', api_id, api_hash) as client:
         return user.username
 
 
-    async def update_chats(conn: db.Connection):
+    async def update_chats(conn: Connection):
         request = await client(functions.messages.GetDialogFiltersRequest())
         f = list(filter(lambda x: x.get("title", "").startswith('Реклама'), [diag.to_dict() for diag in request]))
         # two folders with the same name cannot exist, so it's either 0 or 1
@@ -140,9 +146,9 @@ with TelegramClient('name', api_id, api_hash) as client:
 
 
     async def main():
-        conn = Connection()
+        conn = Connection(host, port, db_name)
         # await update_chats(conn)
-        hour_cutoff = int(configParser.get('General', 'Hours_to_scrape'))
+        hour_cutoff = hours_to_scrape
         date_cutoff = datetime.datetime.now() - datetime.timedelta(hours=hour_cutoff)
         # chat_ids = [x['_id'] for x in conn.get_active_chats()]
         chats = conn.get_active_chats()

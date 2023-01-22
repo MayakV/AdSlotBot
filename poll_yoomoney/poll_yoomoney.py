@@ -11,7 +11,7 @@ import shared.bill as bill
 import shared.db as db
 
 logging.basicConfig(
-        filename='/home/chat_bot/logs/chat_bot.log',
+        filename='/home/poll_yoomoney/logs/chat_bot.log',
         format='%(asctime)s [poll_yoomoney] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)

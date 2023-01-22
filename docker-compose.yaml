@@ -34,7 +34,7 @@ services:
     volumes:
       - type: bind
         source: ./logs
-        target: /home/chat_bot/logs
+        target: /home/expire_script/logs
     environment:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
@@ -49,12 +49,31 @@ services:
     volumes:
       - type: bind
         source: ./logs
-        target: /home/chat_bot/logs
+        target: /home/poll_yoomoney/logs
     environment:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
+  scraper:
+    build:
+      context: ./
+      dockerfile: ./scraper/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - type: bind
+        source: ./logs
+        target: /home/scraper/logs
+    environment:
+      - DB_NAME=${DB_NAME}
+      - HOSTNAME=db
+      - PORT=27017
+      - API_ID=9829389
+      - API_HASH=638fd04be80e8d64cf3fd68e861b0e12
+      - HOURS_TO_SCRAPE=48
 
+
+Hours_to_scrape = 48
 # to run cotainer indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
 

@@ -14,7 +14,7 @@ host = os.getenv("HOSTNAME")   #configParser.get('General', 'Host')
 port = int(os.getenv("PORT"))
 
 logging.basicConfig(
-        filename='/home/chat_bot/logs/chat_bot.log',
+        filename='/home/expire_script/logs/chat_bot.log',
         format='%(asctime)s [expire_script] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)
