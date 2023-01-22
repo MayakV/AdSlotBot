@@ -11,6 +11,9 @@ RUN pip install -r py_requirements.txt
 
 # Copy script and libraries
 COPY ./scraper/scraper.py ./bin/scraper.py
+# TODO need to fix this to generate name.session in scraper
+# TODO probably need to forward message from telegram to ot chat and pass code to scraper somehow
+COPY ./scraper/name.session ./bin/name.session
 COPY ./shared ./shared
 
 # Looks ugly bot works
