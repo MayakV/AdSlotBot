@@ -20,4 +20,4 @@ COPY ./shared ./shared
 # Output from said command redirected to console -u flag in python is needed for docker to see console output
 # && cron -f
 # After writing in crontab it launches cron in foreground so that container wouldn't stop automaticaly
-ENTRYPOINT echo "0 * * * * root HOSTNAME=$HOSTNAME PORT=$PORT DB_NAME=$DB_NAME python -u /bin/poll_yoomoney.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab && cron -f
+ENTRYPOINT echo "0 * * * * root HOSTNAME=$HOSTNAME PORT=$PORT DB_NAME=$DB_NAME python -u /bin/scraper.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab && cron -f
