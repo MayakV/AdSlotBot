@@ -115,7 +115,7 @@ with TelegramClient('name', api_id, api_hash) as client:
 
         peers = []
         for folder in f:
-            peers = peers | folder["include_peers"]
+            peers = list(set(peers.extend(folder["include_peers"])))
 
         chat_ids = [chat.get("channel_id", chat.get("chat_id", chat.get("user_id", ""))) for chat in peers]
         saved_chat_ids = [chat.get('_id') for chat in conn.get_chats()]
