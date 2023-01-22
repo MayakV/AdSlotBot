@@ -72,8 +72,6 @@ services:
       - API_HASH=638fd04be80e8d64cf3fd68e861b0e12
       - HOURS_TO_SCRAPE=48
 
-
-Hours_to_scrape = 48
 # to run cotainer indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
 
