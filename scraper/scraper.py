@@ -31,8 +31,18 @@ api_hash = os.getenv("API_HASH")
 
 hours_to_scrape = int(os.getenv("HOURS_TO_SCRAPE"))
 
-logging.basicConfig(
-        filename='/home/scraper/logs/scraper.log',
+log_folder_path = Path(os.getenv("ADSLOT_LOGS_FOLDER"))
+
+dbg_mode = False
+
+if dbg_mode:
+    logging.basicConfig(
+        format='%(asctime)s [scraper      ] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
+        datefmt='%Y-%m-%d %H:%M:%S',
+        level=logging.INFO)
+else:
+    logging.basicConfig(
+        filename=log_folder_path / 'scraper.log',
         format='%(asctime)s [scraper      ] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)
@@ -113,11 +123,13 @@ with TelegramClient('name', api_id, api_hash) as client:
         if not len(f):
             raise ValueError("Folders starting with \'Реклама\' not found")
 
-        peers = []
+        chat_ids = []
         for folder in f:
-            peers = list(set(peers + folder["include_peers"]))
+            chat_ids = chat_ids + \
+                       [chat.get("channel_id", chat.get("chat_id", chat.get("user_id", ""))) for chat in
+                        folder["include_peers"]]
+        chat_ids = list(set(chat_ids))
 
-        chat_ids = [chat.get("channel_id", chat.get("chat_id", chat.get("user_id", ""))) for chat in peers]
         saved_chat_ids = [chat.get('_id') for chat in conn.get_chats()]
         chats_to_invalidate = list(set(saved_chat_ids) - set(chat_ids))
         conn.invalidate_chats(chats_to_invalidate)
@@ -138,7 +150,8 @@ with TelegramClient('name', api_id, api_hash) as client:
             })
         conn.add_chats(chat_infos_to_add)
         # print('Chats updated')
-        logging.info(f'Chats updated. New chats added: {len(chat_infos_to_add)}. Chats invalidated: {len(chats_to_invalidate)}')
+        logging.info(
+            f'Chats updated. New chats added: {len(chat_infos_to_add)}. Chats invalidated: {len(chats_to_invalidate)}')
 
 
     def msg_hash(text):
@@ -190,7 +203,8 @@ with TelegramClient('name', api_id, api_hash) as client:
                                                  + "%s\r\n"
                                                  + "With keywords : %s\n"
                                                  + "Message excluded because of keywords: %s\n",
-                                                 get_chat_title(message.chat), reindent(message.text, 4), str(keyw), str(exc_keyw))
+                                                 get_chat_title(message.chat), reindent(message.text, 4), str(keyw),
+                                                 str(exc_keyw))
                                 continue
                             # chat = await client.get_entity(message.peer_id)
                             c_type = get_chat_type(message.chat)
