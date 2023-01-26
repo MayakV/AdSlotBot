@@ -63,8 +63,10 @@ empty_check = u'\U0001F532'
 # consoleHandler.setFormatter(logFormatter)
 # rootLogger.addHandler(consoleHandler)
 
+log_folder_path = Path(os.getenv("ADSLOT_LOGS_FOLDER"))
+
 logging.basicConfig(
-        filename='/home/chat_bot/logs/chat_bot.log',
+        filename=log_folder_path / 'chat_bot.log',
         format='%(asctime)s [chat_bot     ] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)

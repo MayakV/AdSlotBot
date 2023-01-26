@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import sys
 import datetime
 import logging
@@ -13,8 +14,10 @@ db_name = os.getenv("DB_NAME")  # configParser.get('General', 'Db_name')
 host = os.getenv("HOSTNAME")   #configParser.get('General', 'Host')
 port = int(os.getenv("PORT"))
 
+log_folder_path = Path(os.getenv("ADSLOT_LOGS_FOLDER"))
+
 logging.basicConfig(
-        filename='/home/expire_script/logs/chat_bot.log',
+        filename=log_folder_path / 'chat_bot.log',
         format='%(asctime)s [expire_script] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)

@@ -4,6 +4,7 @@ import telethon.tl.types
 from telethon.sync import TelegramClient
 from telethon import types
 import os
+from pathlib import Path
 import configparser
 import sys
 from telethon.tl import functions
@@ -47,10 +48,8 @@ else:
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)
 
-dbg_mode = True
 
 # TODO load table of ad hashes first, compare duplicates there before applying all the filters
-
 
 def reindent(s, num_spaces):
     if num_spaces:

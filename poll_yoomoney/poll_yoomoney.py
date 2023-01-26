@@ -1,6 +1,7 @@
 import datetime
 import logging
 import os
+from pathlib import Path
 import sys
 
 # needed to import modules below
@@ -10,8 +11,10 @@ sys.path.insert(0, parent_dir)
 import shared.bill as bill
 import shared.db as db
 
+log_folder_path = Path(os.getenv("ADSLOT_LOGS_FOLDER"))
+
 logging.basicConfig(
-        filename='/home/poll_yoomoney/logs/chat_bot.log',
+        filename=log_folder_path / 'chat_bot.log',
         format='%(asctime)s [poll_yoomoney] [%(threadName)-12.12s] [%(levelname)-5.5s]  %(message)s',
         datefmt='%Y-%m-%d %H:%M:%S',
         level=logging.INFO)

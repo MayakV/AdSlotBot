@@ -24,6 +24,7 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
+      - ADSLOT_LOGS_FOLDER=${ADSLOT_LOGS_FOLDER}
   # updates expired subscription and ads
   expire_script:
     build:
@@ -39,6 +40,7 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
+      - ADSLOT_LOGS_FOLDER=${ADSLOT_LOGS_FOLDER}
   # polls yoomoney for new payments
   poll_yoomoney:
     build:
@@ -54,6 +56,7 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
+      - ADSLOT_LOGS_FOLDER=${ADSLOT_LOGS_FOLDER}
   scraper:
     build:
       context: ./
@@ -68,9 +71,10 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
-      - API_ID=9829389
-      - API_HASH=638fd04be80e8d64cf3fd68e861b0e12
+      - API_ID=${DB_NAME}
+      - API_HASH=${DB_NAME}
       - HOURS_TO_SCRAPE=48
+      - ADSLOT_LOGS_FOLDER=${ADSLOT_LOGS_FOLDER}
 
 # to run container indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
