@@ -71,8 +71,8 @@ services:
       - DB_NAME=${DB_NAME}
       - HOSTNAME=db
       - PORT=27017
-      - API_ID=${DB_NAME}
-      - API_HASH=${DB_NAME}
+      - API_ID=${API_ID}
+      - API_HASH=${API_HASH}
       - HOURS_TO_SCRAPE=48
       - ADSLOT_LOGS_FOLDER=${ADSLOT_LOGS_FOLDER}
 
