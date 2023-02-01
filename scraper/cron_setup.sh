@@ -13,4 +13,5 @@ echo "0 * * * * root " \
 "API_ID=$API_ID " \
 "API_HASH=$API_HASH " \
 "HOURS_TO_SCRAPE=$HOURS_TO_SCRAPE " \
+"ADSLOT_LOGS_FOLDER=$ADSLOT_LOGS_FOLDER " \
 "python -u /bin/scraper.py > /proc/1/fd/1 2>/proc/1/fd/2" >> /etc/crontab && cron -f
