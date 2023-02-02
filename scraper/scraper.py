@@ -62,7 +62,7 @@ def reindent(s, num_spaces):
 session_path = Path(os.getenv("TELETHON_SESSION_PATH"))
 
 if not session_path:
-    session_path = Path('name.session')
+    session_path = Path('name')
 
 with TelegramClient(str(session_path), api_id, api_hash) as client:
     async def get_last_message(chat_id):
