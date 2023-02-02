@@ -9,8 +9,6 @@ import configparser
 import sys
 from telethon.tl import functions
 import logging
-import schedule
-import time
 
 # needed to import modules below
 parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
@@ -33,7 +31,6 @@ api_id = int(os.getenv("API_ID"))
 api_hash = os.getenv("API_HASH")
 
 hours_to_scrape = int(os.getenv("HOURS_TO_SCRAPE"))
-
 log_folder_path = Path(os.getenv("ADSLOT_LOGS_FOLDER"))
 
 dbg_mode = False
@@ -61,8 +58,12 @@ def reindent(s, num_spaces):
         s = '\n'.join(s)
     return s
 
+session_path = Path(os.getenv("TELETHON_SESSION_PATH"))
 
-with TelegramClient('name', api_id, api_hash) as client:
+if not session_path:
+    session_path = Path('name.session')
+
+with TelegramClient(session_path, api_id, api_hash) as client:
     async def get_last_message(chat_id):
         async for message in client.iter_messages(chat_id,
                                                   limit=1,
@@ -286,9 +287,5 @@ with TelegramClient('name', api_id, api_hash) as client:
                 conn.update_last_analyzed_id(chat['_id'], last_analyzed_id)
 
 
-    schedule.every().hour.do(client.loop.run_until_complete(main()))
-
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    client.loop.run_until_complete(main())
 

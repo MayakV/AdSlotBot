@@ -19,7 +19,7 @@ COPY ./shared ./shared
 
 # cron doesn't work because it's not executed from default environment and name.session isn't authenticating te session
 
-# RUN ["chmod", "+x", "/bin/cron_setup.sh"]
-# ENTRYPOINT cron_setup.sh
+RUN ["chmod", "+x", "/bin/cron_setup.sh"]
+ENTRYPOINT cron_setup.sh
 
-ENTRYPOINT python -u ./bin/scraper.py
+# ENTRYPOINT python -u ./bin/scraper.py

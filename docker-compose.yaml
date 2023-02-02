@@ -75,6 +75,7 @@ services:
       - API_HASH=${API_HASH}
       - HOURS_TO_SCRAPE=48
       - ADSLOT_LOGS_FOLDER=${ADSLOT_LOGS_FOLDER}
+      - TELETHON_SESSION_PATH=${TELETHON_SESSION_PATH}
 
 # to run container indefinitely
 #    command: bash -c "while true; do echo hello; sleep 2; done"
