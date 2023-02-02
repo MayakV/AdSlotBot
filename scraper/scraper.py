@@ -64,7 +64,7 @@ session_path = Path(os.getenv("TELETHON_SESSION_PATH"))
 if not session_path:
     session_path = Path('name.session')
 
-with TelegramClient(SQLiteSession(str(session_path)), api_id, api_hash) as client:
+with TelegramClient(str(session_path), api_id, api_hash) as client:
     async def get_last_message(chat_id):
         async for message in client.iter_messages(chat_id,
                                                   limit=1,
