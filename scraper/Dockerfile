@@ -17,5 +17,9 @@ COPY ./scraper/cron_setup.sh ./bin/cron_setup.sh
 COPY ./scraper/name.session ./bin/name.session
 COPY ./shared ./shared
 
-RUN ["chmod", "+x", "/bin/cron_setup.sh"]
-ENTRYPOINT cron_setup.sh
+# cron doesn't work because it's not executed from default environment and name.session isn't authenticating te session
+
+# RUN ["chmod", "+x", "/bin/cron_setup.sh"]
+# ENTRYPOINT cron_setup.sh
+
+ENTRYPOINT python -u ./bin/scraper.py

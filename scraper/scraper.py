@@ -9,6 +9,8 @@ import configparser
 import sys
 from telethon.tl import functions
 import logging
+import schedule
+import time
 
 # needed to import modules below
 parent_dir = os.path.abspath(os.path.join(__file__, os.pardir, os.pardir))
@@ -284,4 +286,9 @@ with TelegramClient('name', api_id, api_hash) as client:
                 conn.update_last_analyzed_id(chat['_id'], last_analyzed_id)
 
 
-    client.loop.run_until_complete(main())
+    schedule.every().hour.do(client.loop.run_until_complete(main()))
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
