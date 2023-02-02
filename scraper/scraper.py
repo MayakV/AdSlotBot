@@ -8,6 +8,7 @@ from pathlib import Path
 import configparser
 import sys
 from telethon.tl import functions
+from telethon.sessions import SQLiteSession
 import logging
 
 # needed to import modules below
@@ -63,7 +64,7 @@ session_path = Path(os.getenv("TELETHON_SESSION_PATH"))
 if not session_path:
     session_path = Path('name.session')
 
-with TelegramClient(session_path, api_id, api_hash) as client:
+with TelegramClient(SQLiteSession(session_path), api_id, api_hash) as client:
     async def get_last_message(chat_id):
         async for message in client.iter_messages(chat_id,
                                                   limit=1,
