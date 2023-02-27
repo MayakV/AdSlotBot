@@ -25,6 +25,10 @@ logging.basicConfig(
 conn = db.Connection(host, port, db_name)
 
 # conn.update_expired_users()
-logging.info(f"Истекшие пользователи обновлены: {str(conn.update_expired_users())}")
+exp_users_count = conn.update_expired_users()
+if exp_users_count:
+    logging.info(f"Истекшие пользователи обновлены: {str(exp_users_count)}")
 # conn.update_expired_ads(datetime.timedelta(days=2))
-logging.info(f"Истекших заявок обновлено: {conn.update_expired_ads(datetime.timedelta(days=2))}")
+exp_ads_count = conn.update_expired_ads(datetime.timedelta(days=2))
+if exp_ads_count:
+    logging.info(f"Истекших заявок обновлено: {str(exp_ads_count)}")
